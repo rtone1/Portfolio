@@ -1,0 +1,49 @@
+<header class="profile">
+  <h1>Welcome back</h1>
+  <h2 class="myName"> <%= @user.name %>  </h2>
+  <div class="log-out">
+    <%= form_tag('/session_log_out', method: :delete) do %>
+      <%= submit_tag "Log-Out" %>
+    <% end %>
+  </div>
+</header>
+
+<div class="content-mail">
+
+  <div class="submit-form-work">
+    <form id="workForm">
+       <%= token_tag %>
+       <input class="category" type="text" placeholder="category...." required>
+       <input class="title" type="text"  placeholder="title...." required>
+       <input class="link" type="text" placeholder="github link...." required>
+       <textarea class="description"  maxlength="1000" placeholder="description" required></textarea>
+       <input  id="file" type="file">
+       <input class="submit-work" type="submit" value="submit">
+    </form>
+  </div>
+
+  <section class="mail">
+    <% @messages.each do |message| %>
+
+      <div class="messages">
+        <h3 class="sender">   <%= message.name %>  </h3> <span> <%= message.created_at %> </span>
+        <p>
+          <u>
+            <strong>email: </strong> <%= message.email %>
+            <strong>phone: </strong> <%= message.phone %>
+          </u>
+        </p>
+        <p class="full-message">
+          <%= message.message %>
+        </p>
+
+        <%= form_tag("/message-delete/#{ message.id }", method: :delete) do %>
+            <%= button_tag 'delete ', class: "delete" %>
+        <% end %>
+
+      </div>
+
+    <% end %>
+  </section>
+
+</div>

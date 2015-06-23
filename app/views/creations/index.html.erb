@@ -1,0 +1,132 @@
+  <header>
+    <h1>Rodrigo Torres</h1>
+    <nav>
+      <ul>
+        <a href="#development"><li>Web Development<span>&nbsp; |</span></li></a>
+        <a href="#graphics"><li>Graphics<span>&nbsp; |</span></li></a>
+        <a href="#top"><li>About Me<span>&nbsp; |</span></li></a>
+        <a href="#container2"><li>Contact Me</li></a>
+      </ul>
+    </nav>
+    <div class="hamIcon"></div>
+  </header>
+
+  <div class="content">
+
+    <div id="container1">
+      <section class="aboutME">
+        <h1>Developer and Graphic Artist</h1>
+        <h2>living in the city of Chicago.</h2>
+        <p>
+          I have always had a strong passion for the web and with a background in graphic design, I knew I wanted to create web functionality while still being able to incorporate design.
+        </p>
+      </section>
+
+      <section class="guideTo">
+        <a href="#development"> <h5>Check out my portfolio</h5> </a>
+      </section>
+    </div>
+
+    <div id="container3">
+      <div class="data">
+          <div id="div1"></div>
+          <div id="div2"></div>
+          <section class="datainfo">
+            <h1>Data About Me</h1>
+            <h3>
+              As a Developer/Designer my portfolio consists of both design and development.
+            </h3>
+            <h4> <%= link_to "download my resume", "resume.pdf", target: "_blank" %> </h4>
+
+            <hr>
+          </section>
+      </div>
+    </div>
+
+   <div class="content2">
+      <div id="development">
+
+        <div class="devwork">
+          <div class="workHolder">
+            <% @creates.each do |c| %>
+
+            <img class="image" src=" <%= c.image %> "/>
+            <section class="devdiscription">
+              <h1> <%= c.title %> </h1>
+              <hr>
+              <p>
+                <%= c.description %>
+              </p>
+              <a href="<%= c.linkgithub %>">link to github</a>
+            </section>
+
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="graphics">
+
+        <div class="devwork">
+          <div class="workHolder">
+            <% @designs.each do |d| %>
+            <img class="image" src=" <%= d.image %> "/>
+            <section class="devdiscription">
+              <h1> <%= d.title %> </h1>
+              <hr>
+              <p>
+                <%= d.description %>
+              </p>
+            </section>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+   </div>
+
+
+    <div id="container2">
+      <section class="contact">
+        <form class="contactForm" action="/api/message" method="post">
+          <%= token_tag %>
+          <h3>Send me a message</h3>
+          <hr>
+          <label>Name</label>
+          <input type="text" name="message[name]" placeholder="name..." required><br>
+          <label>Email</label>
+          <input type="email" name="message[email]" placeholder="email..." required>
+          <label>Phone</label>
+          <input type="phone" name="message[phone]" placeholder="555555555" maxlength="10" required><br>
+          <textarea name="message[message]" maxlength="1000" placeholder="message..."></textarea><br>
+          <input type="submit">
+        </form>
+      </section>
+      <section class="myImage">
+        <div class="me"></div>
+      </section>
+    </div>
+
+    <footer>
+
+      <div class="footerInfo">
+        <ul class="footerul">
+          <a href="https://github.com/rtone1" target="_blank"><li class="git"></li></a>
+          <a href="https://www.linkedin.com/in/rodrigotorrescoronado" target="_blank"><li class="linkedin"></li></a>
+
+        <%= form_tag('/session_log_in', method: :post) do %>
+          <%= label_tag :username %>
+          <%= text_field_tag :name %>
+          <%= label_tag 'password' %>
+          <%= password_field_tag :password %>
+          <br>
+          <%= submit_tag "Sign-In" %>
+        <% end %>
+
+      </ul>
+      </div>
+
+    </footer>
+
+  </div>

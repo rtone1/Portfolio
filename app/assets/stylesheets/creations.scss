@@ -1,0 +1,657 @@
+
+body{
+  background-color: white;
+  margin: 0px;
+}
+h1,h2,h3,h4,h5,h6,p{
+  margin: 0px;
+  padding: 0px;
+}
+// end of normalize
+
+header{
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  z-index: 100;
+  background-color: #227A8A;
+  border-bottom: 1px solid rgb(41, 135, 160);
+  font-family: 'Lato', sans-serif;
+  color: white;
+  h1{
+    display: inline-block;
+    font-weight: 300;
+    line-height: 60px;
+    font-size: 30px;
+    margin: 0px 10px 0px;
+  }
+}
+.shadow{
+  box-shadow: 0px 1px 10px 0px black;
+}
+nav{
+  height: 60px;
+  float: right;
+  a{
+    text-decoration: none;
+    color: white;
+  }
+
+ul{
+  padding: 5px 0px;
+  margin-right: 25px;
+}
+li{
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 10px;
+}
+}// end on navbar
+
+// aboutME section ===========================================================
+.content{
+  width: 100%;
+  overflow: hidden;
+}
+#container1{
+  width: 100%;
+  height: 600px;
+  background-image: url('chicagofixed.jpg');
+  background-size: cover;
+  position: relative;
+  top: 60px;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-size: 32px;
+}
+
+.aboutME{
+  width: 80%;
+  height: 100%;
+h1, h2, p{
+  font-family: 'Lato', sans-serif;
+  position: relative;
+  text-shadow: 1px 1px 5px black;
+}
+h1{
+  top: 100px;
+  left: 45px;
+  animation-name: lightSpeedIn;
+  animation-duration: 2s;
+}
+h2{
+  top: 105px;
+  left: 160px;
+  animation-name: lightSpeedIn;
+  animation-duration: 4s;
+}
+p{
+  font-size: 22px;
+  top: 120px;
+  left: 190px;
+  width: 70%;
+  animation-name: lightSpeedIn;
+  animation-duration: 4s;
+}
+}
+.guideTo{
+  width: 100%;
+  margin: 0px auto;
+  position: absolute;
+  bottom: 40px;
+  text-align: center;
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
+// radial data =================================================================
+.background {
+    fill: #FFFFFF;
+    fill-opacity: 0.01;
+}
+
+.component {
+    fill: white;
+}
+
+.component .label {
+    font-family: Arial;
+    font-size: 19px;
+    text-anchor: middle;
+    fill: white;
+}
+
+.arc {
+    stroke-weight:0.1;
+    fill: rgb(238, 137, 0);
+}
+
+
+.arc2 {
+    stroke-weight:0.1;
+    fill: #3660b0;
+}
+#test .arc2 {
+    stroke-weight:0.1;
+    fill: #3660b0;
+}
+
+#outer {
+    background:#FFFFFF;
+    border-radius: 5px;
+    color: #000;
+}
+
+#div1, #div2{
+    width: 230px;
+    height: 200px;
+    box-sizing: border-box;
+    float: left;
+}
+
+#div2 .arc {
+    stroke-weight: 0.1;
+    fill: rgb(238, 137, 0);
+}
+
+#div2 .arc2 {
+    stroke-weight: 0.1;
+    fill: #b00d08;
+}
+text.label{
+  fill: white;
+}
+path{
+  fill: white;
+}
+//work data ====================================================================
+#container3{
+  width: 100%;
+  height: 400px;
+  background-color: #227A8A;
+  position: relative;
+  top: 60px;
+  z-index: 5;
+  font-family: monaco;
+  color: white;
+  text-align: center;
+  .datainfo{
+    width: 50%;
+    float: left;
+    margin-top: 50px;
+    margin-left: 50px;
+  }
+  h1{
+    font-size: 42px;
+  }
+  h3{
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    margin-right: 0px;
+  }
+  h4{
+    margin-top: 50px;
+  }
+  a{
+    color: white;
+    text-decoration: none;
+  }
+  hr{
+    width: 200px;
+  }
+}
+#div1,#div2{
+  margin-top: 15px;
+}
+.data{
+  width: 100%;
+  position: relative;
+  top: 50px;
+  left: 50px;
+}
+//Developer work ===============================================================
+.content2{
+  width: 100%;
+  position: relative;
+  top: -275px;
+}
+#development{
+  width: 100%;
+  height: 700px;
+  background-color: white;
+  overflow-y: scroll;
+}
+.devwork{
+  width: 95%;
+  margin: 0px auto;
+  position: relative;
+  top: 150px;
+}
+.workHolder{
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+.devdiscription{
+  width: 45%;
+  float: left;
+  margin: 10px 0px 0px 30px;
+  box-sizing: border-box;
+  p{
+    margin-left: 10px;
+  }
+  h1{
+    font-size: 28px;
+  }
+}
+.image{
+  width: 50%;
+  height: 60%;
+  margin: 0px 0px 50px 20px;
+  float: left;
+  box-shadow: 3px 7px 21px -4px black;
+}
+
+//Design work ==================================================================
+#graphics{
+  width: 100%;
+  height: 700px;
+  background-color: rgb(236, 237, 241);
+  overflow-y: scroll;
+}
+//contact me section ===========================================================
+#container2{
+  width: 100%;
+  height: 678px;
+  position: relative;
+  top: -200px;
+  overflow: hidden;
+  margin-bottom: -115px;
+}
+.contact{
+  width: 50%;
+  height: 500px;
+  float: left;
+  margin-top: 100px;
+  position: absolute;
+  font-family: 'Lato', sans-serif;
+  h3{
+    margin: 20px 0px 10px;
+    text-align: center;
+    font-size: 32px;
+  }
+  hr{
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+.contactForm{
+  width: 80%;
+  margin: 20px auto;
+}
+label{
+ display: block;
+ margin-left: 10px;
+}
+input[type=text],
+input[type=email],
+input[type=phone],
+input[type=password]{
+  width: 250px;
+  height: 40px;
+  padding: 10px;
+  margin: 0px 0px 10px 5px;
+  border: 1px solid rgb(120, 137, 147);
+  border-radius: 4px;
+  font-size: 22px;
+  box-sizing: border-box;
+}
+textarea{
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  margin: 0px 0px 10px 5px;
+  border: 1px solid #788993;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  resize: none;
+}
+input[type=submit]{
+  width: 100px;
+  height: 35px;
+  margin: 0px 0px 0px 5px;
+  background-color: rgba(0, 157, 138, .0);
+  border: 1px solid rgb(120, 137, 147);
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+input[type=text]:active,
+input[type=text]:focus,
+input[type=email]:active,
+input[type=email]:focus,
+input[type=phone]:active,
+input[type=phone]:focus,
+input[type=password]:active,
+input[type=password]:focus{
+outline: 0;
+border: 1px solid #93B7CC;
+}
+input[type=submit]:focus,
+input[type=submit]:active{
+outline: 0;
+border: 1px solid #93B7CC;
+}
+textarea:focus,
+textarea:active{
+  outline: 0;
+  border: 1px solid #93B7CC;
+}
+
+.myImage{
+  width: 50%;
+  float: left;
+  overflow: hidden;
+}
+.me{
+  width: 400px;
+  height: 400px;
+  background-image: url('me.png');
+  background-size: cover;
+  border-radius: 200px;
+  margin-top: 105px;
+  position: absolute;
+  right: 120px;
+  top: 40px;
+  z-index: 10;
+}
+// footer start=================================================================
+footer{
+  width: 100%;
+  height: 400px;
+  background-color: #3B4148;
+  color: white;
+input[type=submit]{
+  color: white;
+  border: 1px solid white;
+}
+.footerInfo{
+  width: 100%;
+}
+.footerul{
+  width: 400px;
+  margin: 0px auto;
+  position: relative;
+  top: 50px;
+  padding: 20px;
+}
+li{
+  display: inline-block;
+  margin-left: 30px;
+}
+.git{
+  width: 100px;
+  height: 100px;
+  background-image: url('git.png');
+  background-size: cover;
+}
+.linkedin{
+  width: 90px;
+  height: 90px;
+  background-image: url('linkedin.png');
+  background-size: cover;
+}
+form{
+  margin: 20px 0px 0px 10px;
+}
+label{
+  font-family: Arial;
+}
+}
+// responsive queries start below===============================================
+
+@media (max-width: 1055px){
+
+  #container3{
+    h1{
+      font-size: 33px;
+    }
+    #div1, #div2{
+      display: none;
+    }
+    .data{
+      top: -8px;
+    }
+  }
+  .devwork{
+    top: 70px;
+  }
+  .devdiscription{
+    width: 90%;
+    margin-top: 20px;
+  }
+  .image{
+    width: 75%;
+    height: 55%;
+    margin-left: 30px;
+    margin-bottom: 0px;
+  }
+  .devdiscription{
+    margin-bottom: 50px;
+  }
+  .me{
+    width: 350px;
+    height: 350px;
+  }
+
+}// end of 1050px media responsive
+
+@media (max-width: 900px){
+  .me{
+    width: 320px;
+    height: 320px;
+  }
+
+}
+
+@media (max-width: 750px){
+
+  header{
+    ul{
+      display: none;
+    }
+  }
+  span{
+    display: none;
+  }
+  .hamIcon{
+    width: 50px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    float: right;
+    background-image: url('hambuger.png');
+    background-size: cover;
+    background-position: center;
+  }
+  nav{
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    ul{
+      margin: 0px;
+      padding: 0px;
+      background-color: #3B4148
+    }
+    li{
+      line-height: 105px;
+      font-size: 30px;
+      font-weight: 300;
+      display: block;
+      margin: 0px;
+      padding: 0px 10px 0px;
+      border-bottom: 1px solid #4A4D53;
+    }
+    a{
+      text-decoration: none;
+      color: white;
+    }
+    li:hover,
+    li:focus{
+      background-color: #444B52;
+    }
+  }// end of responsiveNavbar
+
+  .container1{
+    height: 500px;
+  }
+  .aboutME{
+  h1{
+    top: 70px;
+    left: 45px;
+    font-size: 42px
+  }
+  h2{
+    top: 80px;
+    left: 160px;
+    font-size: 40px
+  }
+  p{
+    font-size: 22px;
+    top: 120px;
+    left: 190px;
+  }
+}
+
+
+}// end of 750px media
+
+@media (max-width: 550px){
+
+}// end of 550px media responsive
+
+@media (max-width: 400px){
+
+  #container3 .datainfo {
+    width: 61%;
+    float: left;
+    margin-top: 50px;
+    margin-left: 9px;
+  }
+  .container1{
+    height: 400px;
+  }
+  .aboutME{
+    width: 100%;
+  h1{
+    top: 46px;
+    left: 12px;
+    font-size: 26px
+  }
+  h2{
+    top: 56px;
+    left: 15px;
+    font-size: 26px
+  }
+  p{
+    font-size: 20px;
+    top: 82px;
+    left: 48px;
+  }
+}
+  .guideTo{
+    bottom: 100px;
+  }
+  .me{
+    width: 130px;
+    height: 130px;
+    margin: 10px;
+    right: 118px;
+    top: 0px;
+    z-index: 10;
+  }
+  .contact {
+    width: 97%;
+    top: 30px;
+  }
+  .contactForm {
+    width: 95%;
+  }
+  .devwork{
+    width: 100%;
+    top: 70px;
+  }
+  .devdiscription{
+    width: 90%;
+    margin-left: 15px;
+  }
+  .image{
+    width: 93%;
+    height: 55%;
+    margin-left: 10px;
+  }
+
+}// end of 400px media responsive
+
+// animation fadein ===================
+
+@-webkit-keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0) skewX(30deg);
+    transform: translate3d(-100%, 0, 0) skewX(30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0) skewX(30deg);
+    transform: translate3d(-100%, 0, 0) skewX(30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.lightSpeedIn {
+  -webkit-animation-name: lightSpeedIn;
+  animation-name: lightSpeedIn;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
