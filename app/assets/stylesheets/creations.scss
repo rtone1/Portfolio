@@ -56,7 +56,7 @@ li{
 #container1{
   width: 100%;
   height: 600px;
-  background-image: url('chicagofixed.jpg');
+  background-image: url('/chicagofixed.jpg');
   background-size: cover;
   position: relative;
   top: 60px;
@@ -357,7 +357,7 @@ textarea:active{
 .me{
   width: 405px;
   height: 405px;
-  background-image: url('me.png');
+  background-image: url('/me.png');
   background-size: cover;
   border-radius: 200px;
   margin-top: 105px;
@@ -399,13 +399,13 @@ li{
 .git{
   width: 100px;
   height: 100px;
-  background-image: url('git.png');
+  background-image: url('/git.png');
   background-size: cover;
 }
 .linkedin{
   width: 90px;
   height: 90px;
-  background-image: url('linkedin.png');
+  background-image: url('/linkedin.png');
   background-size: cover;
 }
 form{
@@ -487,7 +487,7 @@ label{
     top: 10px;
     right: 20px;
     float: right;
-    background-image: url('hambuger.png');
+    background-image: url('/hambuger.png');
     background-size: cover;
     background-position: center;
   }
