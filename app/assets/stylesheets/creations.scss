@@ -355,8 +355,8 @@ textarea:active{
   overflow: hidden;
 }
 .me{
-  width: 400px;
-  height: 400px;
+  width: 405px;
+  height: 405px;
   background-image: url('me.png');
   background-size: cover;
   border-radius: 200px;
@@ -365,6 +365,12 @@ textarea:active{
   right: 120px;
   top: 40px;
   z-index: 10;
+}
+.myshadow{
+  box-shadow: inset -2px -2px 6px -4px black;
+  height: 405px;
+  width: 405px;
+  border-radius: 200px;
 }
 // footer start=================================================================
 footer{
@@ -441,16 +447,24 @@ label{
     margin-bottom: 50px;
   }
   .me{
-    width: 350px;
-    height: 350px;
+    width: 355px;
+    height: 355px;
+  }
+  .myshadow{
+    width: 355px;
+    height: 355px;
   }
 
 }// end of 1050px media responsive
 
 @media (max-width: 900px){
   .me{
-    width: 320px;
-    height: 320px;
+    width: 325px;
+    height: 325px;
+  }
+  .myshadow{
+    width: 325px;
+    height: 325px;
   }
 
 }
@@ -565,12 +579,16 @@ label{
     bottom: 100px;
   }
   .me{
-    width: 130px;
-    height: 130px;
+    width: 135px;
+    height: 135px;
     margin: 10px;
     right: 118px;
     top: 0px;
     z-index: 10;
+  }
+  .myshadow{
+    width: 135px;
+    height: 135px;
   }
   .contact {
     width: 97%;
