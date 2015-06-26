@@ -11,7 +11,7 @@ $(document).ready(function(){
   $('.contact').hide();
 // responsive nav ===================
     $('.hamIcon').click(function(){
-      $( 'ul' ).slideToggle(200);
+      $( '.navigation ' ).slideToggle(200);
     });
 
     $('li').click(function(){
