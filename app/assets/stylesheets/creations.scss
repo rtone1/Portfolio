@@ -89,9 +89,9 @@ p{
   font-size: 22px;
   top: 120px;
   left: 190px;
-  width: 70%;
-  animation-name: lightSpeedIn;
-  animation-duration: 4s;
+  width: 60%;
+  animation-name: lightSpeedIn 4s;
+  -webkit-animation: lightSpeedIn 4s;
 }
 }
 .guideTo{
@@ -576,7 +576,8 @@ label{
   }
 }
   .guideTo{
-    bottom: 100px;
+    bottom: 120px;
+    font-size: 20px;
   }
   .me{
     width: 135px;
