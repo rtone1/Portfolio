@@ -1,7 +1,7 @@
 # Created by https://www.gitignore.io
 
 ### Ignore Rake
-#/db/seeds.rb
+/db/seeds.rb
 
 ### Rails ###
 *.rbc
