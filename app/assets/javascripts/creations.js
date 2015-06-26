@@ -14,9 +14,18 @@ $(document).ready(function(){
       $( 'ul' ).slideToggle(200);
     });
 
+    $('li').click(function(){
+      $( '.removeul' ).hide();
+    });
+
+
+
     $(window).resize(function(){
-      if (screen.width > 700) {
+      if ($(window).width() > 750) {
         $('ul').removeAttr('style');
+        $('.navigation').removeClass('removeul');
+      }else {
+        $('.navigation').addClass('removeul');
       }
 
     });
@@ -33,11 +42,11 @@ $(document).ready(function(){
 
       }
 
-      if (scroll > 100){
-        $('.aboutME').fadeOut('slow');
-      } else {
-        $('.aboutME').fadeIn('slow');
-      }
+      // if (scroll > 100){
+      //   $('.aboutME').fadeOut('slow');
+      // } else {
+      //   $('.aboutME').fadeIn('slow');
+      // }
 
       if (scroll > 1700){
         parallaxME();

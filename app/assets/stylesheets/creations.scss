@@ -76,14 +76,14 @@ h1, h2, p{
 h1{
   top: 100px;
   left: 45px;
-  animation-name: lightSpeedIn;
-  animation-duration: 2s;
+  animation-name: lightSpeedIn 2s;
+  -webkit-animation: lightSpeedIn 2s;
 }
 h2{
   top: 105px;
   left: 160px;
-  animation-name: lightSpeedIn;
-  animation-duration: 4s;
+  animation-name: lightSpeedIn 4s;
+  -webkit-animation: lightSpeedIn 4s;
 }
 p{
   font-size: 22px;
@@ -609,6 +609,9 @@ label{
     width: 93%;
     height: 55%;
     margin-left: 10px;
+  }
+  #container2{
+    height: 700px;
   }
 
 }// end of 400px media responsive
