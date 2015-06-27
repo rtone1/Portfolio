@@ -4,7 +4,6 @@ var summary;
 var type;
 var link;
 var content;
-
 $(document).ready(function(){
 
   $('.me').hide();
@@ -33,7 +32,6 @@ $(document).ready(function(){
     $(window).scroll(function() {
 
       parallax();
-
       var scroll = $(document).scrollTop();
       if (scroll >= 60) {
           $('header').addClass('shadow');
@@ -68,14 +66,11 @@ $(document).ready(function(){
        $('#container3').css('top', - scrolled / 2) + 'px';
      }
 
-
      function parallaxME(){
-
           var scrolledY = $(document).scrollTop() - 1950;
           var scrolledY2 = $(document).scrollTop() - 2050;
           $('.me').css('right', + scrolledY) +'px';
           $('.contact').css('left', + scrolledY2) +'px';
-
       };
 // smoth scroll ================================================================
 $('a').click(function(){
@@ -140,7 +135,6 @@ function start() {
 
 }
 start();
-
 // $('#txt').focusout(grabData);
 // $('#enter').click(function(){
 //   $('#txt').val('');
@@ -152,12 +146,11 @@ start();
       reader.onload = function (event) {
         try {
             dataToUpload.file = event.target.result;
-            console.log(event.target.result);
+            //console.log(event.target.result);
         } catch (ex) {
             throw new Error("Error Error");
         }
       }
-
       var file = document.getElementById('file');
       reader.readAsDataURL(file.files[0]);
 
@@ -178,7 +171,6 @@ start();
       submitData();
 
     });
-
 
     function submitData(){
       var imageData = dataToUpload.file;

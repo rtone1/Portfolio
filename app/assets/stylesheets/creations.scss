@@ -538,13 +538,11 @@ label{
     left: 190px;
   }
 }
-
+  #container2{
+    height: 690px;
+  }
 
 }// end of 750px media
-
-@media (max-width: 550px){
-
-}// end of 550px media responsive
 
 @media (max-width: 400px){
 
@@ -612,7 +610,7 @@ label{
     margin-left: 10px;
   }
   #container2{
-    height: 710px;
+    height: 720px;
   }
 
 }// end of 400px media responsive
