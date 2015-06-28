@@ -61,7 +61,7 @@
     </p>
     <a href="<%= c.linkgithub %>" target="_blank">link to github</a>
   </section>
-  <%= form_tag("/message-delete/#{ message.id }", method: :delete) do %>
+  <%= form_tag("/creation-delete/#{ creation.id }", method: :delete) do %>
       <%= button_tag 'delete ', class: "delete" %>
   <% end %>
 
