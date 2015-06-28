@@ -8,12 +8,13 @@ Rails.application.routes.draw do
   get '/messages' => 'messages#index'
   post '/api/message' => 'messages#createapi'
   delete '/message-delete/:id' => 'messages#destroy'
+  delete '/creation-delete/:id' => 'creations#destroy'
   # creations route for posting work ================
   post '/api/creations' => 'creations#createcreationapi'
   # session log-in and log-out routes ===============
   post '/session_log_in' => 'sessions#log_in_behavior'
   delete '/session_log_out' => 'sessions#log_out_behavior'
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

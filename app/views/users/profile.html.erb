@@ -48,3 +48,22 @@
   </section>
 
 </div>
+
+<div class="workHolder">
+  <% @creates.each do |c| %>
+
+  <img class="image" src=" <%= c.image %> "/>
+  <section class="devdiscription">
+    <h1> <%= c.title %> </h1>
+    <hr>
+    <p>
+      <%= c.description %>
+    </p>
+    <a href="<%= c.linkgithub %>" target="_blank">link to github</a>
+  </section>
+  <%= form_tag("/message-delete/#{ message.id }", method: :delete) do %>
+      <%= button_tag 'delete ', class: "delete" %>
+  <% end %>
+
+  <% end %>
+</div>

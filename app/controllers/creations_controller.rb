@@ -8,7 +8,14 @@ class CreationsController < ApplicationController
   end
 
   def createcreationapi
+    authenticate!
     @create = Creation.create(creation_params)
+    redirect_to "/profile"
+  end
+
+  def destroy
+    authenticate!
+    Creation.destroy(params[:id])
     redirect_to "/profile"
   end
 
