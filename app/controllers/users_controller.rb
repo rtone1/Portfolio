@@ -7,6 +7,12 @@ class UsersController < ApplicationController
     @messages = Message.all
   end
 
+  def destroy
+    authenticate!
+    Creation.destroy(params[:id])
+    redirect_to "/profile"
+  end
+
   private
 
   def user_params

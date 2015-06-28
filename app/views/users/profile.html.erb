@@ -50,7 +50,7 @@
 </div>
 
 <div class="workHolder">
-  <% @creates.each do |c| %>
+  <% Creation.all.each do |c| %>
 
   <img class="image" src=" <%= c.image %> "/>
   <section class="devdiscription">
@@ -61,7 +61,7 @@
     </p>
     <a href="<%= c.linkgithub %>" target="_blank">link to github</a>
   </section>
-  <%= form_tag("/creation-delete/#{ creation.id }", method: :delete) do %>
+  <%= form_tag("/creation-delete/#{ c.id }", method: :delete) do %>
       <%= button_tag 'delete ', class: "delete" %>
   <% end %>
 

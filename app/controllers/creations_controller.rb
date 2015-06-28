@@ -13,12 +13,6 @@ class CreationsController < ApplicationController
     redirect_to "/profile"
   end
 
-  def destroy
-    authenticate!
-    Creation.destroy(params[:id])
-    redirect_to "/profile"
-  end
-
   private
 
   def creation_params

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/messages' => 'messages#index'
   post '/api/message' => 'messages#createapi'
   delete '/message-delete/:id' => 'messages#destroy'
-  delete '/creation-delete/:id' => 'creations#destroy'
+  delete '/creation-delete/:id' => 'users#destroy'
   # creations route for posting work ================
   post '/api/creations' => 'creations#createcreationapi'
   # session log-in and log-out routes ===============
