@@ -10,24 +10,24 @@ $(document).ready(function(){
   $('.contact').hide();
 // responsive nav ===================
     $('.hamIcon').click(function(){
-      $( '.navigation ' ).slideToggle(200);
+      $( '.navigation ' ).slideToggle(100);
     });
 
     $('li').click(function(){
       $( '.removeul' ).hide();
     });
 
-
-
     $(window).resize(function(){
       if ($(window).width() > 750) {
         $('ul').removeAttr('style');
         $('.navigation').removeClass('removeul');
-      }else {
+      } else {
         $('.navigation').addClass('removeul');
       }
-
     });
+    if ($(window).width() < 750 ){
+      $('.navigation').addClass('removeul');
+    }
 // add shadow to nav and scroll effects================
     $(window).scroll(function() {
 
@@ -185,5 +185,48 @@ start();
         }
       });
     };
+
+// my simple slideshow =====================================
+
+  var slides = $('.devwork').find('.developwork');
+  var count = 0;
+
+  $('.developwork').first().addClass("active");
+
+  $('#nextslide').on('click',function(){
+      $(slides[count]).removeClass('active');
+      count = (count + 1) % slides.length;
+      $(slides[count]).addClass("active");
+  });
+
+  $('#prevslide').on('click',function(){
+    $(slides[count]).removeClass("active");
+     count = (count - 1);
+     if(count < 0){
+      count = slides.length - 1;
+    }
+    $(slides[count]).addClass("active");
+  });
+
+
+  var slides2 = $('.devwork').find('.graphicswork');
+  var count2 = 0;
+
+  $('.graphicswork').first().addClass("active");
+
+  $('#nextgraph').on('click',function(){
+      $(slides2[count2]).removeClass('active');
+      count2 = (count2 + 1) % slides.length;
+      $(slides2[count2]).addClass("active");
+  });
+
+  $('#prevgraph').on('click',function(){
+    $(slides2[count2]).removeClass("active");
+     count2 = (count2 - 1);
+     if(count2 < 0){
+      count2 = slides.length - 1;
+    }
+    $(slides2[count2]).addClass("active");
+  });
 
 }); // end of document.ready

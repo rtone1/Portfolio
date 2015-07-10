@@ -45,11 +45,9 @@
 
    <div class="content2">
       <div id="development">
-
         <div class="devwork">
-          <div class="workHolder">
             <% @creates.each do |c| %>
-
+          <div class="workHolder developwork">
             <img class="image" src=" <%= c.image %> "/>
             <section class="devdiscription">
               <h1> <%= c.title %> </h1>
@@ -59,18 +57,17 @@
               </p>
               <a href="<%= c.linkgithub %>" target="_blank">link to github</a>
             </section>
-
-            <% end %>
           </div>
+            <% end %>
         </div>
-
+        <div id="prevslide"><img class="arrowimage" src="/left-arrow.png"/></div>
+        <div id="nextslide"><img class="arrowimage" src="/right-arrow.png"/></div>
       </div>
 
       <div id="graphics">
-
         <div class="devwork">
-          <div class="workHolder">
             <% @designs.each do |d| %>
+            <div class="workHolder graphicswork">
             <img class="image" src=" <%= d.image %> "/>
             <section class="devdiscription">
               <h1> <%= d.title %> </h1>
@@ -79,10 +76,11 @@
                 <%= d.description %>
               </p>
             </section>
+            </div>
             <% end %>
-          </div>
         </div>
-
+        <div id="prevgraph"><img class="arrowimage" src="/left-arrow.png"/></div>
+        <div id="nextgraph"><img class="arrowimage" src="/right-arrow.png"/></div>
       </div>
    </div>
 

@@ -30,13 +30,16 @@ header{
   box-shadow: 0px 1px 10px 0px black;
 }
 nav{
-  height: 60px;
+  //height: 60px;
   float: right;
   a{
     text-decoration: none;
     color: white;
   }
-
+  a:hover{
+    opacity: .7;
+    transition: .5s;
+  }
 ul{
   padding: 5px 0px;
   margin-right: 25px;
@@ -108,6 +111,10 @@ p{
   a{
     color: white;
     text-decoration: none;
+  }
+  a:hover{
+    color: rgb(171, 163, 119);
+    transition: .5s;
   }
 }
 // radial data =================================================================
@@ -181,12 +188,7 @@ path{
   font-family: monaco;
   color: white;
   text-align: center;
-  .datainfo{
-    width: 50%;
-    float: left;
-    margin-top: 50px;
-    margin-left: 50px;
-  }
+
   h1{
     font-size: 42px;
   }
@@ -205,6 +207,12 @@ path{
   hr{
     width: 200px;
   }
+}
+.datainfo{
+  width: 50%;
+  float: left;
+  margin-top: 50px;
+  margin-left: 50px;
 }
 #div1,#div2{
   margin-top: 15px;
@@ -225,7 +233,7 @@ path{
   width: 100%;
   height: 700px;
   background-color: white;
-  overflow-y: scroll;
+  //overflow-y: scroll;
 }
 .devwork{
   width: 95%;
@@ -236,6 +244,30 @@ path{
 .workHolder{
   width: 100%;
   font-family: 'Lato', sans-serif;
+  position: absolute;
+  visibility: hidden;
+}
+.active{
+  visibility: visible;
+}
+.arrowimage{
+  width: 35px;
+  height: 60px;
+}
+.arrowimage:hover{
+  opacity: .7;
+}
+#prevslide, #prevgraph{
+  position: relative;
+  top: 300px;
+  float: left;
+  margin-left: 10px;
+}
+#nextslide, #nextgraph{
+  position: relative;
+  top: 300px;
+  float: right;
+  margin-right: 10px;
 }
 .devdiscription{
   width: 45%;
@@ -262,7 +294,7 @@ path{
   width: 100%;
   height: 700px;
   background-color: rgb(236, 237, 241);
-  overflow-y: scroll;
+  //overflow-y: scroll;
 }
 //contact me section ===========================================================
 #rodrigo-contact{
@@ -347,6 +379,10 @@ input[type=submit]:focus,
 input[type=submit]:active{
 outline: 0;
 border: 1px solid #93B7CC;
+}
+input[type=submit]:hover{
+  background: #32C4B2;
+  transition: .3s;
 }
 textarea:focus,
 textarea:active{
@@ -459,7 +495,10 @@ label{
     width: 355px;
     height: 355px;
   }
-
+  .datainfo{
+    margin-top: 100px;
+    margin-left: 100px;
+  }
 }// end of 1050px media responsive
 
 @media (max-width: 900px){
@@ -471,8 +510,12 @@ label{
     width: 325px;
     height: 325px;
   }
+  .datainfo{
+    margin-top: 100px;
+    margin-left: 100px;
+  }
 
-}
+}//end of 900px responsize
 
 @media (max-width: 750px){
 
@@ -543,8 +586,23 @@ label{
     left: 190px;
   }
 }
+  .image{
+    margin-left: 80px;
+  }
   #rodrigo-contact{
     height: 690px;
+  }
+  #prevslide, #prevgraph{
+    position: relative;
+    top: 200px;
+    float: left;
+    margin-left: 10px;
+  }
+  #nextslide, #nextgraph{
+    position: relative;
+    top: 200px;
+    float: right;
+    margin-right: 10px;
   }
 
 }// end of 750px media
@@ -612,12 +670,27 @@ label{
   .image{
     width: 93%;
     height: 55%;
-    margin-left: 10px;
+    margin-left: 16px;
   }
   #rodrigo-contact{
     height: 720px;
   }
-
+  #prevslide, #prevgraph{
+    position: relative;
+    top: 150px;
+    float: left;
+    margin-left: 10px;
+  }
+  #nextslide, #nextgraph{
+    position: relative;
+    top: 150px;
+    float: right;
+    margin-right: 10px;
+  }
+  .arrowimage{
+    width: 25px;
+    height: 50px;
+  }
 }// end of 400px media responsive
 
 // animation fadein ===================
