@@ -188,7 +188,7 @@ start();
 
 // my simple slideshow =====================================
 
-  var slides = $('.devwork').find('.developwork');
+  var slides = $('.devslide').find('.developwork');
   var count = 0;
 
   $('.developwork').first().addClass("active");
@@ -208,23 +208,22 @@ start();
     $(slides[count]).addClass("active");
   });
 
-
-  var slides2 = $('.devwork').find('.graphicswork');
+  var slides2 = $('.graphslide').find('.graphicswork');
   var count2 = 0;
 
   $('.graphicswork').first().addClass("active");
 
-  $('#nextgraph').on('click',function(){
-      $(slides2[count2]).removeClass('active');
-      count2 = (count2 + 1) % slides.length;
-      $(slides2[count2]).addClass("active");
+  $('#nextgraph').on('click', function(){
+    $(slides2[count2]).removeClass('active');
+    count2 = (count2 + 1) % slides2.length;
+    $(slides2[count2]).addClass("active");
   });
 
-  $('#prevgraph').on('click',function(){
+  $('#prevgraph').on('click', function(){
     $(slides2[count2]).removeClass("active");
      count2 = (count2 - 1);
      if(count2 < 0){
-      count2 = slides.length - 1;
+      count2 = slides2.length - 1;
     }
     $(slides2[count2]).addClass("active");
   });

@@ -113,8 +113,8 @@ p{
     text-decoration: none;
   }
   a:hover{
-    color: rgb(171, 163, 119);
-    transition: .5s;
+    font-size: 33px;
+    transition: .4s;
   }
 }
 // radial data =================================================================
@@ -381,7 +381,7 @@ outline: 0;
 border: 1px solid #93B7CC;
 }
 input[type=submit]:hover{
-  background: #32C4B2;
+  color: #32C4B2;
   transition: .3s;
 }
 textarea:focus,
