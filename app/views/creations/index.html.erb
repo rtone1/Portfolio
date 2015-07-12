@@ -37,7 +37,6 @@
               As a Developer/Designer my portfolio consists of both design and development.
             </h3>
             <h4> <%= link_to "download my resume", "resume.pdf", target: "_blank" %> </h4>
-
             <hr>
           </section>
       </div>
@@ -101,32 +100,28 @@
           <input type="submit" class="messagesub">
         </form>
       </section>
+
       <section class="myImage">
-
           <div class="me"><div class="myshadow">  </div></div>
-
       </section>
     </div>
 
     <footer>
-
       <div class="footerInfo">
         <ul class="footerul">
           <a href="https://github.com/rtone1" target="_blank"><li class="git"></li></a>
           <a href="https://www.linkedin.com/in/rodrigotorrescoronado" target="_blank"><li class="linkedin"></li></a>
 
-        <%= form_tag('/session_log_in', method: :post) do %>
-          <%= label_tag :username %>
-          <%= text_field_tag :name %>
-          <%= label_tag 'password' %>
-          <%= password_field_tag :password %>
-          <br>
-          <%= submit_tag "Sign-In" %>
-        <% end %>
-
-      </ul>
+          <%= form_tag('/session_log_in', method: :post) do %>
+            <%= label_tag :username %>
+            <%= text_field_tag :name %>
+            <%= label_tag 'password' %>
+            <%= password_field_tag :password %>
+            <br>
+            <%= submit_tag "Sign-In" %>
+          <% end %>
+        </ul>
       </div>
-
     </footer>
 
   </div>

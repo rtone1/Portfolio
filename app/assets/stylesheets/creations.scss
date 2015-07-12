@@ -427,7 +427,7 @@ input[type=submit]{
   width: 100%;
 }
 .footerul{
-  width: 400px;
+  width: 255px;
   margin: 0px auto;
   position: relative;
   top: 50px;
@@ -593,19 +593,31 @@ label{
     height: 690px;
   }
   #prevslide, #prevgraph{
-    position: relative;
     top: 200px;
-    float: left;
-    margin-left: 10px;
   }
   #nextslide, #nextgraph{
-    position: relative;
     top: 200px;
-    float: right;
-    margin-right: 10px;
   }
 
 }// end of 750px media
+
+@media (max-width: 500px){
+  .image{
+    margin-left: 60px;
+  }
+  #prevslide, #prevgraph{
+    top: 150px;
+  }
+  #nextslide, #nextgraph{
+    top: 150px;
+  }
+  textarea{
+    width: 150%;
+  }
+  .me{
+    z-index: -1;
+  }
+}
 
 @media (max-width: 400px){
 
@@ -655,6 +667,9 @@ label{
   .contact {
     width: 97%;
     top: 30px;
+    h3{
+      font-size: 28px;
+    }
   }
   .contactForm {
     width: 95%;
@@ -676,20 +691,17 @@ label{
     height: 720px;
   }
   #prevslide, #prevgraph{
-    position: relative;
-    top: 150px;
-    float: left;
-    margin-left: 10px;
+    top: 145px;
   }
   #nextslide, #nextgraph{
-    position: relative;
-    top: 150px;
-    float: right;
-    margin-right: 10px;
+    top: 145px;
   }
   .arrowimage{
     width: 25px;
     height: 50px;
+  }
+  textarea{
+    width: 100%;
   }
 }// end of 400px media responsive
 
