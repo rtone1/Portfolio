@@ -1,20 +1,26 @@
+@charset "UTF-8";
+// FONTS
+$intro_h1_name: 'Sansita one', Georgia, serif;
+$intro_h1_name2: 'Pacifico', Georgia, serif;
+$intro_h1_name3: 'Rancho', Georgia, serif;
+$intro_h1_name4: 'Bevan', Georgia, serif;
+// COLORS variables for creations page
 $maincolor: #4594A4;
-body{
-  background-color: white;
-  margin: 0px;
-}
-h1,h2,h3,h4,h5,h6,p{
+$watercolor: #03405C;
+// NORMALIZE
+*{
   margin: 0px;
   padding: 0px;
+  color: white;
+  box-sizing: border-box;
 }
-// end of normalize
-
+// START OF HEADER
 header{
   width: 100%;
   height: 60px;
   position: fixed;
   z-index: 100;
-  background-color: $maincolor ;
+  background-color: $maincolor;
   border-bottom: 1px solid rgb(41, 135, 160);
   font-family: 'Lato', sans-serif;
   color: white;
@@ -30,7 +36,6 @@ header{
   box-shadow: 0px 1px 10px 0px black;
 }
 nav{
-  //height: 60px;
   float: right;
   a{
     text-decoration: none;
@@ -53,19 +58,65 @@ li{
 
 // aboutME section ===========================================================
 .content{
+  background-color: $watercolor;
   width: 100%;
   overflow: hidden;
 }
-#container1{
+.intro_page{
+  background: $watercolor;
+  font: 35px $intro_h1_name4;
+  text-align: center;
+  letter-spacing: 2px;
   width: 100%;
-  height: 600px;
-  background-image:  url('/portfolio_citybackground.jpg');
-  background-size: cover;
-  position: relative;
-  top: 60px;
-  font-family: 'Lato', sans-serif;
-  color: white;
-  font-size: 32px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 100;
+  h1{
+    font-size: 120%;
+    color: #E2F3F5;
+  }
+}
+.arrowDown{
+  width: 50px;
+  height: 50px;
+  margin: 0px auto;
+  border-bottom: solid 2px gray;
+  border-left: solid 2px gray;
+  transform: rotate(-45deg);
+}
+.arrowDown:hover{
+  cursor: pointer;
+}
+
+#cityview_intro{
+    background: url('/portfolio_citybackground.jpg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 736px;
+    .clouds_front, .clouds_back{
+      width: 100%;
+      min-width: 650px;
+      min-height: 50px;
+      position: relative;
+      display: block;
+    }
+    .clouds_front{
+      top: 40px;
+      z-index: 1;
+      // animation: cloudRight ease 100s infinite;
+      // -webkit-animation: cloudRight ease 100s infinite;
+      // -moz-animation: cloudRight ease 100s infinite;
+    }
+    .clouds_back{
+      top: -25px;
+      // animation: cloudRight 73s infinite;
+      // -webkit-animation: cloudRight 73s infinite;
+      // -moz-animation: cloudRight 73s infinite;
+    }
 }
 
 .aboutME{
@@ -455,311 +506,3 @@ label{
 }
 }
 // responsive queries start below===============================================
-
-@media (max-width: 1055px){
-
-  #container3{
-    h1{
-      font-size: 33px;
-    }
-    #div1, #div2{
-      display: none;
-    }
-    .data{
-      top: -8px;
-    }
-  }
-  .devwork{
-    top: 70px;
-  }
-  .devdiscription{
-    width: 90%;
-    margin-top: 20px;
-  }
-  .image{
-    width: 75%;
-    height: 55%;
-    margin-left: 30px;
-    margin-bottom: 0px;
-  }
-  .devdiscription{
-    margin-bottom: 50px;
-  }
-  .me{
-    width: 355px;
-    height: 355px;
-  }
-  .myshadow{
-    width: 355px;
-    height: 355px;
-  }
-  .datainfo{
-    margin-top: 100px;
-    margin-left: 100px;
-  }
-}// end of 1050px media responsive
-
-@media (max-width: 900px){
-  .me{
-    width: 325px;
-    height: 325px;
-  }
-  .myshadow{
-    width: 325px;
-    height: 325px;
-  }
-  .datainfo{
-    margin-top: 100px;
-    margin-left: 100px;
-  }
-
-}//end of 900px responsize
-
-@media (max-width: 750px){
-
-  header{
-    ul{
-      display: none;
-    }
-  }
-  span{
-    display: none;
-  }
-  .hamIcon{
-    width: 50px;
-    height: 40px;
-    display: inline-block;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    float: right;
-    background-image: url('/hambuger.png');
-    background-size: cover;
-    background-position: center;
-  }
-  nav{
-    width: 100%;
-    font-family: 'Lato', sans-serif;
-    ul{
-      margin: 0px;
-      padding: 0px;
-      background-color: #3B4148
-    }
-    li{
-      line-height: 90px;
-      font-size: 28px;
-      font-weight: 300;
-      display: block;
-      margin: 0px;
-      padding: 0px 10px 0px;
-      border-bottom: 1px solid #4A4D53;
-    }
-    a{
-      text-decoration: none;
-      color: white;
-    }
-    li:hover,
-    li:focus{
-      background-color: #444B52;
-    }
-  }// end of responsiveNavbar
-
-  .container1{
-    height: 500px;
-  }
-  .aboutME{
-  h1{
-    top: 70px;
-    left: 45px;
-    font-size: 42px
-  }
-  h2{
-    top: 80px;
-    left: 160px;
-    font-size: 40px
-  }
-  p{
-    font-size: 22px;
-    top: 120px;
-    left: 190px;
-  }
-}
-  .image{
-    margin-left: 80px;
-  }
-  #rodrigo-contact{
-    height: 690px;
-  }
-  #prevslide, #prevgraph{
-    top: 200px;
-  }
-  #nextslide, #nextgraph{
-    top: 200px;
-  }
-
-}// end of 750px media
-
-@media (max-width: 500px){
-  .image{
-    margin-left: 60px;
-  }
-  #prevslide, #prevgraph{
-    top: 150px;
-  }
-  #nextslide, #nextgraph{
-    top: 150px;
-  }
-  textarea{
-    width: 150%;
-  }
-  .me{
-    z-index: -1;
-  }
-}
-
-@media (max-width: 400px){
-
-  #container3 .datainfo {
-    width: 61%;
-    float: left;
-    margin-top: 50px;
-    margin-left: 9px;
-  }
-  .container1{
-    height: 400px;
-  }
-  .aboutME{
-    width: 100%;
-  h1{
-    top: 46px;
-    left: 12px;
-    font-size: 26px
-  }
-  h2{
-    top: 56px;
-    left: 15px;
-    font-size: 26px
-  }
-  p{
-    font-size: 20px;
-    top: 82px;
-    left: 48px;
-  }
-}
-  .guideTo{
-    bottom: 120px;
-    font-size: 20px;
-  }
-  .me{
-    width: 135px;
-    height: 135px;
-    margin: 10px;
-    right: 118px;
-    top: 0px;
-    z-index: 10;
-  }
-  .myshadow{
-    width: 135px;
-    height: 135px;
-  }
-  .contact {
-    width: 97%;
-    top: 30px;
-    h3{
-      font-size: 28px;
-    }
-  }
-  .contactForm {
-    width: 95%;
-  }
-  .devwork{
-    width: 100%;
-    top: 70px;
-  }
-  .devdiscription{
-    width: 90%;
-    margin-left: 15px;
-  }
-  .image{
-    width: 93%;
-    height: 55%;
-    margin-left: 16px;
-  }
-  #rodrigo-contact{
-    height: 720px;
-  }
-  #prevslide, #prevgraph{
-    top: 145px;
-  }
-  #nextslide, #nextgraph{
-    top: 145px;
-  }
-  .arrowimage{
-    width: 25px;
-    height: 50px;
-  }
-  textarea{
-    width: 100%;
-  }
-}// end of 400px media responsive
-
-// animation fadein ===================
-
-@-webkit-keyframes lightSpeedIn {
-  0% {
-    -webkit-transform: translate3d(-100%, 0, 0) skewX(30deg);
-    transform: translate3d(-100%, 0, 0) skewX(30deg);
-    opacity: 0;
-  }
-
-  60% {
-    -webkit-transform: skewX(-20deg);
-    transform: skewX(-20deg);
-    opacity: 1;
-  }
-
-  80% {
-    -webkit-transform: skewX(-5deg);
-    transform: skewX(-5deg);
-    opacity: 1;
-  }
-
-  100% {
-    -webkit-transform: none;
-    transform: none;
-    opacity: 1;
-  }
-}
-
-@keyframes lightSpeedIn {
-  0% {
-    -webkit-transform: translate3d(-100%, 0, 0) skewX(30deg);
-    transform: translate3d(-100%, 0, 0) skewX(30deg);
-    opacity: 0;
-  }
-
-  60% {
-    -webkit-transform: skewX(-20deg);
-    transform: skewX(-20deg);
-    opacity: 1;
-  }
-
-  80% {
-    -webkit-transform: skewX(-5deg);
-    transform: skewX(-5deg);
-    opacity: 1;
-  }
-
-  100% {
-    -webkit-transform: none;
-    transform: none;
-    opacity: 1;
-  }
-}
-
-.lightSpeedIn {
-  -webkit-animation-name: lightSpeedIn;
-  animation-name: lightSpeedIn;
-  -webkit-animation-timing-function: ease-out;
-  animation-timing-function: ease-out;
-}
