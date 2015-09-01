@@ -11,13 +11,12 @@ $(document).ready(function(){
       var animateIntro = $('.intro_page');
       animateIntro.animate(({top: '-900px',bottom: '900px'}), 2000);
   })
-  function cloudsAnimate(){
-    var cloudFront = $('.clouds_front');
-      cloudFront.animate(({left: '100%'}), 3000);
+
+  function cloudsAnimate(target,x,speed){
+
   }
-cloudsAnimate();
 
-
+  cloudsAnimate();
 
 
 //   $('.me').hide();

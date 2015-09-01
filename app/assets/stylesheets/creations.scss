@@ -90,10 +90,14 @@ li{
 }
 .arrowDown:hover{
   cursor: pointer;
+  border-bottom: solid 2px white;
+  border-left: solid 2px white;
+  transition: .3s;
 }
 
 #cityview_intro{
     background: url('/portfolio_citybackground.jpg') no-repeat center;
+    position: relative;
     background-size: cover;
     width: 100%;
     height: 736px;
@@ -107,15 +111,32 @@ li{
     .clouds_front{
       top: 40px;
       z-index: 1;
-      // animation: cloudRight ease 100s infinite;
-      // -webkit-animation: cloudRight ease 100s infinite;
-      // -moz-animation: cloudRight ease 100s infinite;
+      // animation: cloudRight linear 10s infinite;
+      // -webkit-animation: cloudRight linear 10s infinite;
+      // -moz-animation: cloudRight linear 10s infinite;
     }
     .clouds_back{
       top: -25px;
       // animation: cloudRight 73s infinite;
       // -webkit-animation: cloudRight 73s infinite;
       // -moz-animation: cloudRight 73s infinite;
+    }
+    .boatblue,.boatred{
+      position: absolute;
+      bottom: 0px;
+      width: 10%;
+      min-width: 100px;
+      // animation: waveboats linear 8s infinite;
+      // -webkit-animation: waveboats linear 8s infinite;
+      // -moz-animation: waveboats linear 8s infinite;
+    }
+    .boatblue{
+      left: 250px;
+      bottom: 80px;
+    }
+    .boatred{
+      right: 250px;
+      bottom: 50px;
     }
 }
 
