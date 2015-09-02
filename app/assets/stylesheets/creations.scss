@@ -59,7 +59,9 @@ li{
 // aboutME section ===========================================================
 .content{
   background-color: $watercolor;
+  position: relative;
   width: 100%;
+  height: 1200px; // temp property
   overflow: hidden;
 }
 .intro_page{
@@ -79,6 +81,14 @@ li{
     font-size: 120%;
     color: #E2F3F5;
   }
+  // .line {
+  //   stroke-dasharray: 1000;
+  //   stroke-dashoffset: 1000;
+  //   animation: dash 1s linear alternate infinite;
+  // }
+}
+.arrowsvg{
+  transform: rotate(-13deg);
 }
 .arrowDown{
   width: 50px;
@@ -484,46 +494,55 @@ textarea:active{
   border-radius: 200px;
 }
 // footer start=================================================================
-footer{
-  width: 100%;
-  height: 400px;
-  background-color: #3B4148;
-  color: white;
-input[type=submit]{
-  color: white;
-  border: 1px solid white;
+#footer_contact{
+  position: absolute;
+  bottom: 0px;
+  .seafloorFooter{
+    width: 100%;
+    min-width: 400px !important;
+  }
 }
-.footerInfo{
-  width: 100%;
-}
-.footerul{
-  width: 255px;
-  margin: 0px auto;
-  position: relative;
-  top: 50px;
-  padding: 20px;
-}
-li{
-  display: inline-block;
-  margin-left: 30px;
-}
-.git{
-  width: 100px;
-  height: 100px;
-  background-image: url('/git.png');
-  background-size: cover;
-}
-.linkedin{
-  width: 90px;
-  height: 90px;
-  background-image: url('/linkedin.png');
-  background-size: cover;
-}
-form{
-  margin: 20px 0px 0px 10px;
-}
-label{
-  font-family: Arial;
-}
-}
+
+// footer{
+//   width: 100%;
+//   height: 400px;
+//   background-color: #3B4148;
+//   color: white;
+// input[type=submit]{
+//   color: white;
+//   border: 1px solid white;
+// }
+// .footerInfo{
+//   width: 100%;
+// }
+// .footerul{
+//   width: 255px;
+//   margin: 0px auto;
+//   position: relative;
+//   top: 50px;
+//   padding: 20px;
+// }
+// li{
+//   display: inline-block;
+//   margin-left: 30px;
+// }
+// .git{
+//   width: 100px;
+//   height: 100px;
+//   background-image: url('/git.png');
+//   background-size: cover;
+// }
+// .linkedin{
+//   width: 90px;
+//   height: 90px;
+//   background-image: url('/linkedin.png');
+//   background-size: cover;
+// }
+// form{
+//   margin: 20px 0px 0px 10px;
+// }
+// label{
+//   font-family: Arial;
+// }
+// }
 // responsive queries start below===============================================
