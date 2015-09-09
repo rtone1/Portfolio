@@ -1,3 +1,47 @@
+// // START OF HEADER
+// header{
+//   width: 100%;
+//   height: 60px;
+//   position: fixed;
+//   z-index: 100;
+//   background-color: $maincolor;
+//   border-bottom: 1px solid rgb(41, 135, 160);
+//   font-family: 'Lato', sans-serif;
+//   color: white;
+//   h1{
+//     display: inline-block;
+//     font-weight: 300;
+//     line-height: 60px;
+//     font-size: 30px;
+//     margin: 0px 10px 0px;
+//   }
+// }
+// .shadow{
+//   box-shadow: 0px 1px 10px 0px black;
+// }
+// nav{
+//   float: right;
+//   a{
+//     text-decoration: none;
+//     color: white;
+//   }
+//   a:hover{
+//     opacity: .7;
+//     transition: .5s;
+//   }
+// ul{
+//   padding: 5px 0px;
+//   margin-right: 25px;
+// }
+// li{
+//   display: inline-block;
+//   font-size: 16px;
+//   margin-left: 10px;
+// }
+// }// end on navbar
+
+// aboutME section ===========================================================
+
 @charset "UTF-8";
 // FONTS
 $intro_h1_name: 'Sansita one', Georgia, serif;
@@ -7,6 +51,8 @@ $intro_h1_name4: 'Bevan', Georgia, serif;
 // COLORS variables for creations page
 $maincolor: #4594A4;
 $watercolor: #03405C;
+$arrowcolor: gray;
+$arrowhover: white;
 // NORMALIZE
 *{
   margin: 0px;
@@ -14,535 +60,491 @@ $watercolor: #03405C;
   color: white;
   box-sizing: border-box;
 }
-// START OF HEADER
-header{
-  width: 100%;
-  height: 60px;
-  position: fixed;
-  z-index: 100;
-  background-color: $maincolor;
-  border-bottom: 1px solid rgb(41, 135, 160);
-  font-family: 'Lato', sans-serif;
-  color: white;
-  h1{
-    display: inline-block;
-    font-weight: 300;
-    line-height: 60px;
-    font-size: 30px;
-    margin: 0px 10px 0px;
-  }
-}
-.shadow{
-  box-shadow: 0px 1px 10px 0px black;
-}
-nav{
-  float: right;
-  a{
-    text-decoration: none;
-    color: white;
-  }
-  a:hover{
-    opacity: .7;
-    transition: .5s;
-  }
-ul{
-  padding: 5px 0px;
-  margin-right: 25px;
-}
-li{
-  display: inline-block;
-  font-size: 16px;
-  margin-left: 10px;
-}
-}// end on navbar
-
-// aboutME section ===========================================================
-.content{
-  background-color: $watercolor;
-  position: relative;
-  width: 100%;
-  height: 1200px; // temp property
-  overflow: hidden;
-}
 .intro_page{
   background: $watercolor;
-  font: 35px $intro_h1_name4;
+  background: $watercolor -webkit-radial-gradient(center, ellipse cover, transparent 0%, transparent 40%, rgb(3, 53, 74) 100%);
+  background: $watercolor -moz-radial-gradient(center, ellipse cover, transparent 0%, transparent 40%, rgb(3, 53, 74) 100%);
+  background: $watercolor -o-radial-gradient(center, ellipse cover, transparent 0%, transparent 40%, rgb(3, 53, 74) 100%);
+  font: 35px $intro_h1_name;
   text-align: center;
   letter-spacing: 2px;
   width: 100%;
   position: absolute;
-  top: 0;
-  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   z-index: 100;
+  .ferris_W {
+    width: 40%;
+    max-width: 250px;
+    animation: zoomIn 2s linear;
+    -webkit-animation: zoomIn 2s linear;
+    -moz-animation: zoomIn 2s linear;
+    -o-animation: zoomIn 2s linear;
+    -ms-animation: zoomIn 2s linear;
+  }
   h1{
     font-size: 120%;
     color: #E2F3F5;
   }
-  // .line {
-  //   stroke-dasharray: 1000;
-  //   stroke-dashoffset: 1000;
-  //   animation: dash 1s linear alternate infinite;
-  // }
-}
-.arrowsvg{
-  transform: rotate(-13deg);
-}
-.arrowDown{
-  width: 50px;
-  height: 50px;
-  margin: 0px auto;
-  border-bottom: solid 2px gray;
-  border-left: solid 2px gray;
-  transform: rotate(-45deg);
-}
-.arrowDown:hover{
-  cursor: pointer;
-  border-bottom: solid 2px white;
-  border-left: solid 2px white;
-  transition: .3s;
-}
-
-#cityview_intro{
-    background: url('/portfolio_citybackground.jpg') no-repeat center;
+  .arrowsvg{
+    width: 80px;
+    height: 70px;
     position: relative;
-    background-size: cover;
-    width: 100%;
-    height: 736px;
-    .clouds_front, .clouds_back{
-      width: 100%;
-      min-width: 650px;
-      min-height: 50px;
+    left: -9px;
+    top: -8px;
+    .arrow{
+      transform: rotate(37deg);
+      -webkit-transform: rotate(37deg);
+      -moz-transform: rotate(37deg);
+      -o-transform: rotate(37deg);
+      -ms-transform: rotate(37deg);
+      stroke-dasharray: 100;
+      stroke-dashoffset: 200;
+      fill: none;
+      stroke: $arrowhover;
+      stroke-width: 3px;
+    }
+    .arrowAnimate{
+      animation: dash 4s linear alternate infinite;
+      -webkit-animation: dash 4s linear alternate infinite;
+      -moz-animation: dash 4s linear alternate infinite;
+      -o-animation: dash 4s linear alternate infinite;
+      -ms-animation: dash 4s linear alternate infinite;
+    }
+  }
+  .arrowDown{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 0px auto;
+    border-bottom: solid 2px $arrowcolor;
+    border-left: solid 2px $arrowcolor;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    animation: slideUp 2s linear;
+  }
+  .arrowDown:hover{
+    cursor: pointer;
+    border-bottom: solid 2px $arrowhover;
+    border-left: solid 2px $arrowhover;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    -ms-transition: .3s;
+  }
+}
+            ////////////// END OF INTRO PAGE //////////////
+            ///////////// START OF HEADER ////////////////
+            //////////// END OF HEADER //////////////////
+
+            ////////////// CITY VIEW SECTION //////////////
+.content{
+  width: 100%;
+  overflow: hidden;
+  //display: none;
+} // END OF CONTENT
+#cityview_intro{
+      background: url('/portfolio_citybackground.jpg') no-repeat center;
       position: relative;
-      display: block;
-    }
-    .clouds_front{
-      top: 40px;
-      z-index: 1;
-      // animation: cloudRight linear 10s infinite;
-      // -webkit-animation: cloudRight linear 10s infinite;
-      // -moz-animation: cloudRight linear 10s infinite;
-    }
-    .clouds_back{
-      top: -25px;
-      // animation: cloudRight 73s infinite;
-      // -webkit-animation: cloudRight 73s infinite;
-      // -moz-animation: cloudRight 73s infinite;
-    }
-    .boatblue,.boatred{
-      position: absolute;
-      bottom: 0px;
-      width: 10%;
-      min-width: 100px;
-      // animation: waveboats linear 8s infinite;
-      // -webkit-animation: waveboats linear 8s infinite;
-      // -moz-animation: waveboats linear 8s infinite;
-    }
-    .boatblue{
-      left: 250px;
-      bottom: 80px;
-    }
-    .boatred{
-      right: 250px;
-      bottom: 50px;
-    }
-}
-
-.aboutME{
-  width: 80%;
-  height: 100%;
-h1, h2, p{
-  font-family: 'Lato', sans-serif;
-  position: relative;
-  text-shadow: 1px 1px 5px black;
-}
-h1{
-  top: 100px;
-  left: 45px;
-  animation-name: lightSpeedIn 2s;
-  -webkit-animation: lightSpeedIn 2s;
-  -moz-animation: lightSpeedIn 2s;
-}
-h2{
-  top: 105px;
-  left: 160px;
-  animation-name: lightSpeedIn 4s;
-  -webkit-animation: lightSpeedIn 4s;
-  -moz-animation: lightSpeedIn 4s;
-}
-p{
-  font-size: 22px;
-  top: 120px;
-  left: 190px;
-  width: 60%;
-  animation-name: lightSpeedIn 4s;
-  -webkit-animation: lightSpeedIn 4s;
-  -moz-animation: lightSpeedIn 4s;
-}
-}
-.guideTo{
+      z-index: -1;
+      background-size: cover;
+      width: 100%;
+      height: 736px;
+      .clouds_front, .clouds_back{
+        width: 100%;
+        min-width: 650px;
+        min-height: 50px;
+        position: relative;
+        display: block;
+      }
+      .clouds_front{
+        top: 40px;
+        z-index: 1;
+      }
+      .clouds_back{
+        top: -25px;
+      }
+      .boatblue,.boatred{
+        position: absolute;
+        bottom: 0px;
+        width: 10%;
+        min-width: 100px;
+      }
+      .boatblue{
+        left: 250px;
+        bottom: 80px;
+      }
+      .boatred{
+        right: 250px;
+        bottom: 50px;
+      }
+} // END OF CITYVIEW
+.waves{
   width: 100%;
-  margin: 0px auto;
-  position: absolute;
-  bottom: 40px;
-  text-align: center;
-  a{
-    color: white;
-    text-decoration: none;
-  }
-  a:hover{
-    font-size: 33px;
-    transition: .4s;
-  }
-}
-// radial data =================================================================
-.background {
-    fill: #FFFFFF;
-    fill-opacity: 0.01;
-}
-
-.component {
-    fill: white;
-}
-
-.component .label {
-    font-family: Arial;
-    font-size: 19px;
-    text-anchor: middle;
-    fill: white;
-}
-
-.arc {
-    stroke-weight:0.1;
-    fill: rgb(238, 137, 0);
-}
-
-
-.arc2 {
-    stroke-weight:0.1;
-    fill: #3660b0;
-}
-#test .arc2 {
-    stroke-weight:0.1;
-    fill: #3660b0;
-}
-
-#outer {
-    background:#FFFFFF;
-    border-radius: 5px;
-    color: #000;
-}
-
-#div1, #div2{
-    width: 230px;
-    height: 200px;
-    box-sizing: border-box;
-    float: left;
-}
-
-#div2 .arc {
-    stroke-weight: 0.1;
-    fill: rgb(238, 137, 0);
-}
-
-#div2 .arc2 {
-    stroke-weight: 0.1;
-    fill: #b00d08;
-}
-text.label{
-  fill: white;
-}
-path{
-  fill: white;
-}
-//work data ====================================================================
-#container3{
-  width: 100%;
-  height: 400px;
-  background-color: $maincolor;
-  position: relative;
-  top: 60px;
   z-index: 5;
-  font-family: monaco;
-  color: white;
-  text-align: center;
-
-  h1{
-    font-size: 42px;
-  }
-  h3{
-    font-family: 'Lato', sans-serif;
-    font-size: 22px;
-    margin-right: 0px;
-  }
-  h4{
-    margin-top: 50px;
-  }
-  a{
-    color: white;
-    text-decoration: none;
-  }
-  hr{
-    width: 200px;
-  }
-}
-.datainfo{
-  width: 50%;
-  float: left;
-  margin-top: 50px;
-  margin-left: 50px;
-}
-#div1,#div2{
-  margin-top: 15px;
-}
-.data{
-  width: 100%;
-  position: relative;
-  top: 50px;
-  left: 50px;
-}
-//Developer work ===============================================================
-.content2{
-  width: 100%;
-  position: relative;
-  top: -275px;
-}
-#development{
-  width: 100%;
-  height: 700px;
-  background-color: white;
-  //overflow-y: scroll;
-}
-.devwork{
-  width: 95%;
-  margin: 0px auto;
-  position: relative;
-  top: 150px;
-}
-.workHolder{
-  width: 100%;
-  font-family: 'Lato', sans-serif;
-  position: absolute;
-  visibility: hidden;
-}
-.active{
-  visibility: visible;
-}
-.arrowimage{
-  width: 35px;
-  height: 60px;
-}
-.arrowimage:hover{
-  opacity: .7;
-}
-#prevslide, #prevgraph{
-  position: relative;
-  top: 300px;
-  float: left;
-  margin-left: 10px;
-}
-#nextslide, #nextgraph{
-  position: relative;
-  top: 300px;
-  float: right;
-  margin-right: 10px;
-}
-.devdiscription{
-  width: 45%;
-  float: left;
-  margin: 10px 0px 0px 30px;
-  box-sizing: border-box;
-  p{
-    margin-left: 10px;
-  }
-  h1{
-    font-size: 28px;
-  }
-}
-.image{
-  width: 50%;
-  height: 60%;
-  margin: 0px 0px 50px 20px;
-  float: left;
-  box-shadow: 3px 7px 21px -4px black;
-}
-
-//Design work ==================================================================
-#graphics{
-  width: 100%;
-  height: 700px;
-  background-color: rgb(236, 237, 241);
-  //overflow-y: scroll;
-}
-//contact me section ===========================================================
-#rodrigo-contact{
-  width: 100%;
-  height: 678px;
-  position: relative;
-  top: -200px;
-  overflow: hidden;
-  margin-bottom: -115px;
-}
-.contact{
-  width: 50%;
-  height: 500px;
-  float: left;
-  margin-top: 100px;
-  position: absolute;
-  font-family: 'Lato', sans-serif;
-  h3{
-    margin: 20px 0px 10px;
-    text-align: center;
-    font-size: 32px;
-  }
-  hr{
-    width: 90%;
-    margin-bottom: 20px;
-  }
-}
-.contactForm{
-  width: 80%;
-  margin: 20px auto;
-}
-label{
- display: block;
- margin-left: 10px;
-}
-input[type=text],
-input[type=email],
-input[type=phone],
-input[type=password]{
-  width: 250px;
-  height: 40px;
-  padding: 10px;
-  margin: 0px 0px 10px 5px;
-  border: 1px solid rgb(120, 137, 147);
-  border-radius: 4px;
-  font-size: 22px;
-  box-sizing: border-box;
-}
-textarea{
-  width: 100%;
-  height: 200px;
-  padding: 10px;
-  margin: 0px 0px 10px 5px;
-  border: 1px solid #788993;
-  border-radius: 4px;
-  font-size: 16px;
-  box-sizing: border-box;
-  resize: none;
-}
-input[type=submit]{
-  width: 100px;
-  height: 35px;
-  margin: 0px 0px 0px 5px;
-  background-color: rgba(0, 157, 138, .0);
-  border: 1px solid rgb(120, 137, 147);
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-input[type=text]:active,
-input[type=text]:focus,
-input[type=email]:active,
-input[type=email]:focus,
-input[type=phone]:active,
-input[type=phone]:focus,
-input[type=password]:active,
-input[type=password]:focus{
-outline: 0;
-border: 1px solid #93B7CC;
-}
-input[type=submit]:focus,
-input[type=submit]:active{
-outline: 0;
-border: 1px solid #93B7CC;
-}
-input[type=submit]:hover{
-  color: #32C4B2;
-  transition: .3s;
-}
-textarea:focus,
-textarea:active{
-  outline: 0;
-  border: 1px solid #93B7CC;
-}
-
-.myImage{
-  width: 50%;
-  float: left;
-  overflow: hidden;
-}
-.me{
-  width: 405px;
-  height: 405px;
-  background-image: url('/me.png');
-  background-size: cover;
-  border-radius: 200px;
-  margin-top: 105px;
-  position: absolute;
-  right: 120px;
-  top: 40px;
-  z-index: 10;
-}
-.myshadow{
-  box-shadow: inset -2px -2px 6px -4px black;
-  height: 405px;
-  width: 405px;
-  border-radius: 200px;
-}
-// footer start=================================================================
-#footer_contact{
-  position: absolute;
-  bottom: 0px;
-  .seafloorFooter{
+  .wave1,.wave2,
+  .wave3,.wave4{
+    position: relative;
     width: 100%;
-    min-width: 400px !important;
+    min-width: 350px;
+    min-height: 150px;
+  }
+  .wave1{
+    z-index: 1;
+  }
+  .wave2{
+    z-index: 2;
+  }
+  .wave3{
+    z-index: 3;
   }
 }
 
-// footer{
+            //////////// END OF CITY VIEW //////////////////
+
+            /////////// START OF WORK HOLDER SECTION ////////////
+// #workHolder{
+//   width: 100%;
+//   height: 2000px;
+// }
+            /////////// END OF WORK HOLDER SECTION ////////////
+
+            ////////// START OF FOOTER ////////////
+
+            ////////// END OF FOOTER ////////////
+
+// .aboutME{
+//   width: 80%;
+//   height: 100%;
+// h1, h2, p{
+//   font-family: 'Lato', sans-serif;
+//   position: relative;
+//   text-shadow: 1px 1px 5px black;
+// }
+// h1{
+//   top: 100px;
+//   left: 45px;
+//   animation-name: lightSpeedIn 2s;
+//   -webkit-animation: lightSpeedIn 2s;
+//   -moz-animation: lightSpeedIn 2s;
+// }
+// h2{
+//   top: 105px;
+//   left: 160px;
+//   animation-name: lightSpeedIn 4s;
+//   -webkit-animation: lightSpeedIn 4s;
+//   -moz-animation: lightSpeedIn 4s;
+// }
+// p{
+//   font-size: 22px;
+//   top: 120px;
+//   left: 190px;
+//   width: 60%;
+//   animation-name: lightSpeedIn 4s;
+//   -webkit-animation: lightSpeedIn 4s;
+//   -moz-animation: lightSpeedIn 4s;
+// }
+// }
+// .guideTo{
+//   width: 100%;
+//   margin: 0px auto;
+//   position: absolute;
+//   bottom: 40px;
+//   text-align: center;
+//   a{
+//     color: white;
+//     text-decoration: none;
+//   }
+//   a:hover{
+//     font-size: 33px;
+//     transition: .4s;
+//   }
+// }
+//
+// //work data ====================================================================
+// #container3{
 //   width: 100%;
 //   height: 400px;
-//   background-color: #3B4148;
+//   background-color: $maincolor;
+//   position: relative;
+//   top: 60px;
+//   z-index: 5;
+//   font-family: monaco;
 //   color: white;
-// input[type=submit]{
-//   color: white;
-//   border: 1px solid white;
+//   text-align: center;
+//
+//   h1{
+//     font-size: 42px;
+//   }
+//   h3{
+//     font-family: 'Lato', sans-serif;
+//     font-size: 22px;
+//     margin-right: 0px;
+//   }
+//   h4{
+//     margin-top: 50px;
+//   }
+//   a{
+//     color: white;
+//     text-decoration: none;
+//   }
+//   hr{
+//     width: 200px;
+//   }
 // }
-// .footerInfo{
+// .datainfo{
+//   width: 50%;
+//   float: left;
+//   margin-top: 50px;
+//   margin-left: 50px;
+// }
+// #div1,#div2{
+//   margin-top: 15px;
+// }
+// .data{
 //   width: 100%;
-// }
-// .footerul{
-//   width: 255px;
-//   margin: 0px auto;
 //   position: relative;
 //   top: 50px;
-//   padding: 20px;
+//   left: 50px;
 // }
-// li{
-//   display: inline-block;
-//   margin-left: 30px;
+// //Developer work ===============================================================
+// .content2{
+//   width: 100%;
+//   position: relative;
+//   top: -275px;
 // }
-// .git{
-//   width: 100px;
-//   height: 100px;
-//   background-image: url('/git.png');
-//   background-size: cover;
+// #development{
+//   width: 100%;
+//   height: 700px;
+//   background-color: white;
+//   //overflow-y: scroll;
 // }
-// .linkedin{
-//   width: 90px;
-//   height: 90px;
-//   background-image: url('/linkedin.png');
-//   background-size: cover;
+// .devwork{
+//   width: 95%;
+//   margin: 0px auto;
+//   position: relative;
+//   top: 150px;
 // }
-// form{
-//   margin: 20px 0px 0px 10px;
+// .workHolder{
+//   width: 100%;
+//   font-family: 'Lato', sans-serif;
+//   position: absolute;
+//   visibility: hidden;
+// }
+// .active{
+//   visibility: visible;
+// }
+// .arrowimage{
+//   width: 35px;
+//   height: 60px;
+// }
+// .arrowimage:hover{
+//   opacity: .7;
+// }
+// #prevslide, #prevgraph{
+//   position: relative;
+//   top: 300px;
+//   float: left;
+//   margin-left: 10px;
+// }
+// #nextslide, #nextgraph{
+//   position: relative;
+//   top: 300px;
+//   float: right;
+//   margin-right: 10px;
+// }
+// .devdiscription{
+//   width: 45%;
+//   float: left;
+//   margin: 10px 0px 0px 30px;
+//   box-sizing: border-box;
+//   p{
+//     margin-left: 10px;
+//   }
+//   h1{
+//     font-size: 28px;
+//   }
+// }
+// .image{
+//   width: 50%;
+//   height: 60%;
+//   margin: 0px 0px 50px 20px;
+//   float: left;
+//   box-shadow: 3px 7px 21px -4px black;
+// }
+//
+// //Design work ==================================================================
+// #graphics{
+//   width: 100%;
+//   height: 700px;
+//   background-color: rgb(236, 237, 241);
+//   //overflow-y: scroll;
+// }
+// //contact me section ===========================================================
+// #rodrigo-contact{
+//   width: 100%;
+//   height: 678px;
+//   position: relative;
+//   top: -200px;
+//   overflow: hidden;
+//   margin-bottom: -115px;
+// }
+// .contact{
+//   width: 50%;
+//   height: 500px;
+//   float: left;
+//   margin-top: 100px;
+//   position: absolute;
+//   font-family: 'Lato', sans-serif;
+//   h3{
+//     margin: 20px 0px 10px;
+//     text-align: center;
+//     font-size: 32px;
+//   }
+//   hr{
+//     width: 90%;
+//     margin-bottom: 20px;
+//   }
+// }
+// .contactForm{
+//   width: 80%;
+//   margin: 20px auto;
 // }
 // label{
-//   font-family: Arial;
+//  display: block;
+//  margin-left: 10px;
 // }
+// input[type=text],
+// input[type=email],
+// input[type=phone],
+// input[type=password]{
+//   width: 250px;
+//   height: 40px;
+//   padding: 10px;
+//   margin: 0px 0px 10px 5px;
+//   border: 1px solid rgb(120, 137, 147);
+//   border-radius: 4px;
+//   font-size: 22px;
+//   box-sizing: border-box;
 // }
-// responsive queries start below===============================================
+// textarea{
+//   width: 100%;
+//   height: 200px;
+//   padding: 10px;
+//   margin: 0px 0px 10px 5px;
+//   border: 1px solid #788993;
+//   border-radius: 4px;
+//   font-size: 16px;
+//   box-sizing: border-box;
+//   resize: none;
+// }
+// input[type=submit]{
+//   width: 100px;
+//   height: 35px;
+//   margin: 0px 0px 0px 5px;
+//   background-color: rgba(0, 157, 138, .0);
+//   border: 1px solid rgb(120, 137, 147);
+//   border-radius: 5px;
+//   font-size: 14px;
+// }
+//
+// input[type=text]:active,
+// input[type=text]:focus,
+// input[type=email]:active,
+// input[type=email]:focus,
+// input[type=phone]:active,
+// input[type=phone]:focus,
+// input[type=password]:active,
+// input[type=password]:focus{
+// outline: 0;
+// border: 1px solid #93B7CC;
+// }
+// input[type=submit]:focus,
+// input[type=submit]:active{
+// outline: 0;
+// border: 1px solid #93B7CC;
+// }
+// input[type=submit]:hover{
+//   color: #32C4B2;
+//   transition: .3s;
+// }
+// textarea:focus,
+// textarea:active{
+//   outline: 0;
+//   border: 1px solid #93B7CC;
+// }
+//
+// .myImage{
+//   width: 50%;
+//   float: left;
+//   overflow: hidden;
+// }
+// .me{
+//   width: 405px;
+//   height: 405px;
+//   background-image: url('/me.png');
+//   background-size: cover;
+//   border-radius: 200px;
+//   margin-top: 105px;
+//   position: absolute;
+//   right: 120px;
+//   top: 40px;
+//   z-index: 10;
+// }
+// .myshadow{
+//   box-shadow: inset -2px -2px 6px -4px black;
+//   height: 405px;
+//   width: 405px;
+//   border-radius: 200px;
+// }
+// // footer start=================================================================
+//
+//
+// // footer{
+// //   width: 100%;
+// //   height: 400px;
+// //   background-color: #3B4148;
+// //   color: white;
+// // input[type=submit]{
+// //   color: white;
+// //   border: 1px solid white;
+// // }
+// // .footerInfo{
+// //   width: 100%;
+// // }
+// // .footerul{
+// //   width: 255px;
+// //   margin: 0px auto;
+// //   position: relative;
+// //   top: 50px;
+// //   padding: 20px;
+// // }
+// // li{
+// //   display: inline-block;
+// //   margin-left: 30px;
+// // }
+// // .git{
+// //   width: 100px;
+// //   height: 100px;
+// //   background-image: url('/git.png');
+// //   background-size: cover;
+// // }
+// // .linkedin{
+// //   width: 90px;
+// //   height: 90px;
+// //   background-image: url('/linkedin.png');
+// //   background-size: cover;
+// // }
+// // form{
+// //   margin: 20px 0px 0px 10px;
+// // }
+// // label{
+// //   font-family: Arial;
+// // }
+// // }
+// // responsive queries start below===============================================

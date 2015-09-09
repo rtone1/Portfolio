@@ -1,22 +1,87 @@
+// NAME SPACING
+var app = app || {};
+// VARIABLES
 var reader = new FileReader();
 var dataToUpload = {};
-var summary;
-var type;
-var link;
-var content;
+var summary, type, link, content;
+var screenH = $(window).height();
+
+    // FUNCTIONS
+    app.introScreen = function(ScreenH){
+        var intropage = $('.intro_page');
+          intropage.css({ height: ScreenH });
+    }; // END OF INTRO PAGE FIT TO SCREEN FUNCTION
+
+    app.animateIntroUp = function(topP,bottP,speed){
+        var animateIntro = $('.intro_page');
+          animateIntro.animate(({ top: topP,bottom: bottP }), speed);
+    }; // END TO ANIMATE INTRO PAGE UP FUNCTION
+
+    app.parallax = function(posit){
+        var scrolled = $(document).scrollTop();
+        var cityimage = $('#cityview_intro').height();
+        console.log(scrolled);
+        $(window).scroll(function() {
+          // $('.wave1').css('top', - scrolled * 2) + 'px';
+          // $('.wave2').css('top', - scrolled * 3) + 'px';
+          // $('.wave3').css('top', - scrolled * 4) + 'px';
+          // $('.wave4').css('top', - scrolled * 5) + 'px';
+          // if (scrolled > 70){$('.wave1').css('top', '-138px');  }
+          // if (scrolled > 115) {$('.wave2').css('top', '-345px');}
+          // if (scrolled > 137) {$('.wave3').css('top', '-549px');}
+          // if (scrolled > 151) {$('.wave4').css('top', '-753px');}
+          });
+    }; // END OF PARALLAX EFFECTS FUNCTION
+
+    app.delayScroll = function (target, pos ) {
+        var windw = $(window);
+
+          $(window).scroll(function(e){
+              if (windw.scrollTop() > pos) {
+                  target.css({ position: 'absolute',top: pos });
+              } else {
+                  target.css({ position: 'fixed',top: 0 });
+              }
+          })
+    }; // END OF DELAY SCROLL FUNCTION
+
 
 
 $(document).ready(function(){
-  $('.arrowDown').on('click', function(){
-      var animateIntro = $('.intro_page');
-      animateIntro.animate(({top: '-900px',bottom: '900px'}), 2000);
-  })
 
-  function cloudsAnimate(target,x,speed){
+  // CALL FUNCTIONS
+        app.parallax();
+        app.delayScroll($('#cityview_intro'), 200);
+        app.introScreen(screenH);
+  // DOCUMENT EVENTS
+  (function(){
+    $( window ).resize(function() {
+      var intropage = $('.intro_page');
+        intropage.css({ height: $(window).height()});
+    }); // END OF RESIZE INTRO PAGE TO FIT SCREEN
 
-  }
+    $('.arrowDown').on('click', function(){
+        app.animateIntroUp('-900px','900px',2000);
+        $('.content').show();
+        $('.arrow').css({animation: 'stop'});
+    }); // END INTRO PAGE UP ANIMATION AND SHOW MAIN CONTENT
 
-  cloudsAnimate();
+    $('a').click(function(){
+        $('html, body').animate({
+            scrollTop: $( $(this).attr('href') ).offset().top
+        }, 1000);
+          return false;
+    }); // END OF SMOOTH SCROLL EVENT
+
+    $('#cityview_intro').mousemove(function(evt){
+        var x = Math.floor(evt.clientX / 10);
+        var y = evt.clientY;
+    }); // END OF MOUSE COORDS EVENT
+
+  })();
+
+}); // END OF DOCUMENT READY
+
 
 
 //   $('.me').hide();
@@ -86,73 +151,7 @@ $(document).ready(function(){
 //           $('.contact').css('left', + scrolledY2) +'px';
 //       };
 // // smoth scroll ================================================================
-// $('a').click(function(){
-//     $('html, body').animate({
-//         scrollTop: $( $(this).attr('href') ).offset().top
-//     }, 1000);
-//     return false;
-// });
-//
-// // d3 data display =============================================================
-// var div1=d3.select(document.getElementById('div1'));
-// var div2=d3.select(document.getElementById('div2'));
-//
-// function onClick1() {
-//     deselect();
-//     div1.attr("class","selectedRadial");
-// }
-//
-// function onClick2() {
-//     deselect();
-//     div2.attr("class","selectedRadial");
-// }
-//
-// // function labelFunction(val,min,max) {
-// //
-// // }
-//
-// function deselect() {
-//     div1.attr("class","radial");
-//     div2.attr("class","radial");
-// }
-//
-// var design = ['w','e'];
-//
-// function grabData(array){
-//   array = design;
-//   var information = $('#txt').val();
-//   array.push(information);
-//  // console.log(information);
-// }
-//
-// function start() {
-//
-//   var info = design.length;
-//   //console.log(info);
-//   var code = [];
-//   var info2 = code.length;
-//
-//     var rp1 = radialProgress(document.getElementById('div1'))
-//             .label("CODE WORK")
-//             .onClick(onClick1)
-//             .diameter(220)
-//             .value(60)
-//             .render();
-//
-//     var rp1 = radialProgress(document.getElementById('div2'))
-//             .label("DESIGN WORK")
-//             .onClick(onClick2)
-//             .diameter(220)
-//             .value(40)
-//             .render();
-//
-// }
-// start();
-// // $('#txt').focusout(grabData);
-// // $('#enter').click(function(){
-// //   $('#txt').val('');
-// //   start();
-// // });
+
 //
 // // file reader function ========================================================
 //     $('#file').on('focusout', function() {
@@ -240,5 +239,3 @@ $(document).ready(function(){
 //     }
 //     $(slides2[count2]).addClass("active");
 //   });
-
-}); // end of document.ready

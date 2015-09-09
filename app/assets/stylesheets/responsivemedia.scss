@@ -10,11 +10,11 @@
       bottom: 50px;
     }
   }
-}
+
+} // END OF 900PX
 
 @media only screen and (max-width: 550px){
   #cityview_intro{
-    height: 500px;
     .boatblue{
       left: 70px;
       bottom: 80px;
@@ -24,11 +24,11 @@
       bottom: 50px;
     }
   }
-}
+
+} // END OF 550PX
 
 @media only screen and (max-width: 400px){
   #cityview_intro{
-    height: 500px;
     .boatblue{
       left: 30px;
       bottom: 80px;
@@ -38,4 +38,5 @@
       bottom: 50px;
     }
   }
-}
+
+} // END OF 400PX
