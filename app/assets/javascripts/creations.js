@@ -10,11 +10,15 @@ $(document).ready(function(){
   $('.contact').hide();
 // responsive nav ===================
     $('.hamIcon').click(function(){
+      $('.navigation').css({height: $(window).height() + 'px'});
       $( '.navigation ' ).slideToggle(100);
+      $('.hamIcon').toggleClass('xmark');
     });
 
     $('li').click(function(){
       $( '.removeul' ).hide();
+      $('.hamIcon').removeClass('xmark');
+      $('.hamIcon').addClass('hamIcon');
     });
 
     $(window).resize(function(){
@@ -28,6 +32,13 @@ $(document).ready(function(){
     if ($(window).width() < 750 ){
       $('.navigation').addClass('removeul');
     }
+
+    $(window).hover(function(evt){
+      var x = evt.clientX;
+      var y = evt.clienty;
+        $('.cloudsFront').css({left: x / 100}) + 'px';
+        $('.cloudsBack').css({left: - x / 100}) + 'px';
+    })
 // add shadow to nav and scroll effects================
     $(window).scroll(function() {
 
@@ -191,41 +202,41 @@ start();
   var slides = $('.devslide').find('.developwork');
   var count = 0;
 
-  $('.developwork').first().addClass("active");
 
+  $(slides[count]).show();
   $('#nextslide').on('click',function(){
-      $(slides[count]).removeClass('active');
-      count = (count + 1) % slides.length;
-      $(slides[count]).addClass("active");
+        $(slides[count]).fadeOut();
+        count = (count + 1) % slides.length;
+        $(slides[count]).fadeIn();
   });
 
   $('#prevslide').on('click',function(){
-    $(slides[count]).removeClass("active");
-     count = (count - 1);
-     if(count < 0){
-      count = slides.length - 1;
-    }
-    $(slides[count]).addClass("active");
+        $(slides[count]).fadeOut();
+        count = (count - 1);
+        if(count < 0){
+         count = slides.length - 1;
+        }
+        $(slides[count]).fadeIn();
   });
 
   var slides2 = $('.graphslide').find('.graphicswork');
   var count2 = 0;
 
-  $('.graphicswork').first().addClass("active");
 
+  $(slides2[count2]).show();
   $('#nextgraph').on('click', function(){
-    $(slides2[count2]).removeClass('active');
+    $(slides2[count2]).fadeOut();
     count2 = (count2 + 1) % slides2.length;
-    $(slides2[count2]).addClass("active");
+    $(slides2[count2]).fadeIn();
   });
 
   $('#prevgraph').on('click', function(){
-    $(slides2[count2]).removeClass("active");
-     count2 = (count2 - 1);
-     if(count2 < 0){
-      count2 = slides2.length - 1;
+    $(slides2[count2]).fadeOut();
+    count2 = (count2 - 1);
+    if(count2 < 0){
+     count2 = slides2.length - 1;
     }
-    $(slides2[count2]).addClass("active");
+    $(slides2[count2]).fadeIn();
   });
 
 }); // end of document.ready
