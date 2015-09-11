@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang=en>
 <head>
-  <title>Rodrigo Torres Portfolio. Web Developer and Designer</title>
+  <meta charset="utf-8">
   <meta name="description" content="Rodrigo Torres portfolio. Web Developer and Graphic Artist for hire.">
   <meta name="keywords" content="developer, designer, web, internet, Chicago, HTML, CSS, JavaScript, ruby, rails, jquery">
   <meta name="author" content="rtindesings">
-  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rodrigo Torres Portfolio. Web Developer and Designer</title>
   <link href="http://fonts.googleapis.com/css?family=Dancing+Script:700|EB+Garamond" rel="stylesheet" type="text/css" />
   <link href="http://fonts.googleapis.com/css?family=Lato:300|Grand+Hotel" rel="stylesheet" type="text/css" />
   <link href="/assets/users.css" media="screen" rel="stylesheet" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body id="rodrigo-top">
+  <body id="rodrigo-top">
 
-<%= yield %>
+  <%= yield %>
 
-</body>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </body>
 </html>
