@@ -242,7 +242,6 @@ start();
   var slides = $('.devslide').find('.developwork');
   var count = 0;
 
-
   $(slides[count]).show();
   $('#nextslide').on('click',function(){
         $(slides[count]).fadeOut();
@@ -252,16 +251,16 @@ start();
 
   $('#prevslide').on('click',function(){
         $(slides[count]).fadeOut();
-        count = (count - 1);
+        count = (1 - count);
         if(count < 0){
          count = slides.length - 1;
         }
         $(slides[count]).fadeIn();
   });
 
+
   var slides2 = $('.graphslide').find('.graphicswork');
   var count2 = 0;
-
 
   $(slides2[count2]).show();
   $('#nextgraph').on('click', function(){
@@ -272,7 +271,7 @@ start();
 
   $('#prevgraph').on('click', function(){
     $(slides2[count2]).fadeOut();
-    count2 = (count2 - 1);
+    count2 = (1 - count2);
     if(count2 < 0){
      count2 = slides2.length - 1;
     }
