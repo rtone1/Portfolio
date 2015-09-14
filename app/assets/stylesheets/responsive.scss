@@ -1,0 +1,285 @@
+@media (max-width: 1055px){
+
+  #container3{
+    h1{
+      font-size: 33px;
+    }
+    #div1, #div2{
+      display: none;
+    }
+    .data{
+      top: -8px;
+    }
+  }
+  .devwork{
+    top: 70px;
+  }
+  .devdiscription{
+    width: 90%;
+    margin-top: 20px;
+  }
+  .image{
+    width: 75%;
+    height: 55%;
+    margin-left: 12%;
+    margin-bottom: 0px;
+  }
+  .devdiscription{
+    margin-bottom: 50px;
+  }
+  .me{
+    width: 355px;
+    height: 355px;
+  }
+  .myshadow{
+    width: 355px;
+    height: 355px;
+  }
+  .datainfo{
+    margin-top: 100px;
+    margin-left: 100px;
+  }
+}// end of 1050px media responsive
+
+@media (max-width: 900px){
+  .me{
+    width: 325px;
+    height: 325px;
+  }
+  .myshadow{
+    width: 325px;
+    height: 325px;
+  }
+  .datainfo{
+    margin-top: 15%;
+    margin-left: 100px;
+  }
+  #prevslide,#nextslide,
+  #prevgraph,#nextgraph{
+    top: 230px;
+  }
+
+}//end of 900px responsize
+
+@media (max-width: 750px){
+
+  header{
+    ul{
+      display: none;
+    }
+  }
+  span{
+    display: none;
+  }
+  .hamIcon{
+    width: 50px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    float: right;
+    background-image: url('/hambuger.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .xmark{
+    background-image: url('/xmark.png');
+    width: 50px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    float: right;
+    background-size: cover;
+    background-position: center;
+  }
+  nav{
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    ul{
+      margin: 0px;
+      padding: 0px;
+      background-color: #3B4148
+    }
+    li{
+      line-height: 90px;
+      font-size: 28px;
+      font-weight: 300;
+      display: block;
+      margin: 0px;
+      padding: 0px 10px 0px;
+      border-bottom: 1px solid #4A4D53;
+    }
+    a{
+      text-decoration: none;
+      color: white;
+    }
+    li:hover,
+    li:focus{
+      background-color: #444B52;
+    }
+  }// end of responsiveNavbar
+
+  .container1{
+    height: 500px;
+  }
+  .aboutME{
+  h1{
+    top: 70px;
+    left: 45px;
+    font-size: 42px
+  }
+  h2{
+    top: 80px;
+    left: 120px;
+    font-size: 40px
+  }
+  p{
+    font-size: 22px;
+    top: 120px;
+    left: 190px;
+  }
+}
+  .image{
+    margin-left: 80px;
+  }
+  #rodrigo-contact{
+    height: 690px;
+  }
+  #prevslide, #prevgraph{
+    top: 200px;
+  }
+  #nextslide, #nextgraph{
+    top: 200px;
+  }
+
+}// end of 750px media
+
+@media (max-width: 500px){
+    .aboutME{
+      h1{
+        top: 70px;
+        left: 17px;
+        font-size: 36px
+      }
+      h2{
+        top: 80px;
+        left: 17px;
+        font-size: 34px
+      }
+      p{
+        font-size: 22px;
+        top: 120px;
+        left: 40px;
+        width: 80%;
+      }
+  }
+  #development{ height: 570px;}
+  #graphics{ height: 570px;}
+  .image{
+    margin-left: 60px;
+  }
+  #prevslide, #prevgraph{
+    top: 150px;
+  }
+  #nextslide, #nextgraph{
+    top: 150px;
+  }
+  textarea{
+    width: 150%;
+  }
+  .me{
+    z-index: -1;
+  }
+}
+
+@media (max-width: 400px){
+
+  #container3 .datainfo {
+    width: 61%;
+    float: left;
+    margin-top: 50px;
+    margin-left: 9px;
+  }
+  .container1{
+    height: 400px;
+  }
+  .aboutME{
+    width: 100%;
+  h1{
+    top: 46px;
+    left: 12px;
+    font-size: 24px
+  }
+  h2{
+    top: 56px;
+    left: 15px;
+    font-size: 26px
+  }
+  p{
+    font-size: 20px;
+    top: 82px;
+    left: 48px;
+  }
+}
+  .guideTo{
+    bottom: 120px;
+    font-size: 20px;
+  }
+  .me{
+    width: 135px;
+    height: 135px;
+    margin: 10px;
+    right: 118px;
+    top: 60px;
+    z-index: 10;
+  }
+  .myshadow{
+    width: 135px;
+    height: 135px;
+  }
+  .contact {
+    width: 97%;
+    top: 125px;
+    left: 0px;
+    h3{
+      font-size: 28px;
+    }
+  }
+  .contactForm {
+    width: 95%;
+  }
+  .devwork{
+    width: 100%;
+    top: 70px;
+  }
+  .devdiscription{
+    width: 90%;
+    margin-left: 15px;
+  }
+  .image{
+    width: 93%;
+    height: 55%;
+    margin-left: 16px;
+  }
+  #rodrigo-contact{
+    height: 740px;
+    margin-bottom: -170px;
+  }
+  #prevslide, #prevgraph{
+    top: 145px;
+    margin-left: 15px;
+  }
+  #nextslide, #nextgraph{
+    top: 145px;
+  }
+  .arrowimage{
+    width: 25px;
+    height: 50px;
+  }
+  textarea{
+    width: 100%;
+  }
+}// end of 400px media responsive

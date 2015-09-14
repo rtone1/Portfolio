@@ -44,7 +44,7 @@ $(document).ready(function(){
     })
 // add shadow to nav and scroll effects================
     $(window).scroll(function() {
-
+      console.log($(window).scrollTop());
       parallax();
       var scroll = $(document).scrollTop();
       if (scroll >= 60) {
@@ -53,13 +53,15 @@ $(document).ready(function(){
           $('header').removeClass('shadow');
 
       }
-      if (scroll > 1700){
+      if (scroll > 1690){
         parallaxME();
         $('.me').fadeIn(500);
         $('.contact').fadeIn(500);
-        if (scroll > 2052){
-          $('.contact').removeAttr('style');
+        if (scroll > 2000){
           $('.me').removeAttr('style');
+        }
+        if (scroll > 2040){
+          $('.contact').removeAttr('style');
         }
       } else {
         $('.me').fadeOut('slow');
@@ -95,7 +97,7 @@ $(document).ready(function(){
     // Cache selectors
     var lastId,
         topMenu = $("nav"),
-        topMenuHeight = topMenu.outerHeight(),
+        topMenuHeight = topMenu.outerHeight() + 4,
         // All list items
         menuItems = topMenu.find("a"),
         // Anchors corresponding to menu items
