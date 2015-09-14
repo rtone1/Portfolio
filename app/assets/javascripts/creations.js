@@ -253,7 +253,7 @@ start();
 
   $('#prevslide').on('click',function(){
         $(slides[count]).fadeOut();
-        count = (1 - count);
+        count = (count - 1);
         if(count < 0){
          count = slides.length - 1;
         }
@@ -273,7 +273,7 @@ start();
 
   $('#prevgraph').on('click', function(){
     $(slides2[count2]).fadeOut();
-    count2 = (1 - count2);
+    count2 = (count2 - 1);
     if(count2 < 0){
      count2 = slides2.length - 1;
     }
