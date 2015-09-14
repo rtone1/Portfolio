@@ -44,7 +44,7 @@ $(document).ready(function(){
     })
 // add shadow to nav and scroll effects================
     $(window).scroll(function() {
-      console.log($(window).scrollTop());
+      
       parallax();
       var scroll = $(document).scrollTop();
       if (scroll >= 60) {
