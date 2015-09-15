@@ -88,13 +88,13 @@
           <%= token_tag %>
           <h3>Send me a message</h3>
           <hr>
-          <label>Name</label>
-          <input type="text" name="message[name]" placeholder="name..." class="username"required><br>
-          <label>Email</label>
-          <input type="email" name="message[email]" placeholder="email..." required>
+          <label class="nameAlert">Name</label>
+          <input class="username" type="text" name="message[name]" placeholder="name..."  ><br>
+          <label class="emailAlert">Email</label>
+          <input class="emailcheck" type="email" name="message[email]" placeholder="email..." >
           <label>Phone</label>
-          <input type="phone" name="message[phone]" placeholder="555555555" maxlength="10"><br>
-          <textarea name="message[message]" maxlength="1000" placeholder="message..." required></textarea><br>
+          <input type="phone" name="message[phone]" placeholder="601-421-9462" maxlength="10"><br>
+          <textarea name="message[message]" maxlength="1000" placeholder="message..." ></textarea><br>
           <input type="submit" class="messagesub">
         </form>
       </section>

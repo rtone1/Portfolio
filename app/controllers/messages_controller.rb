@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
 
   def createapi
     Message.create(message_params)
-    redirect_to "/"
+    redirect_to "/notice"
   end
 
   def destroy

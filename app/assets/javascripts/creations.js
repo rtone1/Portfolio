@@ -4,7 +4,37 @@ var summary;
 var type;
 var link;
 var content;
+
+// FUNCTIONS
+function flashAlertEmail(){
+
+};
+
+function alertEmptyfield(){
+    var textfield = $('.username').val();
+      if (textfield == false){
+        $('.username').attr('placeholder', 'name required');
+        $('.nameAlert').addClass('alert');
+      } else {
+        return true;
+      }
+};
+
 $(document).ready(function(){
+
+  $('.contactForm').on('submit', function(evt){
+      var emailfield = $('.emailcheck').val();
+      var varified = /^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$/;
+      if (varified.test(emailfield) && alertEmptyfield() == true){
+        $(this).unbind(evt);
+      } else {
+        evt.preventDefault();
+        $('.emailcheck').attr('placeholder', 'valid email required');
+        $('.emailAlert').text('Email must contain @ .').addClass('alert');
+        alertEmptyfield();
+      }
+  });
+
 
   $('.me').hide();
   $('.contact').hide();
@@ -34,8 +64,6 @@ $(document).ready(function(){
       $('.navigation').addClass('removeul');
     }
 
-
-
     $(window).hover(function(evt){
       var x = evt.clientX;
       var y = evt.clienty;
@@ -44,14 +72,12 @@ $(document).ready(function(){
     })
 // add shadow to nav and scroll effects================
     $(window).scroll(function() {
-      
       parallax();
       var scroll = $(document).scrollTop();
       if (scroll >= 60) {
           $('header').addClass('shadow');
       } else {
           $('header').removeClass('shadow');
-
       }
       if (scroll > 1690){
         parallaxME();

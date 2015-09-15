@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # profile page routes =============================
   get '/profile' => 'users#profile'
   get '/messages' => 'messages#index'
+  get '/notice' => 'messages#message_notice'
   post '/api/message' => 'messages#createapi'
   delete '/message-delete/:id' => 'messages#destroy'
   delete '/creation-delete/:id' => 'users#destroy'
