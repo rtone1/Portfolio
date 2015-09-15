@@ -306,4 +306,6 @@ start();
     $(slides2[count2]).fadeIn();
   });
 
+  $('.profile-display').show();
+
 }); // end of document.ready

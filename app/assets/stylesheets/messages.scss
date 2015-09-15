@@ -3,11 +3,29 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .messageNotice{
   background-color: #f2f3f5;
-  width: 100%;
+  font-family: 'Lato', sans-serif;
   position: absolute;
   top: 0px;
   bottom: 0px;
-}
-.gotMessage{
   width: 100%;
+
+  .gotMessage{
+    width: 500px;
+    margin: 0px auto;
+    position: relative;
+    top: 200px;
+    text-align: center;
+    h1{
+      width: 500px;
+      font-size: 32px;
+      font-family: 'Oswald', sans-serif;
+      border-bottom: solid 1px gray;
+      line-height: 2em;
+    }
+    p{
+      line-height: 50px;
+      font-size: 22px;
+      padding: 0px 26px;
+    }
+  }
 }
