@@ -14,6 +14,8 @@
   <div class="content">
 
     <div id="container1">
+      <div class="backImge"></div>
+      <canvas id='canvas' width="1600" height="740"></canvas>
         <img class="cloudsFront" src="cloudsFront.png" alt="clouds above the city of chicago" />
         <img class="cloudsBack" src="cloudsBack.png" alt="clouds above the city of chicago" />
       <section class="aboutME">
@@ -47,11 +49,9 @@
           <div class="workHolder developwork">
             <img class="image" src=" <%= c.image %> "/>
             <section class="devdiscription">
-              <h1> <%= c.title %> </h1>
+              <h1><%= c.title %></h1>
               <hr>
-              <p>
-                <%= c.description %>
-              </p>
+              <p><%= c.description %></p>
               <a href="<%= c.linkgithub %>" target="_blank">link to github</a>
             </section>
           </div>
@@ -67,11 +67,9 @@
             <div class="workHolder graphicswork">
             <img class="image" src=" <%= d.image %> "/>
             <section class="devdiscription">
-              <h1> <%= d.title %> </h1>
+              <h1><%= d.title %></h1>
               <hr>
-              <p>
-                <%= d.description %>
-              </p>
+              <p><%= d.description %></p>
             </section>
             </div>
             <% end %>
