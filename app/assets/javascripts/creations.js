@@ -1,3 +1,5 @@
+
+
 var reader = new FileReader();
 var dataToUpload = {};
 var summary;
@@ -306,83 +308,6 @@ start();
   });
 
   $('.profile-display').show();
-
-// canvas animation
-
-var canvas = document.getElementById('canvas');
-var ctx = canvas.getContext('2d');
-
-// Constructor for a Drops object
-function Drop(x, y, color){
-  this.x = x;
-  this.y = y;
-  this.yVel = Math.random() / 2 ;
-  this.color = color;
-
-  this.draw = function(){
-      ctx.beginPath();
-      ctx.fillStyle= color;
-      ctx.moveTo(this.x-3,this.y);
-      ctx.lineTo(this.x,this.y-5);
-      ctx.lineTo(this.x+3,this.y);
-      ctx.arc(this.x,this.y,3,0, Math.PI);
-      ctx.closePath();
-      ctx.fill();
-  }
-
-  this.update = function(){
-    if (this.y > canvas.height){
-      this.y = -100;
-    }
-    this.y += this.yVel;
-  }
-
-}; //end of object
-
-// Build a bunch of squares //
-var drops = [];
-var color = 'rgba(208,231,245,1)';
-for (var i = 0; i < 200; i++){
-  var x = Math.floor(Math.random() * canvas.width);
-  var y = Math.floor(Math.random() * canvas.width);
-  var newDrop = new Drop(x, y, color);
-  drops.push(newDrop);
-}
-// Build a bunch of squares //
-
-function drawDrops(){
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  for (var i = 0; i < drops.length; i++){
-    drops[i].update();
-    drops[i].draw();
-  }
-};
-
-
-
-
-function addWeather(){
-  $('.backImge').addClass('blur');
-  $('.cloudsFront').addClass('blur');
-  $('.cloudsBack').addClass('blur');
-  setInterval(drawDrops,15);
-};
-
-
-$.ajax({
-  method: 'get',
-  url: 'http://api.wunderground.com/api//forecast/q/IL/Chicago.json',
-  dataType: 'json',
-  success: function(data){
-    var options = data;
-    var weekcast = (options.forecast.simpleforecast.forecastday);
-    var weather = weekcast[0].conditions;
-     if (weather.indexOf('Snow') > -1 ){
-       addWeather();
-     }
-  }
-});
-
 
 
 }); // end of document.ready
