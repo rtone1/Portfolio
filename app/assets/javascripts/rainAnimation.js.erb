@@ -69,7 +69,7 @@ for (var i = 0; i < 200; i++){
   // AJAX CALL TO THE WEATHER CHANNEL API
   $.ajax({
     method: 'get',
-    url: 'http://api.wunderground.com/api/<%= ENV['WEATHER_KEY'] %>/forecast/q/IL/Chicago.json',
+    url: 'http://api.wunderground.com/api/<%= Rails.application.secrets.secret_weather_key %>/forecast/q/IL/Chicago.json',
     dataType: 'json',
     success: function(data){
       var options = data;
