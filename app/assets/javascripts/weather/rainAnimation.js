@@ -50,31 +50,9 @@ for (var i = 0; i < 200; i++){
 
   // FUNCTION TO DISPLAY DROPS EFFECT
   function addWeather(){
-    $('.backImge').addClass('blur');
+    $('.cityImage').addClass('blur');
     $('.cloudsFront').addClass('blur');
     $('.cloudsBack').addClass('blur');
+    $('#container1').css({backgroundColor: '#CACBD2'});
     setInterval(drawDrops,15);
   };
-
-  // FUNCTION TO ACTIVEWEATHER ONLY ON CERTAIN CONDITIONS
-  function activeWeather(w){
-    if (w.indexOf('Snow') > -1 ){
-      addWeather();
-    }
-    if (w.indexOf('Rain') > -1 ){
-      addWeather();
-    }
-  };
-
-  // AJAX CALL TO THE WEATHER CHANNEL API
-  $.ajax({
-    method: 'get',
-    url: 'http://api.wunderground.com/api/6f541fe4a6ee5fb2/forecast/q/IL/Chicago.json',
-    dataType: 'json',
-    success: function(data){
-      var options = data;
-      var weekcast = (options.forecast.simpleforecast.forecastday);
-      var weather = weekcast[0].conditions;
-      activeWeather(weather);
-    }
-  });
