@@ -11,10 +11,11 @@
     }
   };
 
+
   // AJAX CALL TO THE WEATHER CHANNEL API
   $.ajax({
     method: 'get',
-    url: 'http://api.wunderground.com/api/6f541fe4a6ee5fb2/forecast/q/IL/Chicago.json',
+    url: 'http://api.wunderground.com/api/<%= ENV["WEATHER_KEY"] %>/forecast/q/IL/Chicago.json',
     dataType: 'json',
     success: function(data){
       var options = data;
