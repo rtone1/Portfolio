@@ -4,5 +4,4 @@ class User < ActiveRecord::Base
   def to_s
     @user.name + " is admin user."
   end
-
 end
