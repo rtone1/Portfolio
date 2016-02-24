@@ -13,6 +13,7 @@ class CreationsController < ApplicationController
     redirect_to "/profile"
   end
 
+
   private
 
   def creation_params
