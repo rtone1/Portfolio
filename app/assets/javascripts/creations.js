@@ -310,4 +310,7 @@ start();
   $('.profile-display').show();
 
 
+  // Email and Banners common js
+
+
 }); // end of document.ready

@@ -13,14 +13,14 @@
 
 
   // AJAX CALL TO THE WEATHER CHANNEL API
-  $.ajax({
-    method: 'get',
-    url: 'http://api.wunderground.com/api/<%= ENV["WEATHER_KEY"] %>/forecast/q/IL/Chicago.json',
-    dataType: 'json',
-    success: function(data){
-      var options = data;
-      var weekcast = (options.forecast.simpleforecast.forecastday);
-      var weather = weekcast[0].conditions;
-      activeWeather(weather);
-    }
-  });
+  // $.ajax({
+  //   method: 'get',
+  //   url: 'http://api.wunderground.com/api/<%= ENV["WEATHER_KEY"] %>/forecast/q/IL/Chicago.json',
+  //   dataType: 'json',
+  //   success: function(data){
+  //     var options = data;
+  //     var weekcast = (options.forecast.simpleforecast.forecastday);
+  //     var weather = weekcast[0].conditions;
+  //     activeWeather(weather);
+  //   }
+  // });

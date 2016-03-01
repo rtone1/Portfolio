@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   # main page route =================================
   root 'creations#index'
   resource :messages
+  # work projects ===================================
+  get '/email_and_banners' => 'creations#work'
   # profile page routes =============================
   get '/profile' => 'users#profile'
   get '/messages' => 'messages#index'

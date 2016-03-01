@@ -13,6 +13,9 @@ class CreationsController < ApplicationController
     redirect_to "/profile"
   end
 
+  def work
+
+  end
 
   private
 
