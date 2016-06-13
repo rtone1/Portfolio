@@ -1,4 +1,207 @@
+<div class="content_wrapper">
+  <!-- DOCUMENT HEADER -->
+  <header scroll ng-class="{solidHeader:changeClass}">
+      <a href="#portfolio_top"><h1 ng-class="{small:changeClass, smallH1:changeClass}">Rodrigo Torres</h1></a>
+      <div class="local_weather">Chicago 55&deg; f</div>
+      <nav ng-class="{small:changeClass}">
+          <ul class="navigation">
+            <a href="#contact_me"><li class="navlink linkActive" >contact me</li></a>
+            <a href="#my_work"><li class="navlink" >Work</li></a>
+            <a href="#about_me"><li class="navlink" >About Me</li></a>
+          </ul>
+      </nav>
+  </header>
 
+  <!-- MAIN HERO CITYVIEW SECTION -->
+  <section id="mainHero" ng-mouseover="letThemMove($event)">
+    <article class="greetingView">
+        <h1 class="greet_ms">
+          <span class="greet"><span class="greet_anime"></span><span class="greet_int">hello</span></span><span class="city">Chicago</span>
+        </h1>
+        <div class="clouds">
+            <div class="cloud_backGround">
+                <img src="cloud.svg" alt="cloud illustration" />
+                <img src="cloud.svg" alt="cloud illustration" />
+                <img src="cloud.svg" alt="cloud illustration" />
+                <img src="cloud.svg" alt="cloud illustration" />
+            </div>
+            <div class="cloud_foreFront">
+                <img src="cloud.svg" alt="cloud illustration" />
+                <img src="cloud.svg" alt="cloud illustration" />
+                <img src="cloud.svg" alt="cloud illustration" />
+                <img src="cloud.svg" alt="cloud illustration" />
+            </div>
+        </div>
+        <img class="citySkyline"src="citybackground.svg" alt="Illustration of Chicago's city skyline." />
+        <div class="colorOverlay"></div>
+    </article>
+  </section>
+
+  <!-- AUDIO SECTION -->
+  <section id="ct_audio">
+    <article class="greetingView">
+        <h2>start with tunes</h2>
+        <!-- AUDIO PLAYER -->
+        <div class="playerContainer unselectable ng-cloak" ng-mousemove="mouseMoving($event)" ng-mouseup="dragStop($event)">
+          <audio id="audio" src="{{playList[0].song}}"></audio>
+          <div class="imageDisplay">
+              <div class="hamIcon" ng-click="showDetails()">
+                  <div class="top"></div>
+                  <div class="middle"></div>
+                  <div class="bottom"></div>
+              </div>
+              <div class="shadow"></div>
+          </div>
+          <div class="audioPlaylist" ng-show="showPlaylist">
+            <div class="nowPlaying">
+                <h2>Now Playing</h2>
+                <p ng-bind="playList[songCount].description"></p>
+                <p class="duration"><em ng-bind="currentTime | time">00:00</em> / <em ng-bind="totalTime | time">00:00</em></p>
+                <div class="arrow" ng-click="hideDetails()"></div>
+                <div class="listShadow"></div>
+            </div>
+            <div class="songList">
+                <ol>
+                  <li class="pickSong" ng-repeat="index in playList" ng-bind="index.description" ng-click="audioSelected($index,$event)"></li>
+                </ol>
+            </div>
+          </div>
+          <div class="controlsContainer" >
+              <div class="topControls">
+                  <div class="shuffle" ng-click="toggleShuffle()"></div>
+                  <div id="progressMeter" >
+                      <div id="progressBar"></div>
+                      <div id="thumbScrubber" ng-mousedown="dragStart($event)"  style="left:{{scrubLeft}}px;"></div>
+                      <div id="currentTime" ng-bind="currentTime | time">00:00</div>
+                      <div id="totalTime" ng-bind="totalTime | time">00:00</div>
+                  </div>
+                  <div class="loop" ng-click="toggleLoop()"></div>
+              </div>
+              <div class="descriptionCtn">
+                  <div class="songDescription" ng-repeat="i in getNumber(2) track by $index" ng-bind="songInfo"></div>
+              </div>
+              <div class="playPause">
+                  <div class="prev" ng-click="restartSong()" ng-dblclick="prevSong()"></div>
+                  <div class="play_pause" ng-click="togglePlay(0)"></div>
+                  <div class="next" ng-click="nextSong()"></div>
+              </div>
+          </div>
+      </div>
+      <!-- END OF AUDIO PLAYER -->
+      <p>
+        Don't judge me for my music selection
+      </p>
+    </article>
+  </section>
+
+  <!-- MY WORK SECTION -->
+  <section id="portfoliWork">
+    <div class="cto_container">
+        <div class="cta_btn small_btn left">contact me</div>
+        <div class="switch right">
+            <input type="radio" class="switch-input" name="view" value="code" id="code" checked>
+            <label for="code" class="switch-label switch-label-off">Code</label>
+            <input type="radio" class="switch-input" name="view" value="design" id="design">
+            <label for="design" class="switch-label switch-label-on">Design</label>
+            <span class="switch-selection"></span>
+        </div>
+    </div>
+
+    <article class="myWork">
+      <h2>Code</h2>
+
+      <div class="card_ctn">
+
+        <div class="single_card">
+            <div class="card_image">
+                <div class="cardOverlay"></div>
+                <img src="defaultImage.jpg" alt="" />
+            </div>
+            <div class="card_meta">
+                <h3>Email</h3>
+            </div>
+        </div>
+
+        <div class="single_card">
+            <div class="card_image">
+                <img src="defaultImage.jpg" alt="" />
+            </div>
+            <div class="card_meta">
+                <h3>Email</h3>
+            </div>
+        </div>
+
+        <div class="single_card">
+            <div class="card_image">
+                <img src="defaultImage.jpg" alt="" />
+            </div>
+            <div class="card_meta">
+                <h3>Email</h3>
+            </div>
+        </div>
+
+        <div class="single_card">
+            <div class="card_image">
+                <img src="defaultImage.jpg" alt="" />
+            </div>
+            <div class="card_meta">
+                <h3>Email</h3>
+            </div>
+        </div>
+
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ABOUT ME SECTION -->
+  <section id="aboutME">
+
+    <article class="myStory">
+      <h2>What can I say.</h2>
+      <img class="robotProtrait right"src="botProtrait.svg" alt="Illustration of a robot with a handlebar mustache." />
+      <p class="elevatorPitch">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus fermentum luctus. Maecenas posuere eros turpis, eu lobortis odio tempor ut. Mauris maximus neque eu neque viverra bibendum. Integer ac turpis eu arcu elementum viverra. Sed sodales rhoncus sollicitudin. Nulla cursus purus consequat felis mollis dapibus. Morbi in viverra odio. Quisque id condimentum quam, id vehicula sapien. Nullam elementum et elit non fringilla. Sed sagittis et leo eu dictum. Praesent gravida augue lacus, quis finibus purus sagittis et. Aliquam erat volutpat. Sed id est lacinia, egestas orci eget, auctor magna. Pellentesque hendrerit condimentum dignissim. Duis porttitor, metus non tempor finibus, est nibh placerat nisl, ac fringilla enim lorem id nulla. Aliquam vulputate dignissim ipsum.
+      </p>
+    </article>
+
+    <article class="mySkill">
+      <h2>Top Skills</h2>
+      <div class="skillsMarquee">
+        <ul class="skillList">
+            <li>JS</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>ROR</li>
+            <li>Ps</li>
+            <li>Ai</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <!-- PAGE FOOTER -->
+  <footer id="pageFooter">
+    <h3>CHECK ME OUT HERE</h3>
+    <ul class="socialMedia">
+        <li title="GitHub"><a href="https://github.com/rtone1"><img src="github_icon.gif" alt="" /></a></li>
+        <li title="Linkedin"><a href="https://www.linkedin.com/in/rodrigotorrescoronado"><img src="linkedin_icon.gif" alt="" /></a></li>
+        <li title="Instagram"><a href="https://www.instagram.com/rtdesigns84/"><img src="instagram_icon.gif" alt="" /></a></li>
+        <li title="Codepen"><a href="http://codepen.io/rtone1/"><img src="codepen_icon.gif" alt="" /></a></li>
+    </ul>
+    <div class="cta_btn large_btn">contact me</div>
+  </footer>
+  <div class="subFooter"><span>Rodrigo Torres</span> &copy;2016</div>
+
+
+
+</div> <!-- END OF CONTENT WRAPPER -->
+
+
+<!-- OLD CODE BELOW -->
+
+
+<!--
   <header>
     <h1>Rodrigo Torres</h1>
     <nav>
@@ -26,9 +229,9 @@
             I have always had a strong passion for the web and with a background in graphic design, I knew I wanted to create web functionality while still being able to incorporate design.
           </p>
       </section>
-    </div>
+    </div> -->
 
-    <div id="container3">
+    <!-- <div id="container3">
       <div class="data">
             <div id="div1"></div>
             <div id="div2"></div>
@@ -118,6 +321,181 @@
           <% end %>
         </ul>
       </div>
-    </footer>
+    </footer> -->
+  <!-- </div> -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<div class="loader_ctn">
+  <div class="loaderBot">
+    <svg class="bot"version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px"
+   height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
 
+<g id="Layer_11">
+  <path display="none" opacity="0.6" fill="#C67409" d="M125.793,236.483c0,0,21.188-2.997,45.688,0.312l-3.208,3.688
+    c0,0-4.604-0.242-19.938-0.242c-15.417,0-19.081,0.263-19.081,0.263L125.793,236.483z"/>
+  <g>
+    <g>
+      <path fill="#ECFFEE" d="M134.401,245.612c14.56,6.25,30.503,1.541,34.046-0.059l-11.653-5.607L134.401,245.612z"/>
+      <path fill="#9ECEE8" d="M137.634,246.817c0,0,14.478-1.646,25.24,0.494c0,0,4.274-1.008,5.573-1.758l-2.455-3.958l-30.941,1.72
+        l-0.649,2.297C134.401,245.612,137.253,246.858,137.634,246.817z"/>
+      <path fill="#478EB5" d="M161.275,245.228c0,0,3.014,0.888,3.687,1.533c0,0,3.011-0.815,3.485-1.207
+        c0.206-0.172,0.443-0.453,0.443-0.453L161.275,245.228z"/>
+      <path fill="#478EB5" d="M136.81,246.589c0,0,2.639-1.273,3.229-1.333c0.282-0.028-0.601-0.206-1.639-0.253
+        c-1.809-0.082-4.537,0.111-4.537,0.111s0.386,0.4,0.539,0.498C134.956,245.961,136.81,246.589,136.81,246.589z"/>
+    </g>
+    <path fill="#478EB5" d="M130.476,240.967c0,0,20.751-4.579,41.162,0.073l-2.853,4.2l-34.783,0.04l-3.338-4.391"/>
+    <g>
+      <path fill="#706E6C" d="M165.189,143.253l-1.573-0.363l1.578-0.462l0.038-6.402l-1.618-0.374l1.623-0.475l0.035-6.066
+        l-1.617-0.374l1.622-0.476l0.016-2.613c0.016-2.686-2.148-4.877-4.835-4.892l-18.109-0.107c-2.686-0.016-4.877,2.149-4.894,4.835
+        l-0.016,2.756l1.603,0.544l-1.607,0.301l-0.034,5.614l1.438,0.486l-1.44,0.271l-0.037,6.265l1.604,0.544l-1.609,0.301
+        l-0.006,1.077c-0.015,2.686,2.15,4.878,4.836,4.893l18.11,0.106c2.686,0.015,4.875-2.15,4.892-4.835L165.189,143.253z"/>
+      <path fill="#666666" d="M155.708,124.217c0,0,2.321,14.976-0.201,23.661l5.418,0.255c0,0,3.308-8.089,0.412-23.91
+        L155.708,124.217z"/>
+
+        <line fill="none" stroke="#4D4D4D" stroke-width="0.2701" stroke-miterlimit="10" x1="139.042" y1="128.783" x2="163.655" y2="128.736"/>
+
+        <line fill="none" stroke="#4D4D4D" stroke-width="0.2701" stroke-miterlimit="10" x1="138.964" y1="142.265" x2="163.616" y2="142.89"/>
+
+        <line fill="none" stroke="#4D4D4D" stroke-width="0.2701" stroke-miterlimit="10" x1="138.838" y1="135.185" x2="163.614" y2="135.651"/>
+    </g>
+    <g>
+      <path fill="#FF9800" d="M170.457,16.815l-35.018-0.255c-12.662-0.094-22.995,9.131-23.077,20.601l-0.305,41.432l0.032,26.09
+        c1.467,10.124,10.984,17.983,22.573,18.068l35.017,0.258c12.661,0.092,22.994-9.132,23.077-20.603l0.474-64.654
+        C193.314,26.282,183.118,16.908,170.457,16.815z"/>
+      <g>
+        <path fill="#5E7C8B" d="M146.709,54.522c0.01,4.092-3.3,7.416-7.393,7.425l-6.446,0.016c-4.092,0.009-7.415-3.301-7.426-7.395
+          l-0.022-10.23c-0.008-4.091,3.301-7.416,7.394-7.425l6.445-0.014c4.094-0.01,7.418,3.299,7.427,7.393L146.709,54.522z"/>
+        <path fill="#353535" d="M131.939,46.993c0-1.803,1.714-3.264,3.826-3.264l0,0c2.113,0,3.827,1.461,3.827,3.264V58.7
+          c0,1.803-1.714,3.264-3.827,3.264l0,0c-2.112,0-3.826-1.461-3.826-3.264V46.993z"/>
+        <path fill="#707070" d="M130.623,45.265l10.226-0.317c2.329-0.073,5.839-0.655,5.839-0.655
+          c-0.009-4.094-3.333-7.402-7.427-7.393l-6.445,0.014c-4.093,0.009-7.401,3.334-7.394,7.425l0.01,2.383
+          C126.731,45.325,128.565,45.328,130.623,45.265z"/>
+      </g>
+      <g>
+        <path fill="#5E7C8B" d="M157.839,54.522c-0.01,4.092,3.3,7.416,7.394,7.425l6.445,0.016c4.092,0.009,7.415-3.301,7.426-7.395
+          l0.022-10.23c0.008-4.091-3.301-7.416-7.394-7.425l-6.445-0.014c-4.094-0.01-7.418,3.299-7.426,7.393L157.839,54.522z"/>
+        <path fill="#353535" d="M172.609,46.993c0-1.803-1.714-3.264-3.827-3.264l0,0c-2.113,0-3.827,1.461-3.827,3.264V58.7
+          c0,1.803,1.714,3.264,3.827,3.264l0,0c2.113,0,3.827-1.461,3.827-3.264V46.993z"/>
+        <path fill="#707070" d="M173.925,45.265l-10.226-0.317c-2.329-0.073-5.838-0.655-5.838-0.655
+          c0.008-4.094,3.332-7.402,7.426-7.393l6.445,0.014c4.093,0.009,7.401,3.334,7.394,7.425l-0.01,2.383
+          C177.816,45.325,175.982,45.328,173.925,45.265z"/>
+      </g>
+      <path opacity="0.6" fill="#B5680B" d="M180.341,104.513c0,2.984-2.419,5.403-5.403,5.403h-45.925
+        c-2.984,0-5.403-2.419-5.403-5.403V87.403c0-2.983,2.419-5.403,5.403-5.403h45.925c2.984,0,5.403,2.42,5.403,5.403V104.513z"/>
+      <g>
+        <path fill="#FFFFFF" d="M180.341,93.257v-5.854c0-2.983-2.419-5.403-5.403-5.403h-45.925c-2.984,0-5.403,2.42-5.403,5.403v5.854
+          H180.341z"/>
+        <path fill="#FFFFFF" d="M123.609,101.361v3.151c0,2.984,2.419,5.403,5.403,5.403h45.925c2.984,0,5.403-2.419,5.403-5.403v-3.151
+          H123.609z"/>
+        <g>
+          <path opacity="0.6" fill="#E6E6E6" d="M127.211,93.257V88.34c0-2.656,2.131-4.811,4.761-4.811h40.457
+            c2.63,0,4.761,2.154,4.761,4.811v4.917h3.151v-5.854c0-2.983-2.419-5.403-5.403-5.403h-45.925c-2.984,0-5.403,2.42-5.403,5.403
+            v5.854H127.211z"/>
+          <path opacity="0.6" fill="#E6E6E6" d="M177.189,101.249v2.327c0,2.657-2.131,4.811-4.761,4.811h-40.457
+            c-2.63,0-4.761-2.153-4.761-4.811v-2.327h-3.602v3.264c0,2.984,2.419,5.403,5.403,5.403h45.925
+            c2.984,0,5.403-2.419,5.403-5.403v-3.264H177.189z"/>
+        </g>
+      </g>
+    </g>
+    <g>
+
+      <ellipse class="ring" transform="matrix(0.9999 -0.0112 0.0112 0.9999 -2.9019 1.7217)" fill="none" stroke="#9ECEE8" stroke-width="1.801" stroke-miterlimit="10" cx="151.774" cy="259.111" rx="16.209" ry="2.327"/>
+      <path class="ring" fill="#ECFFEE" d="M143.683,260.265c-0.051-2.715,3.664-4.987,8.302-5.078c4.636-0.087,8.433,2.041,8.488,4.761
+        c0.049,2.713-3.664,4.985-8.3,5.076C147.536,265.112,143.737,262.981,143.683,260.265"/>
+      <path class="ring" fill="none" stroke="#9ECEE8" stroke-width="1.801" stroke-miterlimit="10" d="M167.756,258.563
+        c-3.56,0.778-9.044,1.347-15.221,1.48c-7.106,0.155-13.319-0.307-16.747-1.124c-0.135,0.122-0.224,0.246-0.222,0.373
+        c0.015,1.285,7.282,2.244,16.234,2.144c8.951-0.1,16.197-1.223,16.182-2.508C167.981,258.804,167.892,258.681,167.756,258.563z"
+        />
+        <ellipse class="ringLast" transform="matrix(0.9999 -0.0112 0.0112 0.9999 -2.9019 1.7217)" fill="none" stroke="#9ECEE8" stroke-width="1.801" stroke-miterlimit="10" cx="151.774" cy="259.111" rx="16.209" ry="2.327"/>
+      <path class="ringLast" fill="#ECFFEE" d="M143.683,260.265c-0.051-2.715,3.664-4.987,8.302-5.078c4.636-0.087,8.433,2.041,8.488,4.761
+        c0.049,2.713-3.664,4.985-8.3,5.076C147.536,265.112,143.737,262.981,143.683,260.265"/>
+      <path class="ringLast" fill="none" stroke="#9ECEE8" stroke-width="1.801" stroke-miterlimit="10" d="M167.756,258.563
+        c-3.56,0.778-9.044,1.347-15.221,1.48c-7.106,0.155-13.319-0.307-16.747-1.124c-0.135,0.122-0.224,0.246-0.222,0.373
+        c0.015,1.285,7.282,2.244,16.234,2.144c8.951-0.1,16.197-1.223,16.182-2.508C167.981,258.804,167.892,258.681,167.756,258.563z"
+        />
+
+    </g>
+    <polygon fill="#FF9800" points="168.785,245.24 133.965,245.24 77.233,177.403 225.516,177.403 		"/>
+    <path fill="#706E6C" stroke="#6B6B6A" stroke-width="0.473" stroke-miterlimit="10" d="M256.162,178.903
+      c0,0-3.903-3.902-5.104-4.502s-3.15,4.203-1.65,5.254c1.5,1.05,1.651,1.651,4.653,3.151
+      C257.062,184.307,256.162,178.903,256.162,178.903z"/>
+    <path fill="#706E6C" stroke="#6B6B6A" stroke-width="0.473" stroke-miterlimit="10" d="M38.963,177.103
+      c0,0,3.902-3.902,5.103-4.502s3.151,4.203,1.651,5.254c-1.501,1.049-1.652,1.65-4.653,3.151
+      C38.062,182.506,38.963,177.103,38.963,177.103z"/>
+    <polygon opacity="0.6" fill="#C67409" points="117.062,224.98 185.701,225.022 187.742,222.532 186.943,218.526 113.327,218.076
+      113.31,220.591 		"/>
+    <g>
+      <path fill="#F5F6F7" stroke="#CCCCCC" stroke-width="0.9005" stroke-miterlimit="10" d="M251.931,219.678
+        c0,1.382-1.94,2.503-4.334,2.503H48.249c-2.394,0-4.334-1.121-4.334-2.503v-71.34c0-1.382,1.94-2.503,4.334-2.503h199.348
+        c2.394,0,4.334,1.121,4.334,2.503V219.678z"/>
+      <g>
+        <g>
+          <path fill="#4F4F4F" d="M73.412,173.677h6.175v15.35h14.757v3.364H73.412V173.677z"/>
+          <path fill="#4F4F4F" d="M115.437,190.697c-1.845,1.442-4.645,2.163-8.4,2.163c-3.757,0-6.557-0.721-8.401-2.163
+            c-1.845-1.441-2.767-3.177-2.767-5.207c0-1.996,0.922-3.726,2.767-5.188s4.645-2.194,8.401-2.194
+            c3.756,0,6.556,0.731,8.4,2.194s2.768,3.192,2.768,5.188C118.204,187.521,117.281,189.256,115.437,190.697z M110.865,188.698
+            c0.896-0.753,1.344-1.821,1.344-3.208c0-1.386-0.448-2.453-1.344-3.201s-2.179-1.122-3.85-1.122s-2.957,0.374-3.859,1.122
+            s-1.354,1.815-1.354,3.201c0,1.387,0.451,2.455,1.354,3.208c0.902,0.752,2.188,1.128,3.859,1.128
+            S109.97,189.45,110.865,188.698z"/>
+          <path fill="#4F4F4F" d="M130.129,183.973c1.063-0.084,1.824-0.19,2.282-0.317c0.821-0.22,1.232-0.562,1.232-1.028
+            c0-0.566-0.315-0.958-0.945-1.174s-1.555-0.324-2.774-0.324c-1.368,0-2.337,0.212-2.906,0.635
+            c-0.406,0.313-0.677,0.736-0.812,1.27h-5.514c0.12-1.21,0.657-2.204,1.61-2.983c1.518-1.219,4.122-1.828,7.813-1.828
+            c2.403,0,4.537,0.301,6.403,0.901c1.866,0.602,2.799,1.735,2.799,3.402v6.349c0,0.44,0.014,0.974,0.04,1.6
+            c0.04,0.474,0.184,1.917,0.184,1.917h-5.216c-0.174-0.279-0.294-0.542-0.361-0.787c-0.066-0.245-0.12-0.524-0.16-0.838
+            c-0.793,0.542-1.707,1.003-2.742,1.384c-1.237,0.448-2.636,0.673-4.195,0.673c-1.99,0-3.633-0.357-4.931-1.073
+            c-1.298-0.715-1.946-1.729-1.946-3.04c0-1.701,1.044-2.933,3.131-3.695c1.145-0.414,2.828-0.711,5.05-0.889L130.129,183.973z
+             M133.623,185.662c-0.366,0.144-0.735,0.26-1.107,0.349c-0.373,0.089-0.885,0.172-1.535,0.248l-1.3,0.152
+            c-1.22,0.135-2.096,0.3-2.627,0.495c-0.9,0.33-1.35,0.842-1.35,1.536c0,0.617,0.274,1.064,0.824,1.339
+            c0.55,0.275,1.218,0.413,2.005,0.413c1.249,0,2.399-0.229,3.451-0.686s1.598-1.291,1.639-2.501V185.662z"/>
+          <path fill="#4F4F4F" d="M155.077,178.773c1.028,0.369,1.864,0.879,2.506,1.53v-6.602h5.794v18.688h-5.554v-1.917
+            c-0.815,0.821-1.744,1.418-2.787,1.79c-1.042,0.372-2.339,0.559-3.89,0.559c-2.553,0-4.701-0.654-6.445-1.962
+            s-2.617-2.985-2.617-5.033c0-2.362,0.859-4.22,2.577-5.574c1.717-1.354,4.013-2.031,6.887-2.031
+            C152.871,178.222,154.047,178.405,155.077,178.773z M156.48,188.633c0.842-0.762,1.263-1.748,1.263-2.958
+            c0-1.693-0.675-2.903-2.024-3.632c-0.829-0.439-1.792-0.66-2.888-0.66c-1.671,0-2.897,0.4-3.679,1.2
+            c-0.782,0.8-1.173,1.792-1.173,2.977c0,1.278,0.397,2.301,1.192,3.066c0.795,0.767,2.002,1.149,3.619,1.149
+            S155.638,189.395,156.48,188.633z"/>
+          <path fill="#4F4F4F" d="M168.03,177.079v-3.301h5.634v3.301H168.03z M168.03,192.391v-13.483h5.634v13.483H168.03z"/>
+          <path fill="#4F4F4F" d="M195.959,179.346c1.431,0.749,2.146,1.991,2.146,3.726v9.319h-5.854v-8.418
+            c0-0.728-0.152-1.286-0.458-1.676c-0.558-0.711-1.618-1.066-3.184-1.066c-1.925,0-3.245,0.521-3.961,1.562
+            c-0.372,0.551-0.558,1.253-0.558,2.107v7.491h-5.714v-13.813h5.533v2.019c0.732-0.711,1.425-1.223,2.076-1.536
+            c1.172-0.559,2.656-0.838,4.453-0.838C192.688,178.222,194.528,178.596,195.959,179.346z"/>
+          <path fill="#4F4F4F" d="M213.408,178.539c1.389,0.364,2.51,1.033,3.364,2.006v-1.993h5.574v13.128
+            c0,1.786-0.475,3.132-1.424,4.037c-1.631,1.558-4.759,2.336-9.384,2.336c-2.793,0-5.072-0.347-6.837-1.041
+            c-1.764-0.693-2.74-1.73-2.927-3.11h6.215c0.161,0.423,0.422,0.728,0.782,0.914c0.615,0.33,1.65,0.495,3.107,0.495
+            c2.059,0,3.436-0.436,4.131-1.308c0.454-0.559,0.682-1.498,0.682-2.818v-0.889c-0.548,0.593-1.137,1.037-1.765,1.333
+            c-1.136,0.55-2.613,0.825-4.431,0.825c-2.808,0-5.05-0.624-6.727-1.873c-1.678-1.248-2.517-2.938-2.517-5.072
+            c0-2.057,0.808-3.785,2.423-5.186c1.615-1.401,3.904-2.102,6.868-2.102C211.64,178.222,212.594,178.327,213.408,178.539z
+             M215.354,188.461c0.919-0.639,1.378-1.656,1.378-3.054c0-1.312-0.437-2.311-1.308-2.996c-0.872-0.686-2.04-1.028-3.504-1.028
+            c-1.997,0-3.374,0.597-4.133,1.79c-0.399,0.635-0.6,1.418-0.6,2.349c0,0.805,0.213,1.52,0.639,2.146
+            c0.772,1.168,2.156,1.752,4.153,1.752C213.312,189.42,214.437,189.101,215.354,188.461z"/>
+        </g>
+      </g>
+    </g>
+    <g>
+
+        <ellipse fill="#706E6C" stroke="#6B6B6A" stroke-width="0.4502" stroke-miterlimit="10" cx="37.912" cy="190.013" rx="7.504" ry="12.906"/>
+      <path fill="#706E6C" stroke="#6B6B6A" stroke-width="0.4502" stroke-miterlimit="10" d="M39.113,201.117
+        c0,0,9.605,3.153,14.558,1.501c4.953-1.651,2.402-4.052,0-4.052c-2.401,0-12.156-0.602-13.207-1.201"/>
+      <path fill="#706E6C" stroke="#6B6B6A" stroke-width="0.473" stroke-miterlimit="10" d="M39.864,193.764
+        c0,0,10.6,3.153,16.065,1.501c5.465-1.651,2.65-4.052,0-4.052s-13.415-0.602-14.575-1.201"/>
+      <path fill="#706E6C" stroke="#6B6B6A" stroke-width="0.473" stroke-miterlimit="10" d="M41.214,187.761
+        c0,0,8.998,1.649,15.609,1.5c5.708-0.129,2.508-4.802-0.143-4.802s-13.415-0.602-14.575-1.201"/>
+    </g>
+    <g>
+
+        <ellipse fill="#706E6C" stroke="#6B6B6A" stroke-width="0.4502" stroke-miterlimit="10" cx="258.113" cy="191.813" rx="7.504" ry="12.906"/>
+      <path fill="#706E6C" stroke="#6B6B6A" stroke-width="0.4502" stroke-miterlimit="10" d="M256.912,202.919
+        c0,0-9.605,3.152-14.559,1.5c-4.952-1.65-2.401-4.052,0-4.052c2.402,0,12.157-0.602,13.208-1.201"/>
+      <path fill="#706E6C" stroke="#6B6B6A" stroke-width="0.473" stroke-miterlimit="10" d="M256.161,195.565
+        c0,0-10.601,3.152-16.065,1.5c-5.466-1.65-2.65-4.052,0-4.052s13.415-0.602,14.575-1.201"/>
+      <path fill="#706E6C" stroke="#6B6B6A" stroke-width="0.473" stroke-miterlimit="10" d="M254.812,189.562
+        c0,0-8.998,1.649-15.609,1.5c-5.708-0.129-2.508-4.802,0.143-4.802s13.415-0.601,14.575-1.201"/>
+    </g>
+    </g>
+  </g>
+  </svg>
+
+    <div class="shadow"></div>
   </div>
+</div>

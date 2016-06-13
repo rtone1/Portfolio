@@ -1,0 +1,981 @@
+// NOTE: This file contains all the styles for the main page of my portfolio
+// including repeated styles.
+// TABLE OF CONTENTS:
+// 1. NORMALIZE CSS
+// 2. STYLE VARIABLES
+// 3. REPEATED STYLES
+// 4. ACTIVATED STYLES
+// 5. PAGE HEADER
+// 6. MAIN HERO SECTION
+// 7. AUDIO SECTION
+// 8. PORTFOLIO WORK SECTION
+// 9. ABOUT ME SECTION
+// 10. PAGE FOOTER
+// 11. LOADER BOT SVG
+// 12. CSS KEYFRAME ANIMATIONS
+// 13. RESPONSIVE MEDIA QUERIES
+
+//----- 1. NORMALIZE CSS -----//
+*{ margin: 0px; padding: 0px; box-sizing: border-box; -moz-box-sizing: border-box; }
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+a{ text-decoration: none; background-color: transparent; color: #fff; }
+
+a img{  border: none; outline: none; }
+img { border: 0; }
+
+b,
+strong { font-weight: bold; }
+dfn { font-style: italic; }
+
+table { border-collapse: collapse; border-spacing: 0; margin: 20px 5%; }
+td,
+th { padding: 0; }
+
+//----- 2. STYLE VARIABLES -----//
+$whiteSmoke: #F5F5F5;
+$heroBorder: #04425A;
+$mainHero_h1size: 6.4em;
+$defaultFonts:  Helvetica, 'Arial', sans-serif;
+$mainHeroH1: "Lato";
+$fontType2: "Nunito";
+
+//----- 3. REPEATED STYLES -----//
+body{
+  color: #7B6F67;
+  line-height: 1.2em;
+  font-family: $defaultFonts;
+  font-size: 16px;
+}
+
+// -- CALL TO ACTION BTN
+div.cta_btn{
+  cursor: pointer;
+  display: inline-block;
+  text-transform: uppercase;
+  background-color: #C1272D;
+  color: #E6E5E5;
+}
+div.cta_btn:hover{ color: #fff; transition: .1s; }
+
+.small_btn{
+  font-size: 18px;
+  padding: 10px 30px;
+}
+
+.large_btn{
+  padding: 20px 50px;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+
+//----- 4. ACTIVATED STYLES -----//
+.unselectable{
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.blur{
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
+
+div.content_wrapper{
+  display: none;
+}
+
+.solidHeader {
+  font-size: 12px;
+  background-color: rgba(12, 155, 206, 0.7);
+  transition: .2s;
+}
+
+.smallH1{ font-size: 22xpx; transition: .2s; }
+
+.small{
+  padding: 10px 0px;
+  transition: .2s;
+}
+
+.right{
+  float: right;
+}
+
+.left{
+  float: left;
+}
+
+//----- 5. PAGE HEADER -----//
+header{
+  position: fixed;
+  width: 100%;
+  background-color: rgba(12, 155, 206, 0.5);
+  background: -webkit-linear-gradient(top, rgba(12, 155, 206,1) 0%,rgba(125,185,232,0) 100%);
+  background: -moz-linear-gradient(top, rgba(12, 155, 206,1) 0%, rgba(125,185,232,0) 100%);
+  background: linear-gradient(to bottom, rgba(12, 155, 206,1) 0%,rgba(125,185,232,0) 100%);
+  z-index: 2000;
+  h1{
+    display: inline-block;
+    padding: 20px 0px;
+    margin-left: 20px;
+    font-weight: 100;
+    color: #C1E5F8;
+    float: left;
+  }
+  div.local_weather{
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: "Lato";
+    color: #C1E5F8;
+  }
+  nav{
+    float: right;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 20px 0px;
+    text-transform: uppercase;
+  }
+  nav ul li{
+    display: inline;
+    color: #C1E5F8;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  nav ul li:hover, h1:hover{
+    transition: .2s;
+    color: white;
+  }
+}
+
+//----- 6. MAIN HERO SECTION -----//
+section#mainHero{
+  position: relative;
+  width: 100%;
+  border-bottom: 20px solid $heroBorder;
+  h1.greet_ms{
+      position: absolute;
+      overflow: hidden;
+      z-index: 5;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      font-size: $mainHero_h1size;
+      font-family: $mainHeroH1;
+      text-transform: uppercase;
+      line-height: 1.2em;
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      span.greet{
+        position: relative;
+      }
+      span.greet_int{
+        position: relative;
+        animation: fadeOut 5s linear forwards;
+      }
+      span.greet_anime{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
+      span.city{
+        font-weight: 300;
+      }
+      .animeGreet{
+        animation: greetThem 5s linear infinite;
+      }
+  }
+
+  .greetingView img.citySkyline{ width: 100%; display: block; }
+
+  div.clouds {
+      position: absolute;
+      width: 100%;
+      top: 12%;
+      div.cloud_foreFront, div.cloud_backGround{ position: relative; }
+      div.cloud_foreFront img{
+          position: relative;
+          width: 8%;
+          top: -20px;
+      }
+      div.cloud_foreFront img:nth-child(1){ left: 10%; }
+      div.cloud_foreFront img:nth-child(2){ left: 20%; }
+      div.cloud_foreFront img:nth-child(3){ left: 40%; }
+      div.cloud_foreFront img:nth-child(4){ left: 60%; }
+
+      div.cloud_backGround img{
+          position: relative;
+          width: 6%;
+          transform: rotateY(180deg);
+      }
+      div.cloud_backGround img:nth-child(1){ left: 5%; top: 15px; }
+      div.cloud_backGround img:nth-child(2){ left: 16%; }
+      div.cloud_backGround img:nth-child(3){ left: 30%; }
+      div.cloud_backGround img:nth-child(4){ left: 48%; top: 10px; }
+  }
+
+  // -- BLUE OVERLAY ON MAIN HERO
+  .colorOverlay{
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    opacity: 0.1;
+    background-color: #142f44;
+  }
+}
+
+//----- 7. AUDIO SECTION -----//
+section#ct_audio{
+    width: 100%;
+    padding: 40px 0px;
+    background: $whiteSmoke;
+    text-align: center;
+    h2{
+      font-size: 3.4em;
+      line-height: 1.2em;
+      margin: 0px 0px 20px;
+      text-transform: uppercase;;
+      color: #607D8B;
+    }
+    p{
+      color: #9C9595;
+    }
+}
+
+// -- AUDIO PLAYER STYLES
+
+div.playerContainer{
+  position: relative;
+  overflow: hidden;
+  width: 340px;
+  height: 370px;
+  margin: 20px auto;
+  background-color: gray;
+  border-radius: 5px;
+  box-shadow: 0px .5px 2px black;
+  div.imageDisplay{
+    width: inherit;
+    height: 205px;
+    background-color: #CCCCCC;
+    background: url('/defaultImage.jpg') no-repeat 0px 0px;
+    background-size: cover;
+    .hamIcon{
+      position: absolute;
+      cursor: pointer;
+      width: 15px;
+      height: 10px;
+      right: 10px;
+      top: 10px;
+    }
+    .hamIcon div{
+      position: relative;
+      background-color: #989DA0;
+      width: inherit;
+      height: 2px;
+      margin-bottom: 2px;
+      border-radius: 2px;
+    }
+    .shadow{
+      width: inherit;
+      height: 205px;
+      background: url('/gloss.png')
+    }
+  }
+
+  div.audioPlaylist{
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: #363F45;
+    box-shadow: 0px 0px 3px #000;
+    z-index: 1000;
+    border-radius: 5px;
+
+    .nowPlaying{
+      position: relative;
+      width: inherit;
+      height: 150px;
+      padding: 5px 10px;
+      background: url("defaultImage.jpg") no-repeat;
+      background-size: cover;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 10px;
+      color: #fff;
+      text-shadow: 0px 1px 3px #000206;
+      h2,p{
+        margin: 5px 0px;
+        position: relative;
+        z-index: 100;
+      }
+      p.duration{
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+      }
+      .arrow{
+        position: absolute;
+        cursor: pointer;
+        top: 10px;
+        right: 10px;
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid #A6AAAD;
+        border-left: 2px solid #B5B7B9;
+        transform: rotate(-45deg);
+        z-index: 1000;
+      }
+      .listShadow{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: inherit;
+        height: inherit;
+        background-color: rgba(0,0,0,.5);
+      }
+    }
+
+    div.songList{
+      ol {
+        list-style-type: none;
+        margin: 0px;
+        padding: 10px;
+        width: inherit;
+        height: 220px;
+        overflow-y: scroll;
+      }
+      ol > li {
+        counter-increment: customlistcounter;
+        padding: 10px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        color: #fff;
+        border-bottom: 1px solid #4A575E;
+      }
+      ol > li:hover {
+        background-color: #4A575E;
+      }
+      ol > li:before {
+        content: counter(customlistcounter) " ";
+        padding: 10px 10px 10px 5px;
+        color: #4A575E;
+      }
+      ol:first-child {
+        counter-reset: customlistcounter;
+      }
+      .listActive{
+        background-color: #5A6971;
+      }
+    }
+  }
+
+  div.controlsContainer{
+    position: relative;
+    width: inherit;
+    height: 165px;
+    background-color: #363F45;
+    div.topControls{
+      .shuffle{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+        background: url("/shuffle.png") no-repeat 0px 0px;
+        background-size: contain;
+        cursor: pointer;
+        transition: .2s;
+      }
+      .shuffleActive{
+        background: url("/shuffleActive.png") no-repeat 0px 0px;
+        background-size: contain;
+        transition: .2s;
+      }
+
+      div#progressMeter{
+        position: relative;
+        display: inline-block;
+        width: 250px;
+        height: 10px;
+        top: 10px;
+        // left: 45px; THIS CAN BE DELETED AFTER I CHECK THE AUDIO JS
+        #progressBar{
+          position: relative;
+          width: 250px;
+          height: 1px;
+          top: 5px;
+          background-color: whitesmoke;
+        }
+        #thumbScrubber{
+          position: absolute;
+          top: 0px;
+          width: 10px;
+          height: 10px;
+          background-color: white;
+          border-radius: 10px;
+        }
+        #thumbScrubber:hover{
+          top: 0px;
+          transform: scale(1.5,1.5);
+          transition: .1s;
+        }
+        .largeScrubber{
+          top: 0px;
+          transform: scale(1.5,1.5);
+          transition: .1s;
+        }
+        #currentTime, #totalTime{ position: absolute; font-family: Helvetica, Arial, sans-serif; font-size: 10px; color: white; opacity: 1; }
+        #currentTime{
+          left: -10px;
+          top: 20px;
+        }
+        #totalTime{
+          right: -10px;
+          top: 20px;
+        }
+
+      }
+
+      div.loop{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        background: url("/loop.png") no-repeat 0px 0px;
+        background-size: contain;
+        cursor: pointer;
+        transition: .2s;
+      }
+      .loopActive{
+        background: url("/loopActive.png") no-repeat 0px 0px;
+        background-size: contain;
+        transition: .2s;
+      }
+    }
+
+    div.descriptionCtn{
+      position: relative;
+      top: 20px;
+      margin: 0px auto;
+      overflow: hidden;
+      width: 115px;
+      height: 20px;
+      .songDescription{
+        position: absolute;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        color: white;
+        text-align: center;
+        white-space: nowrap;
+        display: inline;
+        padding-right: 15px;
+        line-height: 22px;
+      }
+      .songDescription:nth-child(1){
+        transform: translateX(0%);
+      }
+      .songDescription:nth-child(2){
+        transform: translateX(100%);
+      }
+      .marquee{
+        animation: marquee 10s ease infinite;
+        -webkit-animation: marquee 10s ease infinite;
+      }
+      .marqueetwo{
+        animation: marqueetwo 10s ease infinite;
+        -webkit-animation: marqueetwo 10s ease infinite;
+      }
+    }
+
+    div.playPause{
+      position: absolute;
+      width: 50%;
+      height: 70px;
+      left: 25%;
+      bottom: 30px;
+      .prev, .next{position: absolute; width: 56px; height: 56px; z-index: 1; cursor: pointer;}
+      .prev{
+        background: url("/back.png") no-repeat 0px 0px;
+        background-size: contain;
+        top: 10px;
+      }
+      .next{
+        background: url("/forward.png") no-repeat 0px 0px;
+        background-size: contain;
+        top: 10px;
+        right: 0px;
+      }
+      .play_pause{
+        position: absolute;
+        width: 72px;
+        height: 72px;
+        left: 49px;
+        background: url("/play.png") no-repeat 0px 0px;
+        background-size: contain;
+        z-index: 3;
+        cursor: pointer;
+      }
+      .pause{
+        background: url("/pause.png") no-repeat 0px 0px;
+        background-size: contain;
+      }
+    }
+  }
+}
+
+//----- 8. PORTFOLIO WORK SECTION -----//
+section#portfoliWork{
+  width: 100%;
+  padding-bottom: 40px;
+  background-color: #03394D;
+
+  div.cto_container::before,
+  div.cto_container::after{
+    content: "";
+    display: table;
+  }
+
+  div.cto_container::before,
+  div.cto_container::after{
+    clear: both;
+  }
+
+  div.cto_container{
+    clear: both;
+    *zoom: 1;
+    width: 100%;
+    background-color: #032634;
+    padding: 10px 0px;
+  }
+
+// -- CALL TO ACTION BTN
+  div.cta_btn{
+    margin-left: 30px;
+  }
+
+// -- SWITCH
+
+  .switch {
+    position: relative;
+    margin-right: 30px;
+    height: 26px;
+    width: 120px;
+    top: 7px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .switch-label {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 58px;
+    line-height: 26px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.35);
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+  }
+
+  .switch-label-off {
+    padding-left: 2px;
+  }
+
+  .switch-label-on {
+    padding-left: 3px;
+  }
+
+  .switch-input {
+    display: none;
+  }
+
+  .switch-input:checked + .switch-label {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.65);
+    text-shadow: 0 1px rgba(255, 255, 255, 0.25);
+    -webkit-transition: 0.15s ease-out;
+    -moz-transition: 0.15s ease-out;
+    -o-transition: 0.15s ease-out;
+    transition: 0.15s ease-out;
+  }
+
+  .switch-input:checked + .switch-label-on ~ .switch-selection {
+    left: 60px;
+  }
+
+  .switch-selection {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 2px;
+    left: 2px;
+    width: 58px;
+    height: 22px;
+    background: #65bd63;
+    border-radius: 3px;
+    background-image: -webkit-linear-gradient(top, #9dd993, #65bd63);
+    background-image: -moz-linear-gradient(top, #9dd993, #65bd63);
+    background-image: -o-linear-gradient(top, #9dd993, #65bd63);
+    background-image: linear-gradient(to bottom, #9dd993, #65bd63);
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+    -webkit-transition: left 0.15s ease-out;
+    -moz-transition: left 0.15s ease-out;
+    -o-transition: left 0.15s ease-out;
+    transition: left 0.15s ease-out;
+  }
+
+// -- WORK CARDS
+
+  article.myWork{
+    width: 100%;
+
+    h2{
+      margin: 20px 20px 40px;
+      font-family: "Lato";
+      font-weight: normal;
+      line-height: 1.4em;
+      color: #475960;
+    }
+
+    div.card_ctn{
+      display: flex;
+      flex-wrap: wrap;
+      width: 95%;
+      margin: 0px auto;
+
+      div.single_card{
+        position: relative;
+        width: 23.5%;
+        margin: 0 2% 25px 0;
+        background-color: #043042;
+        border: 5px solid #043042;
+        border-radius: 2px;
+        overflow: hidden;
+        box-shadow: 2px 2px 3px rgba(0,0,0,0.28);
+        -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.28);
+
+        div.card_image{
+          width: 100%;
+          background-color: gray;
+          img{
+            display: block;
+            width: 100%;
+          }
+        }
+
+        div.card_meta{
+          position: relative;
+          font-size: 0.85em;
+          white-space: nowrap;
+          padding: 8px 10px;
+          background-color: #043042;
+          -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.25);
+          box-shadow: 0 0 2px rgba(0,0,0,0.25);
+          z-index: 3;
+        }
+      }
+      div.single_card:nth-child(4n){
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+//----- 9. ABOUT ME SECTION -----//
+section#aboutME{
+  width: 100%;
+  background-color: white;
+
+  article.myStory::before,
+  article.myStory::after{
+    content: "";
+    display: table;
+  }
+  article.myStory::before,
+  article.myStory::after{
+    clear: both;
+  }
+  article.myStory{
+    clear: both;
+    *zoom: 1;
+    padding: 60px 0px;
+
+    h2{
+      display: inline-block;
+      margin: 30px 30px 30px 5%;
+      font-size: 42px;
+      font-family: "Lato";
+      font-weight: normal;
+      line-height: 1.2em;
+      text-shadow: 1px 2px 2px rgba(0,0,0, .2);
+    }
+    p.elevatorPitch{
+      display: block;
+      width: 40%;
+      margin-left: 5%;
+      font-weight: lighter;
+      line-height: 1.4em;
+      font-size: 18px;
+    }
+    img{
+      width: 30%;
+      min-width: 230px;
+      margin-right: 5%;
+    }
+  }
+  article.mySkill{
+    width: 100%;
+    text-align: center;
+    h2{
+      padding: 20px 0px;
+      font-size: 52px;
+      font-weight: 600;
+      line-height: 1.2em;
+      font-family: "Nunito", "Lato", Helvetica;
+      text-shadow: 1px 2px 2px rgba(0,0,0, .2);
+    }
+    div.skillsMarquee{
+      width: inherit;
+      padding: 40px 0px;
+      border-top: 1px solid #B8BBC0;
+      background-color: whitesmoke;
+      ul.skillList{
+        line-height: 1.2em;
+        font-size: 48px;
+        font-family: "Lato", Helvetica, sans-serif;
+        font-weight: 900;
+        cursor: pointer;
+        color: #443D38;
+        li{
+          display: inline-block;
+          padding: 20px;
+          border-radius: 5px;
+          background-color: #777E82;
+          margin: 0px 1% 20px 0px;
+        }
+        li:nth-child(1){ background-color: #FFEB3B;}
+        li:nth-child(2){ background-color: #F78218;}
+        li:nth-child(3){ background-color: #069ACE;}
+        li:nth-child(4){ background-color: #F44336;}
+        li:nth-child(5){ background-color: #069ACE;}
+        li:nth-child(6){ background-color: #F78218;}
+      }
+      ul.skillList li:hover{ color: white; transition: .2s; }
+    }
+  }
+}
+
+//----- 10. PAGE FOOTER -----//
+footer#pageFooter{
+  width: 100%;
+  padding: 60px;
+  background-color: #363f45;
+  text-align: center;
+  h3{
+    padding: 20px 0px;
+    font-size: 28px;
+    line-height: 1.2em;
+    font-family: "Nunito", "Lato", Helvetica;
+    color: white;
+  }
+  ul{
+    padding: 20px 0px;
+    li{ display: inline; margin: 0px 1% 0px 0px; }
+    li:nth-child(4n){ margin-right: 0px; }
+  }
+  div.cta_btn{
+    margin: 20px 0px;
+  }
+}
+
+// -- SUB FOOTER COPYRIGHT
+div.subFooter{
+  width: 100%;
+  padding: 25px 0px;
+  background-color: #191D20;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-weight: 100;
+  font-size: 16px;
+  color: #7A8185;
+  span:hover{ color: white; transition: .1s; }
+}
+
+//----- 11. LOADER BOT SVG -----//
+.loader_ctn{
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+  overflow: hidden;
+  .loaderBot{
+    position: absolute;
+    width: 300px;
+    height: 330px;
+    top: 50%;
+    left: 50%;
+    margin-top: -165px;
+    margin-left: -150px;
+    .bot{
+      position: absolute;
+      animation: bounce 1.8s ease infinite;
+    }
+    .ring{
+      transform-origin: 180px 300px;
+      animation: floatEffect 1.8s linear infinite;
+    }
+    .ringLast{
+      opacity: 0;
+      transform-origin: 180px 300px;
+      animation: floatEffect 1.8s linear infinite;
+      animation-delay: .5s;
+    }
+    .shadow{
+      position: absolute;
+      bottom: 0px;
+      left: 102px;
+      width: 100px;
+      height: 16px;
+      background-color: #999;
+      opacity: .1;
+      border-radius: 100%;
+      animation: shrinkShadow 1.8s ease infinite;
+    }
+  }
+}
+
+//----- 12. CSS KEYFRAME ANIMATIONS -----//
+@keyframes fadeOut{
+  50%{opacity: 1;}
+  100%{opacity: 0;}
+}
+
+@keyframes greetThem{
+  0%{top: -100%; opacity: 1;}
+  30%{top: 0px; opacity: 1;}
+  50%{top: 0px; opacity: 1;}
+  70%{top: 0px; opacity: 1;}
+  80%{top: 0px; opacity: 0;}
+  100%{top: 0px; opacity: 0;}
+}
+
+@keyframes floatEffect{
+  0% {-webkit-transform: scale(1); opacity: 1;}
+  40%{ opacity: 1;}
+  50% {-webkit-transform: scale(0); opacity: 0;}
+  100% {-webkit-transform: scale(0); opacity: 0;}
+}
+
+@keyframes bounce{
+  0%{top: 0px}
+  50%{top: 15px}
+  100%{top: 0px}
+}
+
+@keyframes shrinkShadow{
+  0%{-webkit-transform: scale(1); opacity: 0.1;}
+  50%{-webkit-transform: scale(.5); opacity: 0.4;}
+  100%{-webkit-transform: scale(1); opacity: 0.1;}
+}
+
+@keyframes marquee {
+     0%{
+        transform: translateX(0%);
+     }
+     20%{
+        transform: translateX(0%);
+     }
+     40%{
+        transform: translateX(0%);
+     }
+     100%{
+         transform: translateX(-100%);
+     }
+}
+
+@keyframes marqueetwo {
+     0%{
+        transform: translateX(100%);
+     }
+     20%{
+        transform: translateX(100%);
+     }
+     40%{
+        transform: translateX(100%);
+     }
+     100%{
+         transform: translateX(0%);
+     }
+}
+
+//----- 13. MEDIA QUERIES -----//
+
+/* 4k HD */
+@media (min-width: 1200px){}
+
+/* tablet */
+@media only screen and (max-width: 800px){
+  header{
+    h1{
+      font-size: 22px;
+    }
+    nav{
+      font-size: 12px;
+    }
+  }
+
+  section#mainHero{
+    h1.greet_ms{
+      font-size: 3.4em;
+    }
+  }
+}
+
+/* phablet */
+@media only screen and (max-width: 600px){}
+
+/* mobile */
+@media only screen and (max-width: 400px){}

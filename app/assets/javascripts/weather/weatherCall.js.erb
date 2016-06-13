@@ -1,26 +1,26 @@
   // FUNCTION TO ACTIVEWEATHER ONLY ON CERTAIN CONDITIONS
-  function activeWeather(w){
-    if ( w.indexOf('Snow') > -1 ){
-      addWeather();
-    } else if ( w.indexOf('Rain') > -1 ){
-      addWeather();
-    } else if ( w.indexOf('Drizzle') > -1 ){
-      addWeather();
-    } else {
-      changeSky();
-    }
-  };
+  // function activeWeather(w){
+  //   if ( w.indexOf('Snow') > -1 ){
+  //     addWeather();
+  //   } else if ( w.indexOf('Rain') > -1 ){
+  //     addWeather();
+  //   } else if ( w.indexOf('Drizzle') > -1 ){
+  //     addWeather();
+  //   } else {
+  //     changeSky();
+  //   }
+  // };
 
 
   // AJAX CALL TO THE WEATHER CHANNEL API
-  $.ajax({
-    method: 'get',
-    url: 'http://api.wunderground.com/api/<%= ENV["WEATHER_KEY"] %>/forecast/q/IL/Chicago.json',
-    dataType: 'json',
-    success: function(data){
-      var options = data;
-      var weekcast = (options.forecast.simpleforecast.forecastday);
-      var weather = weekcast[0].conditions;
-      activeWeather(weather);
-    }
-  });
+  // $.ajax({
+  //   method: 'get',
+  //   url: 'http://api.wunderground.com/api/<%= ENV["WEATHER_KEY"] %>/forecast/q/IL/Chicago.json',
+  //   dataType: 'json',
+  //   success: function(data){
+  //     var options = data;
+  //     var weekcast = (options.forecast.simpleforecast.forecastday);
+  //     var weather = weekcast[0].conditions;
+  //     activeWeather(weather);
+  //   }
+  // });

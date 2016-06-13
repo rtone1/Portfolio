@@ -1,24 +1,24 @@
-// EMAIL AND BANNERS PAGE
-.containerEB{ width: 90%; position: relative; top: 120px; margin: 0px auto; }
-.containerEB h1{ font-family: Helvetica, Arial, sans-serif; line-height: 1.4em;
-   font-weight: 100; color: #444B52; border-bottom: 1px solid gray; }
-
-.containerEB article::before,
-.containerEB article::after{ content: ""; display: table; }
-.containerEB article::after{ clear: both; }
-.containerEB article{
-  clear: both;
-  zoom: 1;
-  overflow: auto;
-}
-
-.containerEB article{ background-color: #ecedf1; padding: 20px 20px 30px; text-align: right; }
-.containerEB article h2{ font-family: Helvetica, Arial, sans-serif; line-height: 1.2em;
-   font-weight: 400; color: #444B52; }
-.containerEB article .ctn_content{ width: 200px; height: 250px; float: left; background-color: #fff; text-align: left; border: 1px solid #D4D5D8; margin-left: 20px; cursor: pointer; }
-.containerEB article .ctn_content:nth-child(2){ margin-left: 0px; }
-
-div.ctn_content .headline{ width: 100%; background-color: #444B52; color: #fff; padding: 10px; box-sizing: border-box; }
-
-div.ctn_content .headline h3{ font-family: Helvetica, Arial, sans-serif; line-height: 1.2em;
-   font-weight: 100; font-size: 16px; }
+// // EMAIL AND BANNERS PAGE
+// .containerEB{ width: 90%; position: relative; top: 120px; margin: 0px auto; }
+// .containerEB h1{ font-family: Helvetica, Arial, sans-serif; line-height: 1.4em;
+//    font-weight: 100; color: #444B52; border-bottom: 1px solid gray; }
+//
+// .containerEB article::before,
+// .containerEB article::after{ content: ""; display: table; }
+// .containerEB article::after{ clear: both; }
+// .containerEB article{
+//   clear: both;
+//   zoom: 1;
+//   overflow: auto;
+// }
+//
+// .containerEB article{ background-color: #ecedf1; padding: 20px 20px 30px; text-align: right; }
+// .containerEB article h2{ font-family: Helvetica, Arial, sans-serif; line-height: 1.2em;
+//    font-weight: 400; color: #444B52; }
+// .containerEB article .ctn_content{ width: 200px; height: 250px; float: left; background-color: #fff; text-align: left; border: 1px solid #D4D5D8; margin-left: 20px; cursor: pointer; }
+// .containerEB article .ctn_content:nth-child(2){ margin-left: 0px; }
+//
+// div.ctn_content .headline{ width: 100%; background-color: #444B52; color: #fff; padding: 10px; box-sizing: border-box; }
+//
+// div.ctn_content .headline h3{ font-family: Helvetica, Arial, sans-serif; line-height: 1.2em;
+//    font-weight: 100; font-size: 16px; }

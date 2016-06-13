@@ -12,7 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require d3
-//= require d3.min
-//= require radialProgress
+//= require angular
 //= require_tree .
