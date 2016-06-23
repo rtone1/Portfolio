@@ -10,15 +10,16 @@ $(window).load(function(e){
     app.controller('PortfolioController', ['$scope', function($scope){
 
         // FUNCTION TO ANIMATE CLOUDS WHEN USER HOVERS
-        // $scope.letThemMove = function($event){
-        //     var x = $event.clientX;
-        //     var moveX = x / 100;
-        //     $('.cloud_foreFront').css({left: -moveX, transition: .2 + "s"});
-        //     $('.cloud_backGround').css({left: moveX, transition: .2 + "s"});
-        // };
+        $scope.letThemMove = function($event){
+            var x = $event.clientX;
+            var moveX = x / 100;
+            $('.cloud_foreFront').css({left: -moveX, transition: .2 + "s"});
+            $('.cloud_backGround').css({left: moveX, transition: .2 + "s"});
+        };
 
     }]); // END OF MAIN PORTFOLIO CONTROLLER
 
+    // CUSTOM DIRECTIVES
     app.directive("scroll", function ($window) {
         return function(scope, element, attrs) {
             angular.element($window).bind("scroll", function() {
@@ -34,6 +35,7 @@ $(window).load(function(e){
 
 
 
+  ///////// CODE NEED TO BE ANGULAR FRIENDLY
 
     var greetings = ['hola','ciao','hello'];
     var countGreet = 0;
@@ -52,6 +54,52 @@ $(window).load(function(e){
 
 
 
+
+  // FUNCTION TO DISPLAY X ON HAMICON
+  var addXMenu = function(){
+    $('.line1').addClass('top');
+    $('.line2').addClass('middle');
+    $('.line3').addClass('bottom');
+    $('.line1').removeClass('backMT');
+    $('.line2').removeClass('backM');
+    $('.line3').removeClass('backMB');
+  };
+
+  // FUNCTION TO REMOVE X ON HAMICON
+  var removeXMenu = function(){
+    $('.line1').addClass('backMT');
+    $('.line2').addClass('backM');
+    $('.line3').addClass('backMB');
+    $('.line1').removeClass('top');
+    $('.line2').removeClass('middle');
+    $('.line3').removeClass('bottom');
+  };
+
+  // FUNCTION TO REMOVE ALL ANIMATIONS ON HAMICON
+  var removeClasses = function(){
+    $('.line1').removeClass('backMT');
+    $('.line2').removeClass('backM');
+    $('.line3').removeClass('backMB');
+    $('.line1').removeClass('top');
+    $('.line2').removeClass('middle');
+    $('.line3').removeClass('bottom');
+  }
+
+  // FUNCTION TO DROP DOWN MENU
+  $.fn.dropDownMenu = function(counter){
+
+     $('.main_hamIcon').on('click', function(){
+      if (counter === 0 ){
+        addXMenu();
+        counter += 1;
+      } else{
+        removeXMenu();
+        counter -= 1;
+      }
+    });
+  };
+
+  var navDown = $.fn.dropDownMenu( 0 );
 
 })(); // END OF SELF CALL CLOSURE
 

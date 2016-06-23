@@ -39,7 +39,7 @@ summary {
   display: block;
 }
 
-a{ text-decoration: none; background-color: transparent; color: #fff; }
+a{ text-decoration: none; background-color: transparent; color: #ffffff; }
 
 a img{  border: none; outline: none; }
 img { border: 0; }
@@ -53,19 +53,56 @@ td,
 th { padding: 0; }
 
 //----- 2. STYLE VARIABLES -----//
+// -- colors
 $whiteSmoke: #F5F5F5;
-$heroBorder: #04425A;
-$mainHero_h1size: 6.4em;
+$white: #ffffff;
+$m_menuColor: #03394D;
+$m_weather: #009688;
+$defaultTextColor: #7B6F67;
+//-- header colors
+$headerColorGT: rgba( 12, 155, 206, 1 );
+$headerColorGB: rgba( 125, 185, 232, 0 );
+$headerTextColor: #C1E5F8;
+//-- hero colors
+$heroBorderColor: #04425A;
+//-- call to action colors
+$cta_btnColor: #C1272D;
+$cta_btnTextColor: #E6E5E5;
+//-- audio text colors
+$audioH2Color: #607D8B;
+$audioPColor: #ACA6A6;
+//-- work colors
+$workSectionColor: #03394D;
+$workBorderColor: #032634;
+$cardColor: #043042;
+$skillTextColor: #443D38;
+//-- footer colors
+$footerColor: #363f45;
+$subFooterColor: #191D20;
+$subFooterTextColor: #7A8185;
+//-- fonts
 $defaultFonts:  Helvetica, 'Arial', sans-serif;
-$mainHeroH1: "Lato";
-$fontType2: "Nunito";
+$defaultLineHeight: 1.4em;
+$mainHero_h1size: 6.4em;
+$fontLato: "Lato";
+$fontNunito: "Nunito";
 
 //----- 3. REPEATED STYLES -----//
 body{
-  color: #7B6F67;
-  line-height: 1.2em;
+  line-height: $defaultLineHeight;
   font-family: $defaultFonts;
+  color: $defaultTextColor;
   font-size: 16px;
+}
+div.content_wrapper{
+  display: none;
+  position: relative;
+  box-shadow: 2px 0px 30px rgba(0,0,0,.7);
+  z-index: 1000;
+}
+
+.mobile_nav{
+  display: none;
 }
 
 // -- CALL TO ACTION BTN
@@ -73,8 +110,8 @@ div.cta_btn{
   cursor: pointer;
   display: inline-block;
   text-transform: uppercase;
-  background-color: #C1272D;
-  color: #E6E5E5;
+  background-color: $cta_btnColor;
+  color: $cta_btnTextColor;
 }
 div.cta_btn:hover{ color: #fff; transition: .1s; }
 
@@ -107,46 +144,91 @@ div.cta_btn:hover{ color: #fff; transition: .1s; }
   filter: blur(2px);
 }
 
-div.content_wrapper{
-  display: none;
-}
-
 .solidHeader {
   font-size: 12px;
   background-color: rgba(12, 155, 206, 0.7);
   transition: .2s;
 }
 
-.smallH1{ font-size: 22xpx; transition: .2s; }
+.smallH1{ font-size: 22px; transition: .2s; }
 
-.small{
-  padding: 10px 0px;
-  transition: .2s;
+.small{ padding: 10px 0px; transition: .2s; }
+
+.right{ float: right; }
+
+.left{ float: left; }
+
+// -- Animation Classes
+.top{
+  animation: topRotate .6s forwards;
+  -webkit-animation-name: topRotate;
+  -webkit-animation-duration: .6s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: topRotate .6s forwards;
+  -ms-animation: topRotate .6s forwards;
+  -o-animation: topRotate .6s forwards;
 }
+.middle{
+  animation: fadeOut .2s forwards;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-duration: .2s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animtion: fadeOut .2s forwards;
+  -ms-animtion: fadeOut .2s forwards;
+  -o-animtion: fadeOut .2s forwards;
 
-.right{
-  float: right;
 }
+.bottom{
+  animation: bottomRotate .6s forwards;
+  -webkit-animation-name: bottomRotate;
+  -webkit-animation-duration: .6s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: bottomRotate .6s forwards;
+  -ms-animation: bottomRotate .6s forwards;
+  -o-animation: bottomRotate .6s forwards;
+}
+.backMT{
+  animation: menuTopStart .6s forwards;
+  -webkit-animation-name: menuTopStart;
+  -webkit-animation-duration: .6s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: menuTopStart .6s forwards;
+  -ms-animation: menuTopStart .6s forwards;
+  -o-animation: menuTopStart .6s forwards;
 
-.left{
-  float: left;
+}
+.backM{
+  animation: fadeIn 1s forwards;
+  -webkit-animation: fadeIn 1s forwards;
+  -moz-animation: fadeIn 1s forwards;
+  -ms-animation: fadeIn 1s forwards;
+  -o-animation: fadeIn 1s forwards;
+}
+.backMB{
+  animation: menuBottomStart .6s forwards;
+  -webkit-animation-name: menuBottomStart;
+  -webkit-animation-duration: .6s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: menuBottomStart .6s forwards;
+  -ms-animation: menuBottomStart .6s forwards;
+  -o-animation: menuBottomStart .6s forwards;
 }
 
 //----- 5. PAGE HEADER -----//
 header{
   position: fixed;
   width: 100%;
+  padding: 20px 0px;
   background-color: rgba(12, 155, 206, 0.5);
-  background: -webkit-linear-gradient(top, rgba(12, 155, 206,1) 0%,rgba(125,185,232,0) 100%);
-  background: -moz-linear-gradient(top, rgba(12, 155, 206,1) 0%, rgba(125,185,232,0) 100%);
-  background: linear-gradient(to bottom, rgba(12, 155, 206,1) 0%,rgba(125,185,232,0) 100%);
+  background: -webkit-linear-gradient(top, $headerColorGT 0%, $headerColorGB 100%);
+  background: -moz-linear-gradient(top, $headerColorGT 0%, $headerColorGB 100%);
+  background: linear-gradient(to bottom, $headerColorGT 0%, $headerColorGB 100%);
   z-index: 2000;
   h1{
     display: inline-block;
-    padding: 20px 0px;
     margin-left: 20px;
     font-weight: 100;
-    color: #C1E5F8;
+    color: $headerTextColor;
     float: left;
   }
   div.local_weather{
@@ -155,33 +237,43 @@ header{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    text-transform: capitalize;
+    text-align: center;
     font-family: "Lato";
-    color: #C1E5F8;
+    color: $headerTextColor;
+    span{
+      display: block;
+    }
+    span.forecast{
+      font-size: 10px;
+      display: none;
+    }
   }
   nav{
     float: right;
     display: inline-block;
-    margin-right: 10px;
-    padding: 20px 0px;
+    margin-right: 20px;
     text-transform: uppercase;
   }
   nav ul li{
     display: inline;
-    color: #C1E5F8;
     margin-right: 10px;
     cursor: pointer;
   }
-  nav ul li:hover, h1:hover{
+  nav ul li a{ color: $headerTextColor; }
+  nav ul li a:hover, h1:hover{
     transition: .2s;
-    color: white;
+    color: $white;
   }
+  .main_hamIcon{ display: none; }
 }
 
 //----- 6. MAIN HERO SECTION -----//
 section#mainHero{
   position: relative;
   width: 100%;
-  border-bottom: 20px solid $heroBorder;
+  border-bottom: 20px solid $heroBorderColor;
+  background-color: $m_menuColor;
   h1.greet_ms{
       position: absolute;
       overflow: hidden;
@@ -190,11 +282,11 @@ section#mainHero{
       left: 50%;
       transform: translate(-50%,-50%);
       font-size: $mainHero_h1size;
-      font-family: $mainHeroH1;
+      font-family: $fontLato;
       text-transform: uppercase;
       line-height: 1.2em;
       font-weight: 900;
-      color: #fff;
+      color: $white;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
       span.greet{
         position: relative;
@@ -202,6 +294,13 @@ section#mainHero{
       span.greet_int{
         position: relative;
         animation: fadeOut 5s linear forwards;
+        -webkit-animation-name: fadeOut;
+        -webkit-animation-duration: 5s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-fill-mode: forwards;
+        -moz-animation: fadeOut 5s linear forwards;
+        -ms-animation: fadeOut 5s linear forwards;
+        -o-animation: fadeOut 5s linear forwards;
       }
       span.greet_anime{
         position: absolute;
@@ -213,6 +312,13 @@ section#mainHero{
       }
       .animeGreet{
         animation: greetThem 5s linear infinite;
+        -webkit-animation-name: greetThem;
+        -webkit-animation-duration: 5s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-fill-mode: forwards;
+        -moz-animation: greetThem 5s linear forwards;
+        -ms-animation: greetThem 5s linear forwards;
+        -o-animation: greetThem 5s linear forwards;
       }
   }
 
@@ -222,7 +328,7 @@ section#mainHero{
       position: absolute;
       width: 100%;
       top: 12%;
-      div.cloud_foreFront, div.cloud_backGround{ position: relative; }
+      div.cloud_foreFront, div.cloud_backGround{ position: relative; width: 90%; margin: 0px auto; }
       div.cloud_foreFront img{
           position: relative;
           width: 8%;
@@ -236,7 +342,6 @@ section#mainHero{
       div.cloud_backGround img{
           position: relative;
           width: 6%;
-          transform: rotateY(180deg);
       }
       div.cloud_backGround img:nth-child(1){ left: 5%; top: 15px; }
       div.cloud_backGround img:nth-child(2){ left: 16%; }
@@ -263,22 +368,22 @@ section#ct_audio{
     text-align: center;
     h2{
       font-size: 3.4em;
-      line-height: 1.2em;
+      line-height: $defaultLineHeight;
       margin: 0px 0px 20px;
       text-transform: uppercase;;
-      color: #607D8B;
+      color: $audioH2Color;
     }
     p{
-      color: #9C9595;
+      color: $audioPColor;
     }
 }
 
-// -- AUDIO PLAYER STYLES
+// -- AUDIO PLAYER STYLES --stand along styles--
 
 div.playerContainer{
   position: relative;
   overflow: hidden;
-  width: 340px;
+  width: 300px;
   height: 370px;
   margin: 20px auto;
   background-color: gray;
@@ -288,7 +393,7 @@ div.playerContainer{
     width: inherit;
     height: 205px;
     background-color: #CCCCCC;
-    background: url('/defaultImage.jpg') no-repeat 0px 0px;
+    background: url('/defaultImage.jpg') no-repeat -15px 0px;
     background-size: cover;
     .hamIcon{
       position: absolute;
@@ -429,13 +534,13 @@ div.playerContainer{
       div#progressMeter{
         position: relative;
         display: inline-block;
-        width: 250px;
+        width: 220px;
         height: 10px;
         top: 10px;
         // left: 45px; THIS CAN BE DELETED AFTER I CHECK THE AUDIO JS
         #progressBar{
           position: relative;
-          width: 250px;
+          width: 220px;
           height: 1px;
           top: 5px;
           background-color: whitesmoke;
@@ -528,7 +633,7 @@ div.playerContainer{
       height: 70px;
       left: 25%;
       bottom: 30px;
-      .prev, .next{position: absolute; width: 56px; height: 56px; z-index: 1; cursor: pointer;}
+      .prev, .next{position: absolute; width: 50px; height: 50px; z-index: 1; cursor: pointer;}
       .prev{
         background: url("/back.png") no-repeat 0px 0px;
         background-size: contain;
@@ -542,9 +647,10 @@ div.playerContainer{
       }
       .play_pause{
         position: absolute;
-        width: 72px;
-        height: 72px;
-        left: 49px;
+        width: 70px;
+        height: 70px;
+        left: 50%;
+        transform: translate(-50%,0px);
         background: url("/play.png") no-repeat 0px 0px;
         background-size: contain;
         z-index: 3;
@@ -562,24 +668,24 @@ div.playerContainer{
 section#portfoliWork{
   width: 100%;
   padding-bottom: 40px;
-  background-color: #03394D;
+  background-color: $workSectionColor;
 
-  div.cto_container::before,
-  div.cto_container::after{
+  div.cta_container::before,
+  div.cta_container::after{
     content: "";
     display: table;
   }
 
-  div.cto_container::before,
-  div.cto_container::after{
+  div.cta_container::before,
+  div.cta_container::after{
     clear: both;
   }
 
-  div.cto_container{
+  div.cta_container{
     clear: both;
     *zoom: 1;
     width: 100%;
-    background-color: #032634;
+    background-color: $workBorderColor;
     padding: 10px 0px;
   }
 
@@ -686,8 +792,8 @@ section#portfoliWork{
         position: relative;
         width: 23.5%;
         margin: 0 2% 25px 0;
-        background-color: #043042;
-        border: 5px solid #043042;
+        background-color: $cardColor;
+        border: 5px solid $cardColor;
         border-radius: 2px;
         overflow: hidden;
         box-shadow: 2px 2px 3px rgba(0,0,0,0.28);
@@ -695,7 +801,7 @@ section#portfoliWork{
 
         div.card_image{
           width: 100%;
-          background-color: gray;
+          background-color: $whiteSmoke;
           img{
             display: block;
             width: 100%;
@@ -706,16 +812,13 @@ section#portfoliWork{
           position: relative;
           font-size: 0.85em;
           white-space: nowrap;
-          padding: 8px 10px;
-          background-color: #043042;
+          padding: 15px 10px;
+          background-color: $cardColor;
           -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.25);
           box-shadow: 0 0 2px rgba(0,0,0,0.25);
-          z-index: 3;
         }
       }
-      div.single_card:nth-child(4n){
-        margin-right: 0px;
-      }
+      div.single_card:nth-child(4n){ margin-right: 0px; }
     }
   }
 }
@@ -723,7 +826,7 @@ section#portfoliWork{
 //----- 9. ABOUT ME SECTION -----//
 section#aboutME{
   width: 100%;
-  background-color: white;
+  background-color: $white;
 
   article.myStory::before,
   article.myStory::after{
@@ -741,9 +844,9 @@ section#aboutME{
 
     h2{
       display: inline-block;
-      margin: 30px 30px 30px 5%;
-      font-size: 42px;
-      font-family: "Lato";
+      margin: 30px 30px 30px 10%;
+      font-size: 2.5em;
+      font-family: $fontLato;
       font-weight: normal;
       line-height: 1.2em;
       text-shadow: 1px 2px 2px rgba(0,0,0, .2);
@@ -751,7 +854,7 @@ section#aboutME{
     p.elevatorPitch{
       display: block;
       width: 40%;
-      margin-left: 5%;
+      margin-left: 10%;
       font-weight: lighter;
       line-height: 1.4em;
       font-size: 18px;
@@ -759,7 +862,7 @@ section#aboutME{
     img{
       width: 30%;
       min-width: 230px;
-      margin-right: 5%;
+      margin: 20px 10% 20px 0px;
     }
   }
   article.mySkill{
@@ -767,24 +870,24 @@ section#aboutME{
     text-align: center;
     h2{
       padding: 20px 0px;
-      font-size: 52px;
+      font-size: 3em;
       font-weight: 600;
       line-height: 1.2em;
-      font-family: "Nunito", "Lato", Helvetica;
+      font-family: $fontNunito, $fontLato, Helvetica;
       text-shadow: 1px 2px 2px rgba(0,0,0, .2);
     }
     div.skillsMarquee{
       width: inherit;
-      padding: 40px 0px;
+      padding: 60px 0px 40px;
       border-top: 1px solid #B8BBC0;
-      background-color: whitesmoke;
+      background-color: $whiteSmoke;
       ul.skillList{
         line-height: 1.2em;
         font-size: 48px;
-        font-family: "Lato", Helvetica, sans-serif;
+        font-family: $fontLato, Helvetica, sans-serif;
         font-weight: 900;
         cursor: pointer;
-        color: #443D38;
+        color: $skillTextColor;
         li{
           display: inline-block;
           padding: 20px;
@@ -799,7 +902,7 @@ section#aboutME{
         li:nth-child(5){ background-color: #069ACE;}
         li:nth-child(6){ background-color: #F78218;}
       }
-      ul.skillList li:hover{ color: white; transition: .2s; }
+      ul.skillList li:hover{ color: $white; transition: .2s; }
     }
   }
 }
@@ -808,18 +911,22 @@ section#aboutME{
 footer#pageFooter{
   width: 100%;
   padding: 60px;
-  background-color: #363f45;
+  background-color: $footerColor;
   text-align: center;
-  h3{
+  h2{
     padding: 20px 0px;
     font-size: 28px;
     line-height: 1.2em;
-    font-family: "Nunito", "Lato", Helvetica;
-    color: white;
+    font-family: $fontNunito, $fontLato, Helvetica;
+    color: $white;
   }
   ul{
     padding: 20px 0px;
-    li{ display: inline; margin: 0px 1% 0px 0px; }
+    li{
+      display: inline;
+      margin: 0px 1% 0px 0px;
+      img{ width: 100px; }
+     }
     li:nth-child(4n){ margin-right: 0px; }
   }
   div.cta_btn{
@@ -831,15 +938,16 @@ footer#pageFooter{
 div.subFooter{
   width: 100%;
   padding: 25px 0px;
-  background-color: #191D20;
+  background-color: $subFooterColor;
   text-align: center;
   font-family: Helvetica, sans-serif;
   letter-spacing: 1px;
   line-height: 20px;
   font-weight: 100;
   font-size: 16px;
-  color: #7A8185;
-  span:hover{ color: white; transition: .1s; }
+  color: $subFooterTextColor;
+  a{ color: $subFooterTextColor; }
+  a span:hover{ color: $white; transition: .1s; }
 }
 
 //----- 11. LOADER BOT SVG -----//
@@ -848,7 +956,7 @@ div.subFooter{
   top: 0px;
   bottom: 0px;
   width: 100%;
-  background-color: white;
+  background-color: $white;
   z-index: 1000;
   overflow: hidden;
   .loaderBot{
@@ -862,16 +970,38 @@ div.subFooter{
     .bot{
       position: absolute;
       animation: bounce 1.8s ease infinite;
+      -webkit-animation-name: bounce;
+      -webkit-animation-duration: 1.8s;
+      -webkit-animation-timing-function: ease;
+      -webkit-animation-fill-mode: forwards;
+      -moz-animation: bounce 1.8s ease forwards;
+      -ms-animation: bounce 1.8s ease forwards;
+      -o-animation: bounce 1.8s ease forwards;
     }
     .ring{
       transform-origin: 180px 300px;
       animation: floatEffect 1.8s linear infinite;
+      -webkit-animation-name: floatEffect;
+      -webkit-animation-duration: 1.8s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-fill-mode: infinite;
+      -moz-animation: floatEffect 1.8s linear infinite;
+      -ms-animation: floatEffect 1.8s linear infinite;
+      -o-animation: floatEffect 1.8s linear infinite;
     }
     .ringLast{
       opacity: 0;
       transform-origin: 180px 300px;
       animation: floatEffect 1.8s linear infinite;
       animation-delay: .5s;
+      -webkit-animation-name: floatEffect;
+      -webkit-animation-duration: 1.8s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-fill-mode: infinite;
+      -webkit-animation-delay: .5s;
+      -moz-animation: floatEffect 1.8s linear infinite;
+      -ms-animation: floatEffect 1.8s linear infinite;
+      -o-animation: floatEffect 1.8s linear infinite;
     }
     .shadow{
       position: absolute;
@@ -883,72 +1013,119 @@ div.subFooter{
       opacity: .1;
       border-radius: 100%;
       animation: shrinkShadow 1.8s ease infinite;
+      -webkit-animation-name: shrinkShadow;
+      -webkit-animation-duration: 1.8s;
+      -webkit-animation-timing-function: ease;
+      -webkit-animation-fill-mode: infinite;
+      -moz-animation: shrinkShadow 1.8s ease infinite;
+      -ms-animation: shrinkShadow 1.8s ease infinite;
+      -o-animation: shrinkShadow 1.8s ease infinite;
     }
   }
 }
 
 //----- 12. CSS KEYFRAME ANIMATIONS -----//
 @keyframes fadeOut{
-  50%{opacity: 1;}
-  100%{opacity: 0;}
+    50%{ opacity: 1; }
+    100%{ opacity: 0; }
+}
+@-webkit-keyframes fadeOut{
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
+
 @keyframes greetThem{
-  0%{top: -100%; opacity: 1;}
-  30%{top: 0px; opacity: 1;}
-  50%{top: 0px; opacity: 1;}
-  70%{top: 0px; opacity: 1;}
-  80%{top: 0px; opacity: 0;}
-  100%{top: 0px; opacity: 0;}
+    0%{ top: -100%; opacity: 1; }
+    30%{ top: 0px; opacity: 1; }
+    50%{ top: 0px; opacity: 1; }
+    70%{ top: 0px; opacity: 1; }
+    80%{ top: 0px; opacity: 0; }
+    100%{ top: 0px; opacity: 0; }
 }
 
 @keyframes floatEffect{
-  0% {-webkit-transform: scale(1); opacity: 1;}
-  40%{ opacity: 1;}
-  50% {-webkit-transform: scale(0); opacity: 0;}
-  100% {-webkit-transform: scale(0); opacity: 0;}
+    0% { -webkit-transform: scale(1); opacity: 1; }
+    40%{ opacity: 1; }
+    50% { -webkit-transform: scale(0); opacity: 0; }
+    100% { -webkit-transform: scale(0); opacity: 0; }
 }
 
 @keyframes bounce{
-  0%{top: 0px}
-  50%{top: 15px}
-  100%{top: 0px}
+    0%{ top: 0px }
+    50%{ top: 15px }
+    100%{ top: 0px }
 }
 
 @keyframes shrinkShadow{
-  0%{-webkit-transform: scale(1); opacity: 0.1;}
-  50%{-webkit-transform: scale(.5); opacity: 0.4;}
-  100%{-webkit-transform: scale(1); opacity: 0.1;}
+    0%{ -webkit-transform: scale(1); opacity: 0.1; }
+    50%{ -webkit-transform: scale(.5); opacity: 0.4; }
+    100%{ -webkit-transform: scale(1); opacity: 0.1; }
 }
 
 @keyframes marquee {
-     0%{
-        transform: translateX(0%);
-     }
-     20%{
-        transform: translateX(0%);
-     }
-     40%{
-        transform: translateX(0%);
-     }
-     100%{
-         transform: translateX(-100%);
-     }
+    0%{ transform: translateX(0%); }
+    20%{ transform: translateX(0%); }
+    40%{ transform: translateX(0%); }
+    100%{ transform: translateX(-100%); }
 }
 
 @keyframes marqueetwo {
-     0%{
-        transform: translateX(100%);
-     }
-     20%{
-        transform: translateX(100%);
-     }
-     40%{
-        transform: translateX(100%);
-     }
-     100%{
-         transform: translateX(0%);
-     }
+    0%{ transform: translateX(100%); }
+    20%{ transform: translateX(100%); }
+    40%{ transform: translateX(100%); }
+    100%{ transform: translateX(0%); }
+}
+
+@keyframes fadeIn{
+    0%{ opacity: 0; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-webkit-keyframes fadeIn{
+    0%{ opacity: 0; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes topRotate{
+    70%{ transform: translatey(7px); }
+    100%{ transform: translatey(7px) rotate(45deg); }
+}
+@-webkit-keyframes topRotate{
+    70%{ transform: translatey(14px); -webkit-transform: translatey(14px);}
+    100%{ transform: translatey(14px) rotate(45deg); -webkit-transform: translatey(14px) rotate(45deg);}
+}
+
+@keyframes bottomRotate{
+    70%{ transform: translatey(-7px); }
+    100%{ transform: translatey(-7px) rotate(-45deg); }
+}
+@-webkit-keyframes bottomRotate{
+    70%{ transform: translatey(-6px); -webkit-transform: translatey(-6px);}
+    100%{ transform: translatey(-6px) rotate(-45deg); -webkit-transform: translatey(-6px) rotate(-45deg);}
+}
+
+@keyframes menuTopStart{
+    0%{ transform: translatey(7px) rotate(-45deg); }
+    60%{ transform: translatey(7px) rotate(0deg); }
+    100%{ transform: translatey(0px) rotate(0deg); }
+}
+@-webkit-keyframes menuTopStart{
+    0%{ transform: translatey(14px) rotate(-45deg); -webkit-transform: translatey(14px) rotate(-45deg);}
+    60%{ transform: translatey(14px) rotate(0deg); -webkit-transform: translatey(14px) rotate(0deg);}
+    100%{ transform: translatey(0px) rotate(0deg); -webkit-transform: translatey(0px) rotate(0deg);}
+}
+
+@keyframes menuBottomStart{
+    0%{ transform: translatey(-7px) rotate(45deg); }
+    60%{ transform: translatey(-7px) rotate(0deg); }
+    100%{ transform: translatey(0px); }
+}
+@-webkit-keyframes menuBottomStart{
+    0%{ transform: translatey(-6px) rotate(45deg); -webkit-transform: translatey(-6px) rotate(45deg); }
+    60%{ transform: translatey(-6px) rotate(0deg); -webkit-transform: translatey(-6px) rotate(0deg); }
+    100%{ transform: translatey(0px); -webkit-transform: translatey(0px);}
 }
 
 //----- 13. MEDIA QUERIES -----//
@@ -972,10 +1149,271 @@ div.subFooter{
       font-size: 3.4em;
     }
   }
+
+  section#ct_audio{
+    h2{ font-size: 3em; }
+  }
+
+  section#portfoliWork{
+
+    article.myWork{
+
+      div.card_ctn{
+
+        div.single_card{
+          width: 32%;
+        }
+        div.single_card:nth-child(3n){ margin-right: 0px; }
+
+        div.single_card:nth-child(4n){ margin-right: 2%; }
+      }
+    }
+
+  }
+
+  section#aboutME{
+
+    article.myStory{
+      h2{
+        margin: 30px 30px 30px 5%;
+      }
+      p.elevatorPitch{
+        width: 50%;
+        margin-left: 5%;
+        font-size: 16px;
+      }
+      img{
+        margin-right: 5%;
+      }
+    }
+
+    article.mySkill{
+      h2{
+        font-size: 2.8em;
+      }
+      div.skillsMarquee{
+        ul.skillList{
+          font-size: 34px;
+          li{
+            padding: 15px;
+          }
+        }
+      }
+    }
+
+  }
+
+  footer#pageFooter{
+    h2{
+      font-size: 26px
+    }
+    ul.socialMedia{
+      img{
+        width: 90px;
+      }
+    }
+    div.large_btn{
+      padding: 15px 35px;
+      font-size: 24px;
+    }
+  }
 }
 
 /* phablet */
-@media only screen and (max-width: 600px){}
+@media only screen and (max-width: 600px){
+  header{
+    h1{
+      font-size: 22px;
+    }
+    nav, div.local_weather{ display: none; }
+    div.mobile_nav{
+      position: absolute;
+      nav{
+        font-size: 12px;
+      }
+    }
+
+    .main_hamIcon{
+      position: relative;
+      display: inline-block;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+    .line1,
+    .line2,
+    .line3{
+      width: 25px;
+      height: 3px;
+      margin-bottom: 4px;
+      border-radius: 10px;
+      background-color: #C1E5F8;
+    }
+    div.line3:nth-child(3){ margin-bottom: 0px; }
+  }
+
+  div.mobile_nav{
+    position: fixed;
+    display: block;
+    width: 300px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: $m_menuColor;
+    color: $white;
+    div.m_weather{
+      padding: 10px 20px;
+      font-family: $defaultFonts;
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 1em;
+      background-color: $m_weather;
+      box-shadow: inset 0px 0px 20px rgba(34, 87, 82, .5);
+      border-bottom: 1px solid #02364A;
+      text-shadow: 0px 0px 1px rgba(255,255,255, .2);
+      div.w_city{
+        display: inline-block;
+        span{ display: block; }
+        span.forecast{ font-weight: 100; font-size: 12px; margin-left: 5px; }
+      }
+      div.temp{
+        display: inline-block;
+        float: right;
+        font-size: 42px;
+        line-height: 1em;
+        font-family: $fontLato;
+      }
+    }
+    nav.m_navigation ul li,
+    nav.m_navigation a{
+      display: block;
+    }
+    nav.m_navigation ul li{
+      border-bottom: 1px solid #083547;
+      border-right: 10px solid #032634;
+    }
+    nav.m_navigation ul li:hover{
+      border-right: 10px solid #F78218;
+      transition: .5s;
+    }
+    nav.m_navigation a{
+      padding: 15px;
+      text-transform: uppercase;
+    }
+    nav.m_navigation a:hover{
+      position: relative;
+      left: 10px;
+      transition: .5s;
+    }
+
+  }
+
+  section#mainHero{
+    h1.greet_ms{
+      font-size: 2.6em;
+    }
+  }
+
+  section#ct_audio{
+    padding: 0px 0px 40px;
+    h2{
+      font-size: 2em;
+      padding: 20px 0px;
+      margin-bottom: 40px;
+      background-color: #043042;
+    }
+  }
+
+  section#portfoliWork{
+    div.cta_container{
+      div.cta_btn{ margin-left: 20px; }
+      div.switch{ margin-right: 20px; }
+    }
+    article.myWork{
+      div.card_ctn{
+        display: block;
+        flex-wrap: nowrap;
+        width: 90%;
+        div.single_card{ width: 100%; margin-right: 0px; }
+      }
+    }
+  }
+  // extra styles
+  .small_btn{
+    font-size: 16px;
+    padding: 10px 25px;
+  }
+
+  section#aboutME{
+    article.myStory{
+      text-align: center;
+      h2{ margin: 20px 0px 30px; display: block; }
+      img{
+        float: none;
+        margin: 0px 0px 20px;
+      }
+      p.elevatorPitch{ width: 90%; margin: 0px auto; }
+    }
+    article.mySkill{
+      div.skillsMarquee{
+        padding-top: 50px;
+        ul.skillList{
+          margin: 0px 10px;
+          li{ display: block; margin: 0px 0px 10px; }
+        }
+      }
+    }
+  }
+
+  footer#pageFooter{
+    padding: 60px 20px;
+    ul.socialMedia li{
+      img{ width: 80px; }
+    }
+  }
+
+}
 
 /* mobile */
-@media only screen and (max-width: 400px){}
+@media only screen and (max-width: 400px){
+
+  header{
+    h1{ font-size: 20px; }
+  }
+
+  section#mainHero{
+    height: 300px;
+    background: url('/citybackground.svg') -158px 0px no-repeat;
+    background-size: cover;
+    article.greetingView{
+      h1.greet_ms{
+        font-size: 2.2em;
+      }
+      img.citySkyline{ display: none; }
+    }
+
+  }
+
+  section#ct_audio h2 {
+    font-size: 1.8em;
+  }
+
+  .small_btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  footer#pageFooter{
+    padding: 40px 20px;
+    ul.socialMedia li{
+      display: block;
+      margin: 0px 0px 15px;
+      img{ width: 90px; }
+    }
+    div.cta_btn{
+      margin: 0px 0px 20px;
+    }
+  }
+
+  div.subFooter{ font-size: 14px; }
+
+}

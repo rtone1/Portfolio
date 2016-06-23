@@ -1,15 +1,40 @@
-<div class="content_wrapper">
+<!-- MOBILE MENU -->
+<div class="mobile_nav">
+  <div class="m_weather">
+    <div class="w_city">
+      <span>Chicago</span><span class="forecast">partly cloudy</span>
+    </div>
+    <div class="temp">
+      <span>85&deg; f</span>
+    </div>
+  </div>
+  <nav class="m_navigation">
+      <ul>
+        <li class="m_link"><a href="#contact_me">contact me</a></li>
+        <li class="m_link"><a href="#my_work">Work</a></li>
+        <li class="m_link"><a href="#about_me">About Me</a></li>
+      </ul>
+  </nav>
+</div>
+
+<div id="rodrigo_torres_portfolio" class="content_wrapper">
+
   <!-- DOCUMENT HEADER -->
-  <header scroll ng-class="{solidHeader:changeClass}">
-      <a href="#portfolio_top"><h1 ng-class="{small:changeClass, smallH1:changeClass}">Rodrigo Torres</h1></a>
-      <div class="local_weather">Chicago 55&deg; f</div>
-      <nav ng-class="{small:changeClass}">
-          <ul class="navigation">
-            <a href="#contact_me"><li class="navlink linkActive" >contact me</li></a>
-            <a href="#my_work"><li class="navlink" >Work</li></a>
-            <a href="#about_me"><li class="navlink" >About Me</li></a>
-          </ul>
-      </nav>
+  <header scroll ng-class="{small:changeClass, solidHeader:changeClass}">
+      <a href="#rodrigo_torres_portfolio"><h1 ng-class="{smallH1:changeClass}">Rodrigo Torres</h1></a>
+        <div class="local_weather"><span>Chicago 55&deg; f</span><span class="forecast">partly cloudy</span></div>
+        <nav>
+            <ul class="navigation">
+              <li class="navlink linkActive"><a href="#contact_me">contact me</a></li>
+              <li class="navlink"><a href="#my_work">Work</a></li>
+              <li class="navlink"><a href="#about_me">About Me</a></li>
+            </ul>
+        </nav>
+      <div class="main_hamIcon right">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+      </div>
   </header>
 
   <!-- MAIN HERO CITYVIEW SECTION -->
@@ -32,7 +57,7 @@
                 <img src="cloud.svg" alt="cloud illustration" />
             </div>
         </div>
-        <img class="citySkyline"src="citybackground.svg" alt="Illustration of Chicago's city skyline." />
+        <img class="citySkyline" src="citybackground.svg" alt="Illustration of Chicago's city skyline." />
         <div class="colorOverlay"></div>
     </article>
   </section>
@@ -46,9 +71,9 @@
           <audio id="audio" src="{{playList[0].song}}"></audio>
           <div class="imageDisplay">
               <div class="hamIcon" ng-click="showDetails()">
-                  <div class="top"></div>
-                  <div class="middle"></div>
-                  <div class="bottom"></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
               </div>
               <div class="shadow"></div>
           </div>
@@ -96,7 +121,7 @@
 
   <!-- MY WORK SECTION -->
   <section id="portfoliWork">
-    <div class="cto_container">
+    <div class="cta_container">
         <div class="cta_btn small_btn left">contact me</div>
         <div class="switch right">
             <input type="radio" class="switch-input" name="view" value="code" id="code" checked>
@@ -169,7 +194,7 @@
       <h2>Top Skills</h2>
       <div class="skillsMarquee">
         <ul class="skillList">
-            <li>JS</li>
+            <li>JS <div class=""></div> </li>
             <li>HTML</li>
             <li>CSS</li>
             <li>ROR</li>
@@ -182,16 +207,16 @@
 
   <!-- PAGE FOOTER -->
   <footer id="pageFooter">
-    <h3>CHECK ME OUT HERE</h3>
+    <h2>CHECK ME OUT HERE</h2>
     <ul class="socialMedia">
-        <li title="GitHub"><a href="https://github.com/rtone1"><img src="github_icon.gif" alt="" /></a></li>
-        <li title="Linkedin"><a href="https://www.linkedin.com/in/rodrigotorrescoronado"><img src="linkedin_icon.gif" alt="" /></a></li>
-        <li title="Instagram"><a href="https://www.instagram.com/rtdesigns84/"><img src="instagram_icon.gif" alt="" /></a></li>
-        <li title="Codepen"><a href="http://codepen.io/rtone1/"><img src="codepen_icon.gif" alt="" /></a></li>
+        <li title="GitHub"><a href="https://github.com/rtone1" target="_blank"><img src="github_icon.gif" alt="" /></a></li>
+        <li title="Linkedin"><a href="https://www.linkedin.com/in/rodrigotorrescoronado" target="_blank"><img src="linkedin_icon.gif" alt="" /></a></li>
+        <li title="Instagram"><a href="https://www.instagram.com/rtdesigns84/" target="_blank"><img src="instagram_icon.gif" alt="" /></a></li>
+        <li title="Codepen"><a href="http://codepen.io/rtone1/" target="_blank"><img src="codepen_icon.gif" alt="" /></a></li>
     </ul>
     <div class="cta_btn large_btn">contact me</div>
   </footer>
-  <div class="subFooter"><span>Rodrigo Torres</span> &copy;2016</div>
+  <div class="subFooter"><a href="#rodrigo_torres_portfolio"><span>Rodrigo Torres</span></a> &copy;2016</div>
 
 
 
