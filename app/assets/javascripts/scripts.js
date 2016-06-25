@@ -9,7 +9,7 @@ $(window).load(function(){
 ////-- CLOSURE FOR MAIN FUNCTIONS --//
 (function(){
 
-    var app = angular.module('portfolioApp', []);
+    var app = angular.module('ngAppportfolioApp', []);
 
     app.controller( 'ngAppPortfolioController', [ '$scope', function( $scope ){
         //-- SETTINGS
