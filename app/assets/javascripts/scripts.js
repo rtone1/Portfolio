@@ -9,9 +9,9 @@ $(window).load(function(){
 ////-- CLOSURE FOR MAIN FUNCTIONS --//
 (function(){
 
-    var app = angular.module('ngAppportfolioApp', []);
+    var app = angular.module('portfolioApp', []);
 
-    app.controller( 'ngAppPortfolioController', [ '$scope', function( $scope ){
+    app.controller( 'PortfolioController', [ '$scope', function( $scope ){
         //-- SETTINGS
         $scope.mobileMenu = false;
 
@@ -74,6 +74,7 @@ $(window).load(function(){
             });
         };
     });
+    scroll.$inject = ['$scope'];
     // MOVE CLOUDS AROUND ON MOUSEOVER EVENT
     app.directive("clouds", function () {
         return function(element) {
