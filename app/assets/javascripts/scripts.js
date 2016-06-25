@@ -9,7 +9,7 @@ $(window).load(function(){
 ////-- CLOSURE FOR MAIN FUNCTIONS --//
 (function(){
 
-    var app = angular.module('portfolioApp', []);
+    var app = angular.module('portfolioApp', ['portfolio-directives']);
 
     app.controller( 'PortfolioController', [ '$scope', function( $scope ){
         //-- SETTINGS
@@ -61,8 +61,9 @@ $(window).load(function(){
 
 
     ////-- CUSTOM DIRECTIVES BELOW --//
+    var appD = angular.module('portfolio-directives', []);
     // ADD AND REMOVE CLASSES IN HEARDER ON THE SCROLL EVENT
-    app.directive("scroll", function ($window) {
+    appD.directive("scroll", function ($window) {
         return function(scope, element, attrs) {
             angular.element($window).bind("scroll", function() {
               if (this.pageYOffset > 0) {
@@ -74,9 +75,10 @@ $(window).load(function(){
             });
         };
     });
-    scroll.$inject = ['$scope'];
+
+
     // MOVE CLOUDS AROUND ON MOUSEOVER EVENT
-    app.directive("clouds", function () {
+    appD.directive("clouds", function () {
         return function(element) {
             angular.element($('#mainHero')).bind("mouseover", function($event) {
               var x = $event.clientX;
