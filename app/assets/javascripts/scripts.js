@@ -9,7 +9,7 @@ $(window).load(function(){
 ////-- CLOSURE FOR MAIN FUNCTIONS --//
 (function(){
 
-    var app = angular.module('portfolioApp', []);
+    var app = angular.module('portfolioApp', ['pageDirectives']);
 
     app.controller( 'PortfolioController', [ '$scope', function( $scope ){
         //-- SETTINGS
@@ -61,6 +61,7 @@ $(window).load(function(){
 
 
     ////-- CUSTOM DIRECTIVES BELOW --//
+    app = angular.module('pageDirectives', []);
     // ADD AND REMOVE CLASSES IN HEARDER ON THE SCROLL EVENT
     app.directive("scroll", function ($window) {
         return function(scope, element, attrs) {
