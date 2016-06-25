@@ -62,19 +62,23 @@ $(window).load(function(){
 
     ////-- CUSTOM DIRECTIVES BELOW --//
     var appD = angular.module('portfolio-directives', []);
+
     // ADD AND REMOVE CLASSES IN HEARDER ON THE SCROLL EVENT
     appD.directive("scroll", function ($window) {
-        return function(scope, element, attrs) {
+        return function($scope, element, attrs) {
             angular.element($window).bind("scroll", function() {
               if (this.pageYOffset > 0) {
-                  scope.changeClass = true;
+                  $scope.changeClass = true;
               } else {
-                  scope.changeClass = false;
+                  $scope.changeClass = false;
               }
-                scope.$apply();
+                $scope.$apply();
             });
         };
     });
+
+
+
 
 
     // MOVE CLOUDS AROUND ON MOUSEOVER EVENT
