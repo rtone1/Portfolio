@@ -779,6 +779,7 @@ section#portfoliWork{
       font-family: "Lato";
       font-weight: normal;
       line-height: 1.4em;
+      text-transform: capitalize;;
       color: #475960;
     }
 
@@ -801,10 +802,12 @@ section#portfoliWork{
 
         div.card_image{
           width: 100%;
+          height: 170px;
           background-color: $whiteSmoke;
           img{
             display: block;
             width: 100%;
+            height: inherit;
           }
         }
 
@@ -1237,6 +1240,7 @@ div.subFooter{
       position: relative;
       display: inline-block;
       margin-right: 20px;
+      margin-top: 3px;
       cursor: pointer;
     }
     .line1,
@@ -1254,17 +1258,28 @@ div.subFooter{
   div.mobile_nav{
     position: fixed;
     display: block;
-    width: 300px;
+    width: 260px;
     top: 0px;
     bottom: 0px;
     right: 0px;
     background-color: $m_menuColor;
     color: $white;
+    div.m_weather::before,
+    div.m_weather::after{
+      content: "";
+      display: table;
+    }
+    div.m_weather::before,
+    div.m_weather::after{
+      clear: both;
+    }
     div.m_weather{
-      padding: 10px 20px;
+      clear: both;
+      *zoom: 1;
+      padding: 15px;
       font-family: $defaultFonts;
-      font-size: 24px;
-      font-weight: 300;
+      font-size: 20px;
+      font-weight: 100;
       line-height: 1em;
       background-color: $m_weather;
       box-shadow: inset 0px 0px 20px rgba(34, 87, 82, .5);
@@ -1272,13 +1287,14 @@ div.subFooter{
       text-shadow: 0px 0px 1px rgba(255,255,255, .2);
       div.w_city{
         display: inline-block;
+        text-transform: capitalize;
         span{ display: block; }
-        span.forecast{ font-weight: 100; font-size: 12px; margin-left: 5px; }
+        span.forecast{ font-weight: 100; font-size: 10px; }
       }
       div.temp{
         display: inline-block;
         float: right;
-        font-size: 42px;
+        font-size: 34px;
         line-height: 1em;
         font-family: $fontLato;
       }

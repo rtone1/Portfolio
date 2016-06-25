@@ -1,25 +1,67 @@
-$(window).load(function(e){
+//// LOADER FUNCTION
+$(window).load(function(){
     $('.loader_ctn').fadeOut(500);
     $('div.content_wrapper').css({display: 'block'});
 });
 
+
+
+////-- CLOSURE FOR MAIN FUNCTIONS --//
 (function(){
 
     var app = angular.module('portfolioApp', []);
 
-    app.controller('PortfolioController', ['$scope', function($scope){
+    app.controller( 'PortfolioController', [ '$scope', function( $scope ){
+        //-- SETTINGS
+        $scope.mobileMenu = false;
 
-        // FUNCTION TO ANIMATE CLOUDS WHEN USER HOVERS
-        $scope.letThemMove = function($event){
-            var x = $event.clientX;
-            var moveX = x / 100;
-            $('.cloud_foreFront').css({left: -moveX, transition: .2 + "s"});
-            $('.cloud_backGround').css({left: moveX, transition: .2 + "s"});
+        $scope.toggleMobile = function(){
+            if( $scope.mobileMenu == false ){
+                addXMenu();
+                $('.content_wrapper').animate({left: -260}, 200);
+                $scope.mobileMenu = true;
+            } else {
+                removeXMenu();
+                $('.content_wrapper').animate({left: 0}, 200);
+                $scope.mobileMenu = false
+            }
         };
+
+        $(window).on('resize', function(){
+            if( $(window).width() > 600 && $scope.mobileMenu == true){
+                removeAnimations();
+                $('.content_wrapper').css({left: 0});
+                $scope.mobileMenu = false
+            }
+        });
+
 
     }]); // END OF MAIN PORTFOLIO CONTROLLER
 
-    // CUSTOM DIRECTIVES
+    app.controller( 'PortfolioWork', [ '$http', '$scope', '$timeout', function( $http, $scope, $timeout ){
+        // SETTINGS
+        $scope.works
+        $scope.currentTab = 'code';
+
+        $scope.tabIsSet = function(checked){
+            return checked === $scope.currentTab;
+        };
+
+        // GET WORK DATA OBJECT
+        $timeout(function(){
+            $http.get('/api/my_work').success(function(data){
+                $scope.works = data;
+            });
+        }, 500);
+
+
+
+    }]); // END OF WORK CONTROLLER
+
+
+
+    ////-- CUSTOM DIRECTIVES BELOW --//
+    // ADD AND REMOVE CLASSES IN HEARDER ON THE SCROLL EVENT
     app.directive("scroll", function ($window) {
         return function(scope, element, attrs) {
             angular.element($window).bind("scroll", function() {
@@ -32,23 +74,39 @@ $(window).load(function(e){
             });
         };
     });
+    // MOVE CLOUDS AROUND ON MOUSEOVER EVENT
+    app.directive("clouds", function () {
+        return function(element) {
+            angular.element($('#mainHero')).bind("mouseover", function($event) {
+              var x = $event.clientX;
+              var moveX = x / 100;
+              $('.cloud_foreFront').css({left: -moveX, transition: .2 + "s"});
+              $('.cloud_backGround').css({left: moveX, transition: .2 + "s"});
+            });
+        };
+    });
+
+
+
+
+
 
 
 
   ///////// CODE NEED TO BE ANGULAR FRIENDLY
 
-    var greetings = ['hola','ciao','hello'];
-    var countGreet = 0;
-
-
-    function animeGreet(){
-        var txt = greetings[countGreet];
-        $('span.greet_anime').addClass('animeGreet');
-        $('span.greet_anime').empty();
-        $('span.greet_anime').append(txt);
-        countGreet++;
-        if (countGreet == greetings.length){ countGreet = 0; }
-    }
+    // var greetings = ['hola','ciao','hello'];
+    // var countGreet = 0;
+    //
+    //
+    // function animeGreet(){
+    //     var txt = greetings[countGreet];
+    //     $('span.greet_anime').addClass('animeGreet');
+    //     $('span.greet_anime').empty();
+    //     $('span.greet_anime').append(txt);
+    //     countGreet++;
+    //     if (countGreet == greetings.length){ countGreet = 0; }
+    // }
     // setInterval(animeGreet,5000);
 
 
@@ -76,7 +134,7 @@ $(window).load(function(e){
   };
 
   // FUNCTION TO REMOVE ALL ANIMATIONS ON HAMICON
-  var removeClasses = function(){
+  var removeAnimations = function(){
     $('.line1').removeClass('backMT');
     $('.line2').removeClass('backM');
     $('.line3').removeClass('backMB');
@@ -86,26 +144,26 @@ $(window).load(function(e){
   }
 
   // FUNCTION TO DROP DOWN MENU
-  $.fn.dropDownMenu = function(counter){
+  // $.fn.dropDownMenu = function(counter){
+  //
+  //    $('.main_hamIcon').on('click', function(){
+  //     if (counter === 0 ){
+  //       addXMenu();
+  //       counter += 1;
+  //     } else{
+  //       removeXMenu();
+  //       counter -= 1;
+  //     }
+  //   });
+  // };
 
-     $('.main_hamIcon').on('click', function(){
-      if (counter === 0 ){
-        addXMenu();
-        counter += 1;
-      } else{
-        removeXMenu();
-        counter -= 1;
-      }
-    });
-  };
-
-  var navDown = $.fn.dropDownMenu( 0 );
+  // var navDown = $.fn.dropDownMenu( 0 );
 
 })(); // END OF SELF CALL CLOSURE
 
+
+
 //=============================================================================//
-
-
 
 // var reader = new FileReader();
 // var dataToUpload = {};

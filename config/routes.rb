@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   # main page route =================================
   root 'creations#index'
   resource :messages
-  # work projects ===================================
-  get '/email_and_banners' => 'creations#work'
+
+
   # profile page routes =============================
   get '/profile' => 'users#profile'
   get '/messages' => 'messages#index'
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   delete '/message-delete/:id' => 'messages#destroy'
   delete '/creation-delete/:id' => 'users#destroy'
   # creations route for posting work ================
+  get '/api/my_work' => 'creations#workapi'
   post '/api/creations' => 'creations#createcreationapi'
   # session log-in and log-out routes ===============
   post '/session_log_in' => 'sessions#log_in_behavior'

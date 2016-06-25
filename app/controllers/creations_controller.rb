@@ -7,15 +7,17 @@ class CreationsController < ApplicationController
     @designs = designs.where(category: "design")
   end
 
+  def workapi
+    works = Creation.all
+    render json: works
+  end
+
   def createcreationapi
     authenticate!
     @create = Creation.create(creation_params)
     redirect_to "/profile"
   end
 
-  def work
-
-  end
 
   private
 
