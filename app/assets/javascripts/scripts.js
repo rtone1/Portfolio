@@ -64,9 +64,25 @@ $(window).load(function(){
     var appD = angular.module('portfolio-directives', []);
 
     // ADD AND REMOVE CLASSES IN HEARDER ON THE SCROLL EVENT
+    // appD.directive("scroll", function ($window) {
+    //     return function($scope, element, attrs) {
+    //         angular.element($window).bind("scroll", function() {
+    //           if (this.pageYOffset > 0) {
+    //               $scope.changeClass = true;
+    //           } else {
+    //               $scope.changeClass = false;
+    //           }
+    //             $scope.$apply();
+    //         });
+    //     };
+    // });
+
+
     appD.directive("scroll", function ($window) {
-        return function($scope, element, attrs) {
-            angular.element($window).bind("scroll", function() {
+      return {
+        restrict: 'A',
+        link: function($scope, element, attrs){
+          angular.element($window).bind("scroll", function() {
               if (this.pageYOffset > 0) {
                   $scope.changeClass = true;
               } else {
@@ -74,10 +90,9 @@ $(window).load(function(){
               }
                 $scope.$apply();
             });
-        };
+        }
+      }
     });
-
-
 
 
 
