@@ -11,7 +11,7 @@ $(window).load(function(){
 
     var app = angular.module('portfolioApp', ['portfolio-directives']);
 
-    app.controller( 'PortfolioController', [ '$scope', function( $scope ){
+    app.controller( 'PortfolioController', [ '$scope', '$window', function( $scope, $window ){
         //-- SETTINGS
         $scope.mobileMenu = false;
 
@@ -65,14 +65,14 @@ $(window).load(function(){
 
     // ADD AND REMOVE CLASSES IN HEARDER ON THE SCROLL EVENT
     appD.directive("scroll", function ($window) {
-        return function($scope, element, attrs) {
+        return function(scope, element, attrs) {
             angular.element($window).bind("scroll", function() {
               if (this.pageYOffset > 0) {
-                  $scope.changeClass = true;
+                  scope.changeClass = true;
               } else {
-                  $scope.changeClass = false;
+                  scope.changeClass = false;
               }
-                // $scope.$apply();
+                scope.$apply();
             });
         };
     });
