@@ -99,6 +99,7 @@ div.content_wrapper{
   position: relative;
   box-shadow: 2px 0px 30px rgba(0,0,0,.7);
   z-index: 1000;
+  overflow-y: scroll;
 }
 
 .mobile_nav{
@@ -1099,17 +1100,17 @@ div.subFooter{
     100%{ transform: translatey(7px) rotate(45deg); }
 }
 @-webkit-keyframes topRotate{
-    70%{ transform: translatey(14px); -webkit-transform: translatey(14px);}
-    100%{ transform: translatey(14px) rotate(45deg); -webkit-transform: translatey(14px) rotate(45deg);}
+    70%{ transform: translatey(7px); -webkit-transform: translatey(7px);}
+    100%{ transform: translatey(7px) rotate(45deg); -webkit-transform: translatey(7px) rotate(45deg);}
 }
 
 @keyframes bottomRotate{
-    70%{ transform: translatey(-7px); }
-    100%{ transform: translatey(-7px) rotate(-45deg); }
+    70%{ transform: translatey(-8px); }
+    100%{ transform: translatey(-8px) rotate(-45deg); }
 }
 @-webkit-keyframes bottomRotate{
-    70%{ transform: translatey(-6px); -webkit-transform: translatey(-6px);}
-    100%{ transform: translatey(-6px) rotate(-45deg); -webkit-transform: translatey(-6px) rotate(-45deg);}
+    70%{ transform: translatey(-8px); -webkit-transform: translatey(-8px);}
+    100%{ transform: translatey(-8px) rotate(-45deg); -webkit-transform: translatey(-8px) rotate(-45deg);}
 }
 
 @keyframes menuTopStart{
@@ -1260,7 +1261,6 @@ div.subFooter{
 
   div.mobile_nav{
     position: fixed;
-    display: block;
     width: 260px;
     top: 0px;
     bottom: 0px;

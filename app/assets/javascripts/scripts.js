@@ -15,19 +15,24 @@ $(window).load(function(){
         //-- SETTINGS
         $scope.mobileMenu = false;
 
-        $scope.toggleMobile = function(){
+        $scope.toggleMobile = function(){ // make this into a directive later
             if( $scope.mobileMenu == false ){
                 addXMenu();
+                $('.mobile_nav').css({display: 'block'});
                 $('.content_wrapper').animate({left: -260}, 200);
+                $('header').animate({left: -260}, 200);
                 $scope.mobileMenu = true;
             } else {
                 removeXMenu();
                 $('.content_wrapper').animate({left: 0}, 200);
+                $('header').animate({left: 0}, 200, function(){
+                  $('.mobile_nav').css({display: 'none'});
+                });
                 $scope.mobileMenu = false
             }
         };
 
-        $(window).on('resize', function(){
+        $(window).on('resize', function(){ // make this into a directive later
             if( $(window).width() > 600 && $scope.mobileMenu == true){
                 removeAnimations();
                 $('.content_wrapper').css({left: 0});
@@ -76,9 +81,6 @@ $(window).load(function(){
             });
         };
     }]);
-
-
-
 
 
     // MOVE CLOUDS AROUND ON MOUSEOVER EVENT
