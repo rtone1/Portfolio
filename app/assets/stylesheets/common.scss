@@ -113,7 +113,7 @@ div.cta_btn{
   background-color: $cta_btnColor;
   color: $cta_btnTextColor;
 }
-div.cta_btn:hover{ color: #fff; transition: .1s; }
+div.cta_btn:hover{ background-color: #AB2227 ; color: $white; transition: .1s; }
 
 .small_btn{
   font-size: 18px;
@@ -237,6 +237,7 @@ header{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
     text-transform: capitalize;
     text-align: center;
     font-family: "Lato";
@@ -281,6 +282,7 @@ section#mainHero{
       top: 50%;
       left: 50%;
       transform: translate(-50%,-50%);
+      -webkit-transform: translate(-50%,-50%);
       font-size: $mainHero_h1size;
       font-family: $fontLato;
       text-transform: uppercase;
@@ -650,7 +652,8 @@ div.playerContainer{
         width: 70px;
         height: 70px;
         left: 50%;
-        transform: translate(-50%,0px);
+        transform: translate(-50%, 0px);
+        -webkit-transform: translate(-50%, 0px);
         background: url("/play.png") no-repeat 0px 0px;
         background-size: contain;
         z-index: 3;
