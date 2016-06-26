@@ -135,9 +135,9 @@
     <article class="myWork">
       <h2>{{currentTab}}</h2>
 
-      <div class="card_ctn">
+      <div class="card_ctn" ng-show="tabIsSet('code')">
 
-        <div class="single_card" ng-repeat="index in works | filter : {category: 'code'} : true" ng-show="tabIsSet('code')">
+        <div class="single_card" ng-repeat="index in works | filter : {category: 'code'} : true">
             <div class="card_image">
                 <div class="cardOverlay"></div>
                 <img ng-src="{{index.image}}" alt="{{index.title}}" />
@@ -147,7 +147,11 @@
             </div>
         </div>
 
-        <div class="single_card" ng-repeat="index in works | filter : {category: 'design'} : true" ng-show="tabIsSet('design')">
+      </div>
+
+      <div class="card_ctn" ng-show="tabIsSet('design')">
+
+        <div class="single_card" ng-repeat="index in works | filter : {category: 'design'} : true">
             <div class="card_image">
                 <div class="cardOverlay"></div>
                 <img ng-src="{{index.image}}" alt="{{index.title}}" />
