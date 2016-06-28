@@ -987,6 +987,7 @@ div.subFooter{
     }
     .ring{
       transform-origin: 180px 300px;
+      -webkit-transform-origion: 180px 300px;
       animation: floatEffect 1.8s linear infinite;
       -webkit-animation-name: floatEffect;
       -webkit-animation-duration: 1.8s;
@@ -999,6 +1000,7 @@ div.subFooter{
     .ringLast{
       opacity: 0;
       transform-origin: 180px 300px;
+      -webkit-transform-origion: 180px 300px;
       animation: floatEffect 1.8s linear infinite;
       animation-delay: .5s;
       -webkit-animation-name: floatEffect;
