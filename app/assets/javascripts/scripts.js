@@ -1,8 +1,8 @@
 //// LOADER FUNCTION
-$(window).load(function(){
-    $('.loader_ctn').fadeOut(500);
-    $('div.content_wrapper').css({display: 'block'});
-});
+// $(window).load(function(){
+//     $('.loader_ctn').fadeOut(500);
+//     $('div.content_wrapper').css({display: 'block'});
+// });
 
 
 
@@ -153,20 +153,20 @@ $(window).load(function(){
   }
 
   // FUNCTION TO DROP DOWN MENU
-  // $.fn.dropDownMenu = function(counter){
-  //
-  //    $('.main_hamIcon').on('click', function(){
-  //     if (counter === 0 ){
-  //       addXMenu();
-  //       counter += 1;
-  //     } else{
-  //       removeXMenu();
-  //       counter -= 1;
-  //     }
-  //   });
-  // };
+  $.fn.dropDownMenu = function(counter){
 
-  // var navDown = $.fn.dropDownMenu( 0 );
+     $('.main_hamIcon').on('click', function(){
+      if (counter === 0 ){
+        addXMenu();
+        counter += 1;
+      } else{
+        removeXMenu();
+        counter -= 1;
+      }
+    });
+  };
+
+  var navDown = $.fn.dropDownMenu( 0 );
 
 })(); // END OF SELF CALL CLOSURE
 
