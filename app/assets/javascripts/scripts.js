@@ -15,20 +15,13 @@ $(window).load(function(){
         //-- SETTINGS
         $scope.mobileMenu = false;
 
-        $scope.toggleMobile = function(){ // make this into a directive later
-            if( $scope.mobileMenu == false ){
+        $scope.toggleMMenu = function(){ // make this into a directive later
+            if( !$scope.mobileMenu ){
                 addXMenu();
-                $('.mobile_nav').css({display: 'block'});
-                $('.content_wrapper').animate({left: -260}, 200);
-                $('header').animate({left: -260}, 200);
                 $scope.mobileMenu = true;
             } else {
                 removeXMenu();
-                $('.content_wrapper').animate({left: 0}, 200);
-                $('header').animate({left: 0}, 200, function(){
-                  $('.mobile_nav').css({display: 'none'});
-                });
-                $scope.mobileMenu = false
+                $scope.mobileMenu = false;
             }
         };
 
@@ -39,13 +32,12 @@ $(window).load(function(){
                 $scope.mobileMenu = false
             }
         });
-
-
     }]); // END OF MAIN PORTFOLIO CONTROLLER
+
 
     app.controller( 'PortfolioWork', [ '$http', '$scope', '$timeout', function( $http, $scope, $timeout ){
         // SETTINGS
-        $scope.works
+        $scope.works;
         $scope.currentTab = 'code';
 
         $scope.tabIsSet = function(checked){
@@ -58,9 +50,6 @@ $(window).load(function(){
                 $scope.works = data;
             });
         }, 500);
-
-
-
     }]); // END OF WORK CONTROLLER
 
 
@@ -102,21 +91,25 @@ $(window).load(function(){
 
 
 
+
+
+
+
   ///////// CODE NEED TO BE ANGULAR FRIENDLY
 
-    var greetings = ['hola','ciao','hello'];
-    var countGreet = 0;
-
-
-    function animeGreet(){
-        var txt = greetings[countGreet];
-        $('span.greet_anime').addClass('animeGreet');
-        $('span.greet_anime').empty();
-        $('span.greet_anime').append(txt);
-        countGreet++;
-        if (countGreet == greetings.length){ countGreet = 0; }
-    }
-    setInterval(animeGreet,5000);
+    // var greetings = ['hola','ciao','hello'];
+    // var countGreet = 0;
+    //
+    //
+    // function animeGreet(){
+    //     var txt = greetings[countGreet];
+    //     $('span.greet_anime').addClass('animeGreet');
+    //     $('span.greet_anime').empty();
+    //     $('span.greet_anime').append(txt);
+    //     countGreet++;
+    //     if (countGreet == greetings.length){ countGreet = 0; }
+    // }
+    // setInterval(animeGreet,5000);
 
 
 

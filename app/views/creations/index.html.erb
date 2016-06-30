@@ -1,5 +1,5 @@
 <!-- MOBILE MENU -->
-<div class="mobile_nav">
+<div class="mobile_nav" ng-class="{show:mobileMenu}">
   <div class="m_weather">
     <div class="w_city">
       <span>Chicago</span><span class="forecast">partly cloudy</span>
@@ -17,10 +17,10 @@
   </nav>
 </div>
 
-<div id="rodrigo_torres_portfolio" class="content_wrapper">
+<div id="rodrigo_torres_portfolio" class="content_wrapper" ng-class="{showMenu:mobileMenu}">
 
   <!-- DOCUMENT HEADER -->
-  <header scroll ng-class="{small:changeClass, solidHeader:changeClass}">
+  <header scroll ng-class="{small:changeClass, solidHeader:changeClass, showMenu:mobileMenu}">
       <a href="#rodrigo_torres_portfolio"><h1 ng-class="{smallH1:changeClass}">Rodrigo Torres</h1></a>
         <div class="local_weather"><span>Chicago 55&deg; f</span><span class="forecast">partly cloudy</span></div>
         <nav>
@@ -30,7 +30,7 @@
               <li class="navlink"><a href="#about_me">About Me</a></li>
             </ul>
         </nav>
-      <div class="main_hamIcon right" ng-click="toggleMobile(0)">
+      <div class="main_hamIcon right" ng-click="toggleMMenu()">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>

@@ -106,6 +106,7 @@ div.content_wrapper{
   display: none;
 }
 
+
 // -- CALL TO ACTION BTN
 div.cta_btn{
   cursor: pointer;
@@ -154,6 +155,9 @@ div.cta_btn:hover{ background-color: #AB2227 ; color: $white; transition: .1s; }
 .smallH1{ font-size: 22px; transition: .2s; }
 
 .small{ padding: 10px 0px; transition: .2s; }
+
+.showMenu{ animation: open .1s linear forwards; left: -260px; }
+.show{ display: block; }
 
 .right{ float: right; }
 
@@ -1055,6 +1059,12 @@ div.subFooter{
     100% { opacity: 1; }
 }
 
+@keyframes open{
+    0%{ left: 0px; }
+    100%{ left: -260px; }
+}
+
+
 
 @keyframes greetThem{
     0%{ top: -100%; opacity: 1; }
@@ -1233,7 +1243,7 @@ div.subFooter{
 
   footer#pageFooter{
     h2{
-      font-size: 26px
+      font-size: 24px
     }
     ul.socialMedia{
       img{
