@@ -10,7 +10,7 @@
   </div>
   <nav class="m_navigation">
       <ul>
-        <li class="m_link"><a href="#contact_me">contact me</a></li>
+        <li class="m_link"><a href="#contact_me" ng-click="toggleContact()">contact me</a></li>
         <li class="m_link"><a href="#my_work">Work</a></li>
         <li class="m_link"><a href="#about_me">About Me</a></li>
       </ul>
@@ -25,7 +25,7 @@
         <div class="local_weather"><span>Chicago 55&deg; f</span><span class="forecast">partly cloudy</span></div>
         <nav>
             <ul class="navigation">
-              <li class="navlink linkActive"><a href="#contact_me">contact me</a></li>
+              <li class="navlink linkActive"><a href="#contact_me" ng-click="toggleContact()">contact me</a></li>
               <li class="navlink"><a href="#my_work">Work</a></li>
               <li class="navlink"><a href="#about_me">About Me</a></li>
             </ul>
@@ -37,7 +37,7 @@
       </div>
   </header>
 
-  <!-- MAIN HERO CITYVIEW SECTION -->
+  <!-- MAIN HERO CITY VIEW SECTION -->
   <section id="mainHero" clouds>
     <article class="greetingView">
         <h1 class="greet_ms">
@@ -67,7 +67,7 @@
     <article class="greetingView">
         <h2>start with tunes</h2>
         <!-- AUDIO PLAYER -->
-        <div class="playerContainer unselectable ng-cloak" ng-mousemove="mouseMoving($event)" ng-mouseup="dragStop($event)">
+        <div class="playerContainer unselectable" ng-mousemove="mouseMoving($event)" ng-mouseup="dragStop($event)">
           <audio id="audio" src="{{playList[0].song}}"></audio>
           <div class="imageDisplay">
               <div class="hamIcon" ng-click="showDetails()">
@@ -122,7 +122,7 @@
   <!-- MY WORK SECTION -->
   <section id="portfoliWork" ng-controller="PortfolioWork">
     <div class="cta_container">
-        <div class="cta_btn small_btn left">contact me</div>
+        <div class="cta_btn small_btn left" ng-click="toggleContact()">contact me</div>
         <div class="switch right">
             <input type="radio" class="switch-input" name="view" ng-model="currentTab" value="code" id="code" checked>
             <label for="code" class="switch-label switch-label-off">Code</label>
@@ -201,13 +201,42 @@
         <li title="Instagram"><a href="https://www.instagram.com/rtdesigns84/" target="_blank"><img src="instagram_icon.gif" alt="" /></a></li>
         <li title="Codepen"><a href="http://codepen.io/rtone1/" target="_blank"><img src="codepen_icon.gif" alt="" /></a></li>
     </ul>
-    <div class="cta_btn large_btn">contact me</div>
+    <div class="cta_btn large_btn" ng-click="toggleContact()">contact me</div>
   </footer>
   <div class="subFooter"><a href="#rodrigo_torres_portfolio"><span>Rodrigo Torres</span></a> &copy;2016</div>
 
-
-
 </div> <!-- END OF CONTENT WRAPPER -->
+
+  <div class="contact_ctn" ng-class="{show:contact}">
+      <form class="contactForm" action="/api/message" method="post">
+        <%= token_tag %>
+
+        <fieldset>
+          <legend>lets build something <span>together</span></legend>
+              <label for="username" class="nameAlert">Name:</label>
+              <input class="username" type="text" name="message[name]" placeholder="name..." required>
+
+              <label for="email" class="emailAlert">Email:</label>
+              <input class="emailcheck" type="email" name="message[email]" placeholder="email..." required>
+
+              <label for="phone" >Phone:</label>
+              <input type="phone" name="message[phone]" placeholder="601.421.9462" maxlength="10">
+
+              <label for="phone" >what's on your mind?</label>
+              <textarea name="message[message]" maxlength="1000" placeholder="message..." required></textarea>
+
+              <input type="submit" value="Send" class="messageSub">
+        </fieldset>
+      </form>
+  </div>
+
+  <div class="blackOverlay" ng-class="{show:contact}" ng-click="toggleContact()"></div>
+
+
+
+
+
+
 
 
 <!-- OLD CODE BELOW -->

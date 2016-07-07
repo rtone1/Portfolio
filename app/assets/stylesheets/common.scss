@@ -130,6 +130,93 @@ div.cta_btn:hover{ background-color: #AB2227 ; color: $white; transition: .1s; }
 
 
 //----- 4. ACTIVATED STYLES -----//
+.solidHeader {
+  font-size: 12px;
+  background-color: rgba(12, 155, 206, 0.7);
+  transition: .2s;
+}
+
+// -- contact form
+div.contact_ctn{
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  padding: 30px 4%;
+  z-index: 2000;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: capitalize;
+  border-radius: 5px;
+  background-color: #F4EFEC;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
+  fieldset{ border: none; }
+  legend{
+    font-size: 18px;
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #607D8B;
+  }
+  span{ font-size: 24px; font-weight: 900; font-family: 'Shrikhand'; letter-spacing: 2px; }
+  span, label, input, textarea{ display: block; margin-bottom: 10px; }
+  label, input, textarea{ text-align: left; font-size: 16px; }
+  input, textarea{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 3px;
+    color: #808080;
+    border: solid 1px transparent;
+    background-color: #ECE7E4;
+  }
+  textarea{ resize: none; height: 110px; }
+  input:active,
+  input:focus,
+  textarea:active,
+  textarea:focus{
+  outline: 0;
+  border: 1px solid #EAE5E2;
+  background-color: white;
+  }
+  input:-webkit-autofill {
+      border: 1px solid #F4EFEC;
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+      -webkit-text-fill-color: gray !important;
+  }
+  input[type="submit"]{
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 0px;
+    letter-spacing: 1px;
+    font-size: 22px;
+    color: #128E5B;
+    background-color: #54E4A9;
+    border-bottom: 2px solid #3DA077;
+  }
+  input[type="submit"]:hover{
+    color: #F7FBF9;
+    background-color: #20CE87;
+    border-bottom: 2px solid #3DA077;
+    transition: all .5s;
+  }
+}
+
+div.blackOverlay{
+  position: fixed;
+  display: none;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  z-index: 1999;
+  background-color: #000000;
+  opacity: .5;
+}
+// -- end of contact form
+
 .unselectable{
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
@@ -146,21 +233,15 @@ div.cta_btn:hover{ background-color: #AB2227 ; color: $white; transition: .1s; }
   filter: blur(2px);
 }
 
-.solidHeader {
-  font-size: 12px;
-  background-color: rgba(12, 155, 206, 0.7);
-  transition: .2s;
-}
-
 .smallH1{ font-size: 22px; transition: .2s; }
-
 .small{ padding: 10px 0px; transition: .2s; }
 
 .showMenu{ animation: open .1s linear forwards; left: -260px; }
-.show{ display: block; }
+
+.show{ display: block !important; }
+.hide{ display: none !important; }
 
 .right{ float: right; }
-
 .left{ float: left; }
 
 // -- Animation Classes

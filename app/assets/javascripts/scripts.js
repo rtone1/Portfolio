@@ -6,6 +6,7 @@ $(window).load(function(){
 
 
 
+
 ////-- CLOSURE FOR MAIN FUNCTIONS --//
 (function(){
 
@@ -14,6 +15,7 @@ $(window).load(function(){
     app.controller( 'PortfolioController', [ '$scope',  function( $scope ){
         //-- SETTINGS
         $scope.mobileMenu = false;
+        $scope.contact = false;
 
         $scope.toggleMMenu = function(){ // make this into a directive later
             if( !$scope.mobileMenu ){
@@ -22,6 +24,14 @@ $(window).load(function(){
             } else {
                 removeXMenu();
                 $scope.mobileMenu = false;
+            }
+        };
+
+        $scope.toggleContact = function(){
+            if( !$scope.contact ){
+                $scope.contact = true;
+            } else {
+                $scope.contact= false;
             }
         };
 
@@ -66,7 +76,7 @@ $(window).load(function(){
               } else {
                   scope.changeClass = false;
               }
-                scope.$apply();
+                  scope.$apply();
             });
         };
     }]);
