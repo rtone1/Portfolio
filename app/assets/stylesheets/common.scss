@@ -147,6 +147,7 @@ div.contact_ctn{
   z-index: 2000;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
+  font-size: 16px;
   text-align: center;
   text-transform: capitalize;
   border-radius: 5px;
@@ -163,7 +164,7 @@ div.contact_ctn{
   }
   span{ font-size: 24px; font-weight: 900; font-family: 'Shrikhand'; letter-spacing: 2px; }
   span, label, input, textarea{ display: block; margin-bottom: 10px; }
-  label, input, textarea{ text-align: left; font-size: 16px; }
+  label, input, textarea{ text-align: left; }
   input, textarea{
     width: 100%;
     margin-bottom: 20px;
@@ -1546,5 +1547,16 @@ div.subFooter{
   }
 
   div.subFooter{ font-size: 14px; }
+
+  div.contact_ctn{
+    width: 90%;
+    font-size: 12px;
+    legend{
+      font-size: 16px;
+      margin-bottom: 10px;
+      span{ font-size: 20px; }
+    }
+    input[type="submit"]{ font-size: 18px; }
+  }
 
 }
