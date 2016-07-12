@@ -1553,12 +1553,16 @@ div.subFooter{
   div.contact_ctn{
     width: 90%;
     font-size: 12px;
+    padding: 25px 4%;
     legend{
       font-size: 16px;
       margin-bottom: 10px;
       span{ font-size: 20px; }
     }
-    input[type="submit"]{ font-size: 18px; }
+    label{ margin-bottom: 5px; }
+    input, textarea{ margin-bottom: 10px; }
+    textarea{ height: 90px; }
+    input[type="submit"]{ font-size: 16px; }
   }
 
 }
