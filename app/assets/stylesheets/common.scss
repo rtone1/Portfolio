@@ -173,6 +173,7 @@ div.contact_ctn{
     color: #808080;
     border: solid 1px transparent;
     background-color: #ECE7E4;
+    font-size: 14px;
     line-height: normal;
   }
   textarea{ resize: none; height: 110px; }
@@ -218,6 +219,7 @@ div.blackOverlay{
   background-color: #000000;
   opacity: .5;
 }
+
 // -- end of contact form
 
 .unselectable{
@@ -235,6 +237,8 @@ div.blackOverlay{
   -ms-filter: blur(2px);
   filter: blur(2px);
 }
+
+.noScroll{margin: 0; height: 100%; overflow: hidden}
 
 .smallH1{ font-size: 22px; transition: .2s; }
 .small{ padding: 10px 0px; transition: .2s; }
@@ -1560,7 +1564,7 @@ div.subFooter{
       span{ font-size: 20px; }
     }
     label{ margin-bottom: 5px; }
-    input, textarea{ margin-bottom: 10px; }
+    input, textarea{ margin-bottom: 10px; font-size: 10px; }
     textarea{ height: 90px; }
     input[type="submit"]{ font-size: 16px; }
   }
