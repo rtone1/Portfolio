@@ -173,6 +173,7 @@ div.contact_ctn{
     color: #808080;
     border: solid 1px transparent;
     background-color: #ECE7E4;
+    line-height: normal;
   }
   textarea{ resize: none; height: 110px; }
   input:active,
@@ -197,6 +198,7 @@ div.contact_ctn{
     color: #128E5B;
     background-color: #54E4A9;
     border-bottom: 2px solid #3DA077;
+    -webkit-appearance: none;
   }
   input[type="submit"]:hover{
     color: #F7FBF9;
