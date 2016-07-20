@@ -99,7 +99,6 @@ div.content_wrapper{
   position: relative;
   box-shadow: 2px 0px 30px rgba(0,0,0,.7);
   z-index: 1000;
-  overflow-y: scroll;
 }
 
 .mobile_nav{
@@ -140,7 +139,7 @@ div.cta_btn:hover{ background-color: #AB2227 ; color: $white; transition: .1s; }
 div.contact_ctn{
   position: fixed;
   display: none;
-  top: 50%;
+  top: -50%;
   left: 50%;
   width: 40%;
   padding: 30px 4%;
@@ -218,6 +217,10 @@ div.blackOverlay{
   z-index: 1999;
   background-color: #000000;
   opacity: .5;
+}
+
+.dropContact{
+  animation: dropDown .3s linear forwards;
 }
 
 // -- end of contact form
@@ -458,7 +461,7 @@ section#mainHero{
 //----- 7. AUDIO SECTION -----//
 section#ct_audio{
     width: 100%;
-    padding: 40px 0px;
+    padding: 60px 0px;
     background: $whiteSmoke;
     text-align: center;
     h2{
@@ -763,7 +766,7 @@ div.playerContainer{
 //----- 8. PORTFOLIO WORK SECTION -----//
 section#portfoliWork{
   width: 100%;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
   background-color: $workSectionColor;
 
   div.cta_container::before,
@@ -923,7 +926,7 @@ section#portfoliWork{
 }
 
 //----- 9. ABOUT ME SECTION -----//
-section#aboutME{
+section#about_me{
   width: 100%;
   background-color: $white;
 
@@ -1152,7 +1155,10 @@ div.subFooter{
     100%{ left: -260px; }
 }
 
-
+@keyframes dropDown{
+    0%{ top: 0px; opacity: 0; }
+    100%{ top: 50%; opacity: 1; }
+}
 
 @keyframes greetThem{
     0%{ top: -100%; opacity: 1; }
@@ -1297,7 +1303,7 @@ div.subFooter{
 
   }
 
-  section#aboutME{
+  section#about_me{
 
     article.myStory{
       h2{
@@ -1343,6 +1349,12 @@ div.subFooter{
       font-size: 24px;
     }
   }
+
+  div.contact_ctn{
+    width: 70%;
+    padding: 25px 4%;
+  }
+
 }
 
 /* phablet */
@@ -1481,7 +1493,7 @@ div.subFooter{
     padding: 10px 25px;
   }
 
-  section#aboutME{
+  section#about_me{
     article.myStory{
       text-align: center;
       h2{ margin: 20px 0px 30px; display: block; }
@@ -1507,6 +1519,11 @@ div.subFooter{
     ul.socialMedia li{
       img{ width: 80px; }
     }
+  }
+
+  div.contact_ctn{
+    width: 85%;
+    font-size: 12px;
   }
 
 }
@@ -1556,8 +1573,6 @@ div.subFooter{
 
   div.contact_ctn{
     width: 90%;
-    font-size: 12px;
-    padding: 25px 4%;
     legend{
       font-size: 16px;
       margin-bottom: 10px;
