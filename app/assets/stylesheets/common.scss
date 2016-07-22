@@ -221,10 +221,13 @@ div.blackOverlay{
 
 .dropContact{
   animation: dropDown .3s ease forwards;
-  animation-name: dropDown;
-  animation-duration: .3s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
+  -webkit-animation-name: dropDown;
+  -webkit-animation-duration: .3s ;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: dropDown .3s  ease forwards;
+  -ms-animation: dropDown .3s  ease forwards;
+  -o-animation: dropDown .3s  ease forwards;
 }
 
 // -- end of contact form
