@@ -220,7 +220,11 @@ div.blackOverlay{
 }
 
 .dropContact{
-  animation: dropDown .3s linear forwards;
+  animation: dropDown .3s ease forwards;
+  animation-name: dropDown;
+  animation-duration: .3s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
 }
 
 // -- end of contact form
@@ -1157,7 +1161,12 @@ div.subFooter{
 }
 
 @keyframes dropDown{
-    0%{ top: 0px; opacity: 0; }
+    0%{ top: -100px; opacity: 0; }
+    100%{ top: 50%; opacity: 1; }
+}
+
+@-webkit-keyframes dropDown{
+    0%{ top: -100px; opacity: 0; }
     100%{ top: 50%; opacity: 1; }
 }
 
