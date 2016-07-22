@@ -241,7 +241,8 @@ div.blackOverlay{
   filter: blur(2px);
 }
 
-.noScroll{margin: 0; height: 100%; overflow: hidden}
+// .noScroll{ margin: 0; height: 100%; overflow: hidden; }
+.noScroll{ overflow: hidden; position: relative; }
 
 .smallH1{ font-size: 22px; transition: .2s; }
 .small{ padding: 10px 0px; transition: .2s; }
