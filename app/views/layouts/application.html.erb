@@ -29,6 +29,12 @@
 
 
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      
+      <script type="text/javascript">
+      $('input, select, textarea').on('focus blur', function(event) {
+        $('meta[name=viewport]').attr('content', 'width=device-width,initial-scale=1,maximum-scale=' + (event.type == 'blur' ? 10 : 1));
+      });
+      </script>
 
 
   </body>
