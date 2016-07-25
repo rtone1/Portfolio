@@ -146,7 +146,7 @@ div.contact_ctn{
   z-index: 2000;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
   text-transform: capitalize;
   border-radius: 5px;
@@ -951,12 +951,12 @@ section#about_me{
     clear: both;
     *zoom: 1;
     padding: 60px 0px;
+    font-family: $fontLato;
 
     h2{
       display: inline-block;
       margin: 30px 30px 30px 10%;
       font-size: 2.5em;
-      font-family: $fontLato;
       font-weight: normal;
       line-height: 1.2em;
       text-shadow: 1px 2px 2px rgba(0,0,0, .2);

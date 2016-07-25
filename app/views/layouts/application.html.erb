@@ -6,7 +6,7 @@
   <meta name="description" content="Web Developer and Graphic Artist for hire. I develop web applications using HTML5, CSS3 and Javascript.">
   <meta name="keywords" content="Developer, Designer, web, web development, Graphics, Illustrations, Internet, Chicago, HTML, CSS, JavaScript, jquery, Ruby, Rails">
   <meta name="author" content="rtindesings">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Rodrigo Torres Portfolio. Web Developer and Designer living in Chicago</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,900,300' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
@@ -29,12 +29,6 @@
 
 
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-      
-      <script type="text/javascript">
-      $('input, select, textarea').on('focus blur', function(event) {
-        $('meta[name=viewport]').attr('content', 'width=device-width,initial-scale=1,maximum-scale=' + (event.type == 'blur' ? 10 : 1));
-      });
-      </script>
 
 
   </body>
