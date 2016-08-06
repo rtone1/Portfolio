@@ -17,7 +17,7 @@
   </nav>
 </div>
 
-<div id="rodrigo_torres_portfolio" windowSize class="content_wrapper" ng-class="{showMenu:mobileMenu}">
+<div id="rodrigo_torres_portfolio" windowSize class="content_wrapper ng-cloak" ng-class="{showMenu:mobileMenu}">
 
   <!-- DOCUMENT HEADER -->
   <header scroll ng-class="{small:changeClass, solidHeader:changeClass, showMenu:mobileMenu}">
@@ -168,6 +168,7 @@
 
   <!-- ABOUT ME SECTION -->
   <section id="about_me">
+    <h2 class="hide">A bit about me</h2>
 
     <article class="myStory">
       <h2>What can I say.</h2>
@@ -207,29 +208,47 @@
 
 </div> <!-- END OF CONTENT WRAPPER -->
 
-  <div class="contact_ctn" ng-class="{show:contact, dropContact:contact}">
-      <form class="contactForm" action="/api/message" method="post">
-        <%= token_tag %>
-        <fieldset>
-          <legend>lets build something <span>together</span></legend>
-              <label for="username" class="nameAlert">Name:</label>
-              <input class="username" type="text" name="message[name]" placeholder="name..." required>
 
-              <label for="email" class="emailAlert">Email:</label>
-              <input class="emailcheck" type="email" name="message[email]" placeholder="email..." required>
 
-              <label for="phone" >Phone:</label>
-              <input type="phone" name="message[phone]" placeholder="601.421.9462" maxlength="10">
+<div class="modal" ng-class="{show:contact}" ng-click="toggleContact()">
+  <div class="modal_box" ng-class="{dropContact:contact}">
+    <div class="contact_ctn" ng-class="{show:contact}" ng-click="$event.stopPropagation()" >
+        <form class="contactForm" action="/api/message" method="post" data-toggle="validator" role="form">
+          <%= token_tag %>
+          <fieldset>
+            <legend>lets build something <span>together</span></legend>
+              <div class="form-group">
+                  <label for="username" class="nameAlert">Name:</label>
+                  <input class="username form-control" type="text" name="message[name]" placeholder="name..." required>
+                  <div class="help-block with-errors"></div>
+              </div>
 
-              <label for="phone" >what's on your mind?</label>
-              <textarea name="message[message]" maxlength="1000" placeholder="message..." required></textarea>
+              <div class="form-group">
+                <label for="email" class="emailAlert">Email:</label>
+                <input class="emailcheck form-control" type="email" name="message[email]" placeholder="email..." data-error="Oops, that email address is invalid" required>
+                <div class="help-block with-errors"></div>
+              </div>
 
-              <input type="submit" value="Send" class="messageSub">
-        </fieldset>
-      </form>
+              <div class="form-group">
+                <label for="phone" >Phone:</label>
+                <input class="form-control" type="phone" name="message[phone]" placeholder="601.421.9462" maxlength="10" required>
+                <div class="help-block with-errors"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="phone" >what's on your mind?</label>
+                <textarea class="form-control" name="message[message]" maxlength="1000" placeholder="message..." required></textarea>
+                <div class="help-block with-errors"></div>
+              </div>
+
+                <input type="submit" value="Send" class="messageSub">
+          </fieldset>
+        </form>
+    </div>
   </div>
+</div>
 
-  <div class="blackOverlay" ng-class="{show:contact}" ng-click="toggleContact()"></div>
+
 
 
 

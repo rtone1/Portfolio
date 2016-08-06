@@ -26,6 +26,9 @@ gem 'uglifier', '>= 1.3.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+# Use bootstrap validator plugin
+gem 'bootstrap-validator-rails', '~> 0.5.3'
+
 # Use Angular as the JavaScript framework
 gem 'angularjs-rails', '~> 1.5'
 

@@ -1,7 +1,7 @@
 //// LOADER FUNCTION
 $(window).load(function(){
     $('.loader_ctn').fadeOut(500);
-    $('div.content_wrapper').css({display: 'block'});
+    // $('div.content_wrapper').css({display: 'block'}); // May be able to remove this and replace with ng-cloak
 });
 
 
@@ -43,6 +43,8 @@ $(window).load(function(){
 
               }
         });
+
+
 
         // $(window).on('resize', function(){ // make this into a directive later
         //     if( $(window).width() > 600 && $scope.mobileMenu == true){

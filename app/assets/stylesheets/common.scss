@@ -95,7 +95,7 @@ body{
   font-size: 16px;
 }
 div.content_wrapper{
-  display: none;
+  // display: none; // May be able to remove this and replace with ng-cloak
   position: relative;
   box-shadow: 2px 0px 30px rgba(0,0,0,.7);
   z-index: 1000;
@@ -135,103 +135,6 @@ div.cta_btn:hover{ background-color: #AB2227 ; color: $white; transition: .1s; }
   transition: .2s;
 }
 
-// -- contact form
-div.contact_ctn{
-  position: fixed;
-  display: none;
-  top: -50%;
-  left: 50%;
-  width: 40%;
-  padding: 30px 4%;
-  z-index: 2000;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  font-size: 14px;
-  text-align: center;
-  text-transform: capitalize;
-  border-radius: 5px;
-  background-color: #F4EFEC;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
-  fieldset{ border: none; }
-  legend{
-    font-size: 18px;
-    line-height: 1.4em;
-    margin-bottom: 20px;
-    display: inline-block;
-    text-transform: uppercase;
-    color: #607D8B;
-  }
-  span{ font-size: 24px; font-weight: 900; font-family: 'Shrikhand'; letter-spacing: 2px; }
-  span, label, input, textarea{ display: block; margin-bottom: 10px; }
-  label, input, textarea{ text-align: left; }
-  input, textarea{
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 5px;
-    border-radius: 3px;
-    color: #808080;
-    border: solid 1px transparent;
-    background-color: #ECE7E4;
-    font-size: 14px;
-    line-height: normal;
-  }
-  textarea{ resize: none; height: 110px; }
-  input:active,
-  input:focus,
-  textarea:active,
-  textarea:focus{
-  outline: 0;
-  border: 1px solid #EAE5E2;
-  background-color: white;
-  }
-  input:-webkit-autofill {
-      border: 1px solid #F4EFEC;
-      -webkit-box-shadow: 0 0 0px 1000px white inset;
-      -webkit-text-fill-color: gray !important;
-  }
-  input[type="submit"]{
-    text-align: center;
-    padding: 10px;
-    margin-bottom: 0px;
-    letter-spacing: 1px;
-    font-size: 22px;
-    color: #128E5B;
-    background-color: #54E4A9;
-    border-bottom: 2px solid #3DA077;
-    -webkit-appearance: none;
-  }
-  input[type="submit"]:hover{
-    color: #F7FBF9;
-    background-color: #20CE87;
-    border-bottom: 2px solid #3DA077;
-    transition: all .5s;
-  }
-}
-
-div.blackOverlay{
-  position: fixed;
-  display: none;
-  top: 0px;
-  bottom: 0px;
-  width: 100%;
-  z-index: 1999;
-  background-color: #000000;
-  opacity: .5;
-}
-
-.dropContact{
-  animation: dropDown .3s ease forwards;
-  -webkit-animation-name: dropDown;
-  -webkit-animation-duration: .3s ;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation: dropDown .3s  ease forwards;
-  -ms-animation: dropDown .3s  ease forwards;
-  -o-animation: dropDown .3s  ease forwards;
-}
-
-// -- end of contact form
-
 .unselectable{
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
@@ -248,8 +151,8 @@ div.blackOverlay{
   filter: blur(2px);
 }
 
+.ng-cloak{display: none !important;}
 .noScroll{ overflow: hidden; margin: 0px; padding: 0px; }
-
 
 .smallH1{ font-size: 22px; transition: .2s; }
 .small{ padding: 10px 0px; transition: .2s; }
@@ -261,6 +164,12 @@ div.blackOverlay{
 
 .right{ float: right; }
 .left{ float: left; }
+
+div.form-group.has-error input,
+div.form-group.has-error textarea{
+    border-color: #ff5722;
+}
+div.help-block ul{ list-style-type: none; color: #ff5722; }
 
 // -- Animation Classes
 .top{
@@ -317,6 +226,119 @@ div.blackOverlay{
   -ms-animation: menuBottomStart .6s forwards;
   -o-animation: menuBottomStart .6s forwards;
 }
+
+// -- contact form ** CLEAN MODAL CODE FOR FUTURE USE AND ELIMINATE UNUSABLE CODE
+.modal{
+  position: fixed;
+  display: none;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  z-index: 2000;
+}
+div.modal_box{
+  position: relative;
+  transform: translate(0,0);
+  -webkit-transform: translate(0,0);
+}
+
+div.contact_ctn{
+  width: 90%;
+  max-width: 600px;
+  padding: 30px 4%;
+  margin: 0px auto;
+  font-size: 14px;
+  text-align: center;
+  text-transform: capitalize;
+  border-radius: 5px;
+  background-color: #f9f6f5;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
+  fieldset{ border: none; }
+  legend{
+    font-size: 18px;
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #607D8B;
+    span{ font-size: 24px; font-weight: 900; font-family: 'Shrikhand'; letter-spacing: 2px; margin-top: 5px; }
+  }
+  span, label, input, textarea{ display: block; }
+  label{ margin: 15px 0px 10px; }
+  label, input, textarea{ text-align: left; }
+  input, textarea{
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    color: #808080;
+    border: solid 1px transparent;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    background-color: #f5f0ee;
+    font-size: 14px;
+    line-height: normal;
+  }
+  textarea{ resize: none; height: 110px; }
+  input:active,
+  input:focus,
+  textarea:active,
+  textarea:focus{
+  outline: 0;
+  border: 1px solid #EAE5E2;
+  background-color: white;
+  }
+  input:-webkit-autofill {
+      border: 1px solid #F4EFEC;
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+      -webkit-text-fill-color: gray !important;
+  }
+  input[type="submit"]{
+    text-align: center;
+    padding: 10px;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    letter-spacing: 1px;
+    font-size: 22px;
+    color: #128E5B;
+    background-color: #54E4A9;
+    border-bottom: 2px solid #3DA077;
+    -webkit-appearance: none;
+  }
+  input[type="submit"]:hover{
+    color: #F7FBF9;
+    background-color: #20CE87;
+    border-bottom: 2px solid #3DA077;
+    transition: all .5s;
+  }
+}
+
+.dropContact{
+  animation: dropDown .3s ease forwards;
+  -webkit-animation-name: dropDown;
+  -webkit-animation-duration: .3s ;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: dropDown .3s  ease forwards;
+  -ms-animation: dropDown .3s  ease forwards;
+  -o-animation: dropDown .3s  ease forwards;
+}
+
+.upContact{
+  animation: comeUp .3s ease forwards;
+  -webkit-animation-name: comeUp;
+  -webkit-animation-duration: .3s ;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: comeUp;
+  -moz-animation: comeUp .3s  ease forwards;
+  -ms-animation: comeUp .3s  ease forwards;
+  -o-animation: comeUp .3s  ease forwards;
+}
+
+// -- end of contact form
 
 //----- 5. PAGE HEADER -----//
 header{
@@ -1164,14 +1186,25 @@ div.subFooter{
 }
 
 @keyframes dropDown{
-    0%{ top: -100px; opacity: 0; }
-    100%{ top: 50%; opacity: 1; }
+    0%{ transform: translate(0,-100px); opacity: 0; }
+    100%{ transform: translate(0,20px); opacity: 1; }
 }
 
-@-webkit-keyframes dropDown{
-    0%{ top: -100px; opacity: 0; }
-    100%{ top: 50%; opacity: 1; }
+// @-webkit-keyframes dropDown{
+//     0%{ top: -100px; opacity: 0; }
+//     100%{ top: 50%; opacity: 1; }
+// }
+
+@keyframes comeUp{
+    0%{ top: 50%; opacity: 1; }
+    100%{ top: -100%; opacity: 0; }
 }
+
+@-webkit-keyframes comeUp{
+    0%{ top: 50%; opacity: 1; }
+    100%{ top: -100%; opacity: 0; }
+}
+
 
 @keyframes greetThem{
     0%{ top: -100%; opacity: 1; }
