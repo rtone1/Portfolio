@@ -249,7 +249,7 @@ div.contact_ctn{
   width: 90%;
   max-width: 600px;
   padding: 30px 4%;
-  margin: 0px auto;
+  margin: 25px auto;
   font-size: 14px;
   text-align: center;
   text-transform: capitalize;
@@ -1187,13 +1187,13 @@ div.subFooter{
 
 @keyframes dropDown{
     0%{ transform: translate(0,-100px); opacity: 0; }
-    100%{ transform: translate(0,20px); opacity: 1; }
+    100%{ transform: translate(0,0px); opacity: 1; }
 }
 
-// @-webkit-keyframes dropDown{
-//     0%{ top: -100px; opacity: 0; }
-//     100%{ top: 50%; opacity: 1; }
-// }
+@-webkit-keyframes dropDown{
+    0%{ -webkit-transform: translate(0,-100px); opacity: 0; }
+    100%{ -webkit-transform: translate(0,0px); opacity: 1; }
+}
 
 @keyframes comeUp{
     0%{ top: 50%; opacity: 1; }
