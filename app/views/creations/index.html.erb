@@ -210,9 +210,9 @@
 
 
 
-<div class="modal" ng-class="{show:contact}" ng-click="toggleContact()">
-  <div class="modal_box" ng-class="{dropContact:contact}">
-    <div class="contact_ctn" ng-class="{show:contact}" ng-click="$event.stopPropagation()" >
+<div class="modal" ng-class="{fadeIn:showContact, fadeOut:hideContact}" ng-click="toggleContact()">
+  <div class="modal_box" ng-class="{dropContact:showContact, upContact:hideContact}">
+    <div class="contact_ctn" ng-click="$event.stopPropagation()" >
         <form class="contactForm" action="/api/message" method="post" data-toggle="validator" role="form">
           <%= token_tag %>
           <fieldset>

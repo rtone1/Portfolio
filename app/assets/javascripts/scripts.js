@@ -16,6 +16,8 @@ $(window).load(function(){
         //-- SETTINGS
         $scope.mobileMenu = false;
         $scope.contact = false;
+        $scope.showContact = false;
+        $scope.hideContact = false;
 
         $scope.toggleMMenu = function(){ // make this into a directive later
             if( !$scope.mobileMenu ){
@@ -28,10 +30,14 @@ $(window).load(function(){
         };
 
         $scope.toggleContact = function(){
-            if( !$scope.contact ){
+            if( !$scope.contact){
                 $scope.contact = true;
+                $scope.showContact = true;
+                $scope.hideContact= false;
             } else {
-                $scope.contact= false;
+                $scope.contact = false;
+                $scope.hideContact= true;
+                $scope.showContact = false;
             }
         };
 

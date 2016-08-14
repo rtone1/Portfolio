@@ -230,7 +230,8 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
 // -- contact form ** CLEAN MODAL CODE FOR FUTURE USE AND ELIMINATE UNUSABLE CODE
 .modal{
   position: fixed;
-  display: none;
+  // display: none;
+  opacity: 0;
   overflow-y: auto;
   top: 0;
   left: 0;
@@ -305,15 +306,37 @@ div.contact_ctn{
     font-size: 22px;
     color: #128E5B;
     background-color: #54E4A9;
-    border-bottom: 2px solid #3DA077;
+    border-bottom: 2px solid #20CE87;
     -webkit-appearance: none;
   }
   input[type="submit"]:hover{
     color: #F7FBF9;
     background-color: #20CE87;
-    border-bottom: 2px solid #3DA077;
+    border-bottom: 2px solid #20CE87;
     transition: all .5s;
   }
+}
+
+.fadeIn{
+  animation: fadeIn .3s ease forwards;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: .3s ;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: fadeIn .3s  ease forwards;
+  -ms-animation: fadeIn .3s  ease forwards;
+  -o-animation: fadeIn .3s  ease forwards;
+}
+
+.fadeOut{
+  animation: fadeOut .3s ease forwards;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-duration: .3s ;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: fadeOut .3s  ease forwards;
+  -ms-animation: fadeOut .3s  ease forwards;
+  -o-animation: fadeOut .3s  ease forwards;
 }
 
 .dropContact{
@@ -1185,24 +1208,45 @@ div.subFooter{
     100%{ left: -260px; }
 }
 
+@keyframes fadeIn{
+    0%{ opacity: 0; }
+    50%{ opacity: 1; }
+    100%{ opacity: 1; }
+}
+@-webkit-keyframes fadeIn{
+    0%{ opacity: 0; }
+    50%{ opacity: 1; }
+    100%{ opacity: 1; }
+}
+@keyframes fadeOut{
+    0%{ opacity: 1; }
+    50%{ opacity: 1; }
+    100%{ opacity: 0; }
+}
+@-webkit-keyframes fadeOut{
+    0%{ opacity: 1; }
+    50%{ opacity: 1; }
+    100%{ opacity: 0; }
+}
+
 @keyframes dropDown{
     0%{ transform: translate(0,-100px); opacity: 0; }
-    100%{ transform: translate(0,0px); opacity: 1; }
+    100%{ transform: translate(0,25px); opacity: 1; }
 }
 
 @-webkit-keyframes dropDown{
     0%{ -webkit-transform: translate(0,-100px); opacity: 0; }
-    100%{ -webkit-transform: translate(0,0px); opacity: 1; }
+    100%{ -webkit-transform: translate(0,25px); opacity: 1; }
 }
 
 @keyframes comeUp{
-    0%{ top: 50%; opacity: 1; }
-    100%{ top: -100%; opacity: 0; }
+    0%{ transform: translate(0, 25px); opacity: 1; }
+    100%{ transform: translate(0,-100px); opacity: 0; }
 }
 
 @-webkit-keyframes comeUp{
-    0%{ top: 50%; opacity: 1; }
-    100%{ top: -100%; opacity: 0; }
+    0%{ -webkit-transform: translate(0, 25px); opacity: 1; }
+    100%{ -webkit-transform: translate(0,-100px); opacity: 0; }
 }
 
 
