@@ -10,14 +10,13 @@ $(window).load(function(){
 ////-- CLOSURE FOR MAIN FUNCTIONS --//
 (function(){
 
-    var app = angular.module('portfolioApp', ['portfolio-directives']);
+    var app = angular.module('portfolioApp', ['ngAnimate','portfolio-directives']);
 
     app.controller( 'PortfolioController', [ '$scope', '$window', function( $scope, $window ){
         //-- SETTINGS
         $scope.mobileMenu = false;
         $scope.contact = false;
-        $scope.showContact = false;
-        $scope.hideContact = false;
+
 
         $scope.toggleMMenu = function(){ // make this into a directive later
             if( !$scope.mobileMenu ){
@@ -32,12 +31,8 @@ $(window).load(function(){
         $scope.toggleContact = function(){
             if( !$scope.contact){
                 $scope.contact = true;
-                $scope.showContact = true;
-                $scope.hideContact= false;
             } else {
                 $scope.contact = false;
-                $scope.hideContact= true;
-                $scope.showContact = false;
             }
         };
 
@@ -52,13 +47,6 @@ $(window).load(function(){
 
 
 
-        // $(window).on('resize', function(){ // make this into a directive later
-        //     if( $(window).width() > 600 && $scope.mobileMenu == true){
-        //         removeAnimations();
-        //         $scope.mobileMenu = false;
-        //         console.log($scope.mobileMenu);
-        //     }
-        // });
     }]); // END OF MAIN PORTFOLIO CONTROLLER
 
 

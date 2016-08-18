@@ -101,10 +101,7 @@ div.content_wrapper{
   z-index: 1000;
 }
 
-.mobile_nav{
-  display: none;
-}
-
+.mobile_nav{ display: none; }
 
 // -- CALL TO ACTION BTN
 div.cta_btn{
@@ -126,7 +123,6 @@ div.cta_btn:hover{ background-color: #AB2227 ; color: $white; transition: .1s; }
   font-size: 26px;
   font-weight: 400;
 }
-
 
 //----- 4. ACTIVATED STYLES -----//
 .solidHeader {
@@ -172,6 +168,15 @@ div.form-group.has-error textarea{
 div.help-block ul{ list-style-type: none; color: #ff5722; }
 
 // -- Animation Classes
+.fade{
+  transition: all linear 0.5s;
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: all linear 0.5s;
+  -ms-transition: all linear 0.5s;
+  -o-transition: all linear 0.5s;
+}
+.fade.ng-hide{ opacity: 0; }
+
 .top{
   animation: topRotate .6s forwards;
   -webkit-animation-name: topRotate;
@@ -227,37 +232,83 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
   -o-animation: menuBottomStart .6s forwards;
 }
 
-// -- contact form ** CLEAN MODAL CODE FOR FUTURE USE AND ELIMINATE UNUSABLE CODE
-.modal{
-  position: fixed;
-  opacity: 0;
-  overflow-y: auto;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,.5);
-  z-index: 2000;
-}
-div.modal_box{
-  position: absolute;
-  width: 90%;
-  max-width: 600px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
+.fadeIn{
+  animation: fadeIn .3s ease forwards;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: .3s ;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: fadeIn .3s  ease forwards;
+  -ms-animation: fadeIn .3s  ease forwards;
+  -o-animation: fadeIn .3s  ease forwards;
 }
 
-div.contact_ctn{
+.fadeOut{
+  animation: fadeOut .3s ease forwards;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-duration: .3s ;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: fadeOut .3s  ease forwards;
+  -ms-animation: fadeOut .3s  ease forwards;
+  -o-animation: fadeOut .3s  ease forwards;
+}
+
+.drop{
+  animation: dropDown .2s ease forwards;
+  -webkit-animation-name: dropDown;
+  -webkit-animation-duration: .2s ;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: dropDown .2s  ease forwards;
+  -ms-animation: dropDown .2s  ease forwards;
+  -o-animation: dropDown .2s  ease forwards;
+}
+
+.up{
+  animation: comeUp .2s ease forwards;
+  -webkit-animation-name: comeUp;
+  -webkit-animation-duration: .2s ;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: comeUp;
+  -moz-animation: comeUp .2s  ease forwards;
+  -ms-animation: comeUp .2s  ease forwards;
+  -o-animation: comeUp .2s  ease forwards;
+}
+
+// -- contact form ** CLEAN MODAL CODE FOR FUTURE USE AND ELIMINATE UNUSABLE CODE
+div.modal{
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  z-index: 2000;
+}
+
+div.modal_box{
+  position: absolute;
+  width: 100%;
+  padding: 0px 20px;
+  top: 0px;
+}
+
+div.modal_content{
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  margin: 55px auto;
   padding: 30px 4%;
-  margin: 45px 0px;
-  font-size: 14px;
-  text-align: center;
   text-transform: capitalize;
-  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
   background-color: #f9f6f5;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  outline: 0;
   fieldset{ border: none; }
   legend{
     font-size: 18px;
@@ -316,50 +367,6 @@ div.contact_ctn{
     border-bottom: 2px solid #20CE87;
     transition: all .5s;
   }
-}
-
-.fadeIn{
-  animation: fadeIn .3s ease forwards;
-  -webkit-animation-name: fadeIn;
-  -webkit-animation-duration: .3s ;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation: fadeIn .3s  ease forwards;
-  -ms-animation: fadeIn .3s  ease forwards;
-  -o-animation: fadeIn .3s  ease forwards;
-}
-
-.fadeOut{
-  animation: fadeOut .3s ease forwards;
-  -webkit-animation-name: fadeOut;
-  -webkit-animation-duration: .3s ;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation: fadeOut .3s  ease forwards;
-  -ms-animation: fadeOut .3s  ease forwards;
-  -o-animation: fadeOut .3s  ease forwards;
-}
-
-.dropContact{
-  animation: dropDown .3s ease forwards;
-  -webkit-animation-name: dropDown;
-  -webkit-animation-duration: .3s ;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation: dropDown .3s  ease forwards;
-  -ms-animation: dropDown .3s  ease forwards;
-  -o-animation: dropDown .3s  ease forwards;
-}
-
-.upContact{
-  animation: comeUp .3s ease forwards;
-  -webkit-animation-name: comeUp;
-  -webkit-animation-duration: .3s ;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-fill-mode: comeUp;
-  -moz-animation: comeUp .3s  ease forwards;
-  -ms-animation: comeUp .3s  ease forwards;
-  -o-animation: comeUp .3s  ease forwards;
 }
 
 // -- end of contact form
@@ -1183,7 +1190,6 @@ div.subFooter{
 }
 
 //----- 12. CSS KEYFRAME ANIMATIONS -----//
-
 @keyframes fadeOut{
     50%{ opacity: 1; }
     100%{ opacity: 0; }
@@ -1208,46 +1214,27 @@ div.subFooter{
     0%{ left: 0px; }
     100%{ left: -260px; }
 }
-
-@keyframes fadeIn{
-    0%{ opacity: 0; }
-    50%{ opacity: 1; }
-    100%{ opacity: 1; }
-}
-@-webkit-keyframes fadeIn{
-    0%{ opacity: 0; }
-    50%{ opacity: 1; }
-    100%{ opacity: 1; }
-}
-@keyframes fadeOut{
-    0%{ opacity: 1; }
-    50%{ opacity: 1; }
-    100%{ opacity: 0; }
-}
-@-webkit-keyframes fadeOut{
-    0%{ opacity: 1; }
-    50%{ opacity: 1; }
-    100%{ opacity: 0; }
+@-webkit-keyframes open{
+    0%{ left: 0px; }
+    100%{ left: -260px; }
 }
 
 @keyframes dropDown{
-    0%{ top: -100px; transform: translate(-50%,-100px);}
-    100%{ top: 45px; transform: translate(-50%, 0px);}
+    0%{ top: -100%; opacity: 0; }
+    100%{ top: 0px; opacity: 1; }
 }
-
 @-webkit-keyframes dropDown{
-    0%{ top: -100px; -webkit-transform: translate(-50%,-100px);}
-    100%{ top: 45px; -webkit-transform: translate(-50%, 0px);}
+    0%{ top: -100%; opacity: 0; }
+    100%{ top: 0px; opacity: 1; }
 }
 
 @keyframes comeUp{
-    0%{ top: 45px; transform: translate(-50%,45px);}
-    100%{ top: -100px; transform: translate(-50%, -100px);}
+    0%{ top: 0px; opacity: 1; }
+    100%{ top: -100%; opacity: 0; }
 }
-
 @-webkit-keyframes comeUp{
-    0%{ top: 45px; -webkit-transform: translate(-50%,45px);}
-    100%{ top: -100px; -webkit-transform: translate(-50%, -100px);}
+    0%{ top: 0px; opacity: 1; }
+    100%{ top: -150%; opacity: 0; }
 }
 
 
@@ -1441,8 +1428,7 @@ div.subFooter{
     }
   }
 
-  div.contact_ctn{
-    width: 70%;
+  div.modal_content{
     padding: 25px 4%;
   }
 
@@ -1612,8 +1598,7 @@ div.subFooter{
     }
   }
 
-  div.contact_ctn{
-    width: 85%;
+  div.modal_content{
     font-size: 12px;
   }
 
@@ -1662,8 +1647,7 @@ div.subFooter{
 
   div.subFooter{ font-size: 14px; }
 
-  div.contact_ctn{
-    width: 90%;
+  div.modal_content{
     font-size: 10px;
     legend{
       font-size: 14px;
