@@ -154,6 +154,7 @@ div.cta_btn:hover{ background-color: #AB2227 ; color: $white; transition: .1s; }
 .small{ padding: 10px 0px; transition: .2s; }
 
 .showMenu{ animation: open .1s linear forwards; left: -260px; }
+.hideMenu{ animation: close .1s linear forwards; left: 0px; }
 
 .show{ display: block !important; }
 .hide{ display: none !important; }
@@ -351,7 +352,7 @@ div.modal_content{
     font-size: 14px;
     line-height: normal;
   }
-  textarea{ resize: none; height: 110px; }
+  textarea{ resize: vertical; height: 110px; }
   input:active,
   input:focus,
   textarea:active,
@@ -1245,6 +1246,14 @@ div.subFooter{
 @-webkit-keyframes open{
     0%{ left: 0px; }
     100%{ left: -260px; }
+}
+@keyframes close{
+    0%{ left: -260px; }
+    100%{ left: 0px; }
+}
+@-webkit-keyframes close{
+    0%{ left: -260px; }
+    100%{ left: 0px; }
 }
 
 @keyframes dropDown{
