@@ -212,12 +212,12 @@
 
 <div class="modal fade ng-cloak" ng-show="contact" ng-click="toggleContact()">
   <div class="modal_box" ng-class="{drop:contact, up:!contact}">
-
     <div class="modal_content" ng-click="$event.stopPropagation()" >
+
         <form class="contactForm" action="/api/message" method="post" data-toggle="validator" role="form">
           <%= token_tag %>
           <fieldset>
-            <legend>lets build something <span>together</span></legend>
+            <legend><span class="tagLine" ng-class={showUp:contact}>lets build something</span><span class="keyWord" ng-class="{backM:contact}">together</span></legend>
               <div class="form-group">
                   <label for="username" class="nameAlert">Name:</label>
                   <input class="username form-control" type="text" name="message[name]" placeholder="name..." required>
@@ -242,9 +242,11 @@
                 <div class="help-block with-errors"></div>
               </div>
 
-                <input type="submit" value="Send" class="messageSub">
+              <button type="submit" name="button" value="Send" class="messageSub">SEND</button>
+
           </fieldset>
         </form>
+
     </div>
   </div>
 </div>

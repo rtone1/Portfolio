@@ -29,12 +29,21 @@ $(window).load(function(){
         };
 
         $scope.toggleContact = function(){
+            $scope.clearInputs();
             if( !$scope.contact){
                 $scope.contact = true;
             } else {
                 $scope.contact = false;
             }
         };
+
+        $scope.clearInputs = function(){ // make helper function
+            if( !$scope.contact ){
+              $('.form-control').val('');
+            }
+        };
+
+
 
         var w = angular.element($window);
         w.bind('resize', function(){

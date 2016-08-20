@@ -167,6 +167,8 @@ div.form-group.has-error textarea{
 }
 div.help-block ul{ list-style-type: none; color: #ff5722; }
 
+.disabled{ cursor: not-allowed;}
+
 // -- Animation Classes
 .fade{
   transition: all linear 0.5s;
@@ -176,6 +178,18 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
   -o-transition: all linear 0.5s;
 }
 .fade.ng-hide{ opacity: 0; }
+
+.showUp{
+  animation: textPop .4s linear forwards;
+  animation-delay: .3s;
+  -webkit-animation-name: textPop;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: .4s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: textPop .4s linear forwards;
+  -ms-animation: textPop .4s linear forwards;
+  -o-animation: textPop .4s linear forwards;
+}
 
 .top{
   animation: topRotate .6s forwards;
@@ -311,13 +325,15 @@ div.modal_content{
   outline: 0;
   fieldset{ border: none; }
   legend{
+    width: 100%;
     font-size: 18px;
     line-height: 1.4em;
     margin-bottom: 20px;
     display: inline-block;
     text-transform: uppercase;
     color: #607D8B;
-    span{ font-size: 24px; font-weight: 900; font-family: 'Shrikhand'; letter-spacing: 2px; margin-top: 5px; }
+    span{ position: relative; opacity: 0; }
+    span.keyWord{ font-size: 24px; font-weight: 900; font-family: 'Shrikhand'; letter-spacing: 2px; margin-top: 5px; }
   }
   span, label, input, textarea{ display: block; }
   label{ margin: 15px 0px 10px; }
@@ -349,22 +365,23 @@ div.modal_content{
       -webkit-box-shadow: 0 0 0px 1000px white inset;
       -webkit-text-fill-color: gray !important;
   }
-  input[type="submit"]{
+  button[type="submit"]{
+    width: 100%;
     text-align: center;
     padding: 10px;
     margin-top: 25px;
     margin-bottom: 0px;
     letter-spacing: 1px;
     font-size: 22px;
-    color: #128E5B;
+    color: $white;
     background-color: #54E4A9;
-    border-bottom: 2px solid #20CE87;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    border-bottom: 2px solid #20CE87 !important;
     -webkit-appearance: none;
   }
-  input[type="submit"]:hover{
-    color: #F7FBF9;
+  button[type="submit"]:hover{
     background-color: #20CE87;
-    border-bottom: 2px solid #20CE87;
     transition: all .5s;
   }
 }
@@ -1210,6 +1227,17 @@ div.subFooter{
     100% { opacity: 1; }
 }
 
+@keyframes textPop{
+    0%{ opacity: 0; top: 25px; }
+    50%{ opacity: 1; }
+    100%{ opacity: 1; top: 0px; }
+}
+@-webkit-keyframes textPop{
+    0%{ opacity: 0; top: 25px; }
+    50%{ opacity: 1; }
+    100%{ opacity: 1; top: 0px; }
+}
+
 @keyframes open{
     0%{ left: 0px; }
     100%{ left: -260px; }
@@ -1652,7 +1680,7 @@ div.subFooter{
     legend{
       font-size: 14px;
       margin-bottom: 10px;
-      span{ font-size: 18px; margin-bottom: 0px; }
+      span.keyWord{ font-size: 18px; margin-bottom: 0px; }
     }
     label{ margin-bottom: 5px; }
     input, textarea{ margin-bottom: 10px; font-size: 10px; }
