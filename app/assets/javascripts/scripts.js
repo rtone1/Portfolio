@@ -12,9 +12,9 @@ $(window).load(function(){
 
     var app = angular.module('portfolioApp', ['ngAnimate', 'portfolio-directives']);
 
-    app.config(function($animateProvider) {
-        $animateProvider.classNameFilter(/^(?:(?!ng-animate-disabled).)*$/);
-    });
+    // app.config(function($animateProvider) {
+    //     $animateProvider.classNameFilter(/^(?:(?!ng-animate-disabled).)*$/);
+    // });
 
     app.controller( 'PortfolioController', [ '$scope', '$window', function( $scope, $window ){
         //-- SETTINGS
