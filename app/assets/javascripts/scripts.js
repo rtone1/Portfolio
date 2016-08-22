@@ -10,16 +10,21 @@ $(window).load(function(){
 ////-- CLOSURE FOR MAIN FUNCTIONS --//
 (function(){
 
-    var app = angular.module('portfolioApp', ['ngAnimate','portfolio-directives']);
+    var app = angular.module('portfolioApp', ['ngAnimate', 'portfolio-directives']);
+
+    app.config(function($animateProvider) {
+        $animateProvider.classNameFilter(/^(?:(?!ng-animate-disabled).)*$/);
+    });
 
     app.controller( 'PortfolioController', [ '$scope', '$window', function( $scope, $window ){
         //-- SETTINGS
         $scope.mobileMenu = false;
         $scope.contact = false;
+        $scope.windowWidth = angular.element($window).width()
 
 
         $scope.toggleMMenu = function(){ // make this into a directive later
-            if( !$scope.mobileMenu ){
+            if( !$scope.mobileMenu && $scope.windowWidth <= 600 ){
                 addXMenu();
                 $scope.mobileMenu = true;
             } else {
@@ -64,6 +69,7 @@ $(window).load(function(){
         $scope.works;
         $scope.currentTab = 'code';
 
+
         $scope.tabIsSet = function(checked){
             return checked === $scope.currentTab;
         };
@@ -75,7 +81,6 @@ $(window).load(function(){
             });
         }, 500);
     }]); // END OF WORK CONTROLLER
-
 
 
     ////-- CUSTOM DIRECTIVES BELOW --//

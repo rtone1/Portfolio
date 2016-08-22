@@ -180,6 +180,11 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
 }
 .fade.ng-hide{ opacity: 0; }
 
+.fadeInText{
+  animation: fadeIn .4s linear forwards;
+  animation-delay: .3s;
+ }
+
 .showUp{
   animation: textPop .4s linear forwards;
   animation-delay: .3s;

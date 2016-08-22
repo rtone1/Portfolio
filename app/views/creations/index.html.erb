@@ -135,8 +135,7 @@
     <article class="myWork">
       <h2>{{currentTab}}</h2>
 
-      <div class="card_ctn" ng-show="tabIsSet('code')">
-
+      <div class="card_ctn ng-animate-disabled" ng-show="tabIsSet('code')">
         <div class="single_card" ng-repeat="index in works | filter : {category: 'code'} : true">
             <div class="card_image">
                 <div class="cardOverlay"></div>
@@ -146,11 +145,9 @@
                 <h3 ng-bind="index.title"></h3>
             </div>
         </div>
-
       </div>
 
-      <div class="card_ctn" ng-show="tabIsSet('design')">
-
+      <div class="card_ctn ng-animate-disabled" ng-show="tabIsSet('design')">
         <div class="single_card" ng-repeat="index in works | filter : {category: 'design'} : true">
             <div class="card_image">
                 <div class="cardOverlay"></div>
@@ -160,10 +157,9 @@
                 <h3 ng-bind="index.title"></h3>
             </div>
         </div>
-
       </div>
-    </article>
 
+    </article>
   </section>
 
   <!-- ABOUT ME SECTION -->
@@ -217,7 +213,7 @@
         <form class="contactForm" action="/api/message" method="post" data-toggle="validator" role="form">
           <%= token_tag %>
           <fieldset>
-            <legend><span class="tagLine" ng-class={showUp:contact}>lets build something</span><span class="keyWord" ng-class="{backM:contact}">together</span></legend>
+            <legend><span class="tagLine" ng-class={showUp:contact}>lets build something</span><span class="keyWord" ng-class="{fadeInText:contact}">together</span></legend>
               <div class="form-group">
                   <label for="username" class="nameAlert">Name:</label>
                   <input class="username form-control" type="text" name="message[name]" placeholder="name..." required>
