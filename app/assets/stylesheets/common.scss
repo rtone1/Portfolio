@@ -183,6 +183,13 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
 .fadeInText{
   animation: fadeIn .4s linear forwards;
   animation-delay: .3s;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: .4s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: fadeIn .4s linear forwards;
+  -ms-animation: fadeIn .4s linear forwards;
+  -o-animation: fadeIn .4s linear forwards;
  }
 
 .showUp{
