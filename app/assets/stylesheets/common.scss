@@ -655,6 +655,7 @@ section#ct_audio{
           border-top: 2px solid #A6AAAD;
           border-left: 2px solid #B5B7B9;
           transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
           z-index: 1000;
         }
         .listShadow{
@@ -1417,7 +1418,7 @@ div.subFooter{
   }
 
   section#ct_audio{
-    h2{ font-size: 3em; }
+    h2.audioGreet{ font-size: 3em; }
   }
 
   section#portfoliWork{
@@ -1598,7 +1599,7 @@ div.subFooter{
 
   section#ct_audio{
     padding: 0px 0px 40px;
-    h2{
+    h2.audioGreet{
       font-size: 2em;
       padding: 20px 0px;
       margin-bottom: 40px;
@@ -1677,10 +1678,9 @@ div.subFooter{
       }
       img.citySkyline{ display: none; }
     }
-
   }
 
-  section#ct_audio h2 {
+  section#ct_audio h2.audioGreet {
     font-size: 1.8em;
   }
 
