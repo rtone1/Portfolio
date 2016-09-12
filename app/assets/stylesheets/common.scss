@@ -282,25 +282,25 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
 }
 
 .drop{
-  animation: dropDown .2s ease forwards;
+  animation: dropDown .2s linear forwards;
   -webkit-animation-name: dropDown;
   -webkit-animation-duration: .2s ;
-  -webkit-animation-timing-function: ease;
+  -webkit-animation-timing-function: linear;
   -webkit-animation-fill-mode: forwards;
-  -moz-animation: dropDown .2s  ease forwards;
-  -ms-animation: dropDown .2s  ease forwards;
-  -o-animation: dropDown .2s  ease forwards;
+  -moz-animation: dropDown .2s  linear forwards;
+  -ms-animation: dropDown .2s  linear forwards;
+  -o-animation: dropDown .2s  linear forwards;
 }
 
 .up{
-  animation: comeUp .2s ease forwards;
+  animation: comeUp .2s linear forwards;
   -webkit-animation-name: comeUp;
   -webkit-animation-duration: .2s ;
-  -webkit-animation-timing-function: ease;
+  -webkit-animation-timing-function: linear;
   -webkit-animation-fill-mode: comeUp;
-  -moz-animation: comeUp .2s  ease forwards;
-  -ms-animation: comeUp .2s  ease forwards;
-  -o-animation: comeUp .2s  ease forwards;
+  -moz-animation: comeUp .2s  linear forwards;
+  -ms-animation: comeUp .2s  linear forwards;
+  -o-animation: comeUp .2s  linear forwards;
 }
 
 // -- contact form ** CLEAN MODAL CODE FOR FUTURE USE AND ELIMINATE UNUSABLE CODE
@@ -555,304 +555,310 @@ section#ct_audio{
     padding: 60px 0px;
     background: $whiteSmoke;
     text-align: center;
-    h2{
+    h2.audioGreet{
       font-size: 3.4em;
       line-height: $defaultLineHeight;
       margin: 0px 0px 20px;
       text-transform: uppercase;;
       color: $audioH2Color;
     }
-    p{
+    small.audioInfo{
+      display: inline-block;
+      width: 300px;
+      line-height: 1.2em;
       color: $audioPColor;
     }
-}
 
 // -- AUDIO PLAYER STYLES --stand along styles--
 
-div.playerContainer{
-  position: relative;
-  overflow: hidden;
-  width: 300px;
-  height: 370px;
-  margin: 20px auto;
-  background-color: gray;
-  border-radius: 5px;
-  box-shadow: 0px .5px 2px black;
-  div.imageDisplay{
-    width: inherit;
-    height: 205px;
-    background-color: #CCCCCC;
-    background: url('/defaultImage.jpg') no-repeat -15px 0px;
-    background-size: cover;
-    .hamIcon{
-      position: absolute;
-      cursor: pointer;
-      width: 15px;
-      height: 10px;
-      right: 10px;
-      top: 10px;
-    }
-    .hamIcon div{
-      position: relative;
-      background-color: #989DA0;
-      width: inherit;
-      height: 2px;
-      margin-bottom: 2px;
-      border-radius: 2px;
-    }
-    .shadow{
+  div.playerContainer{
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 370px;
+    margin: 20px auto;
+    background-color: gray;
+    border-radius: 5px;
+    box-shadow: 0px .5px 2px black;
+    div.imageDisplay{
       width: inherit;
       height: 205px;
-      background: url('/gloss.png')
-    }
-  }
-
-  div.audioPlaylist{
-    position: absolute;
-    overflow: hidden;
-    opacity: 0;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background: #363F45;
-    box-shadow: 0px 0px 3px #000;
-    z-index: 1000;
-    border-radius: 5px;
-
-    .nowPlaying{
-      position: relative;
-      width: inherit;
-      height: 150px;
-      padding: 5px 10px;
-      background: url("defaultImage.jpg") no-repeat;
+      background-color: #CCCCCC;
+      background: url("/defaultImage.jpg") no-repeat 0px 0px;
       background-size: cover;
-      font-family: Helvetica, Arial, sans-serif;
-      font-size: 10px;
-      color: #fff;
-      text-shadow: 0px 1px 3px #000206;
-      h2,p{
-        margin: 5px 0px;
-        position: relative;
-        z-index: 100;
-      }
-      p.duration{
-        position: absolute;
-        bottom: 5px;
-        right: 10px;
-      }
-      .arrow{
+      .hamIcon{
         position: absolute;
         cursor: pointer;
-        top: 10px;
-        right: 10px;
-        width: 10px;
+        width: 15px;
         height: 10px;
-        border-top: 2px solid #A6AAAD;
-        border-left: 2px solid #B5B7B9;
-        transform: rotate(-45deg);
-        z-index: 1000;
+        right: 10px;
+        top: 10px;
       }
-      .listShadow{
-        position: absolute;
-        top: 0px;
-        left: 0px;
+      .hamIcon div{
+        position: relative;
+        background-color: #989DA0;
         width: inherit;
-        height: inherit;
-        background-color: rgba(0,0,0,.5);
+        height: 2px;
+        margin-bottom: 3px;
+        border-radius: 2px;
+      }
+      .shadow{
+        width: inherit;
+        height: 205px;
+        background: url("/gloss.png");
       }
     }
 
-    div.songList{
-      ol {
-        list-style-type: none;
-        margin: 0px;
-        padding: 10px;
+    div.audioPlaylist{
+      position: absolute;
+      overflow: hidden;
+      opacity: 0;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background: #363F45;
+      box-shadow: 0px 0px 3px #000;
+      z-index: 1000;
+      border-radius: 5px;
+      text-align: left;
+      line-height: 1em;
+
+      .nowPlaying{
+        position: relative;
         width: inherit;
-        height: 220px;
-        overflow-y: scroll;
-      }
-      ol > li {
-        counter-increment: customlistcounter;
-        padding: 10px;
+        height: 150px;
+        padding: 5px 10px;
+        background: url("/defaultImage.jpg") no-repeat;
+        background-size: cover;
         font-family: Helvetica, Arial, sans-serif;
-        font-size: 12px;
+        font-size: 10px;
         color: #fff;
-        border-bottom: 1px solid #4A575E;
-      }
-      ol > li:hover {
-        background-color: #4A575E;
-      }
-      ol > li:before {
-        content: counter(customlistcounter) " ";
-        padding: 10px 10px 10px 5px;
-        color: #4A575E;
-      }
-      ol:first-child {
-        counter-reset: customlistcounter;
-      }
-      .listActive{
-        background-color: #5A6971;
-      }
-    }
-  }
-
-  div.controlsContainer{
-    position: relative;
-    width: inherit;
-    height: 165px;
-    background-color: #363F45;
-    div.topControls{
-      .shuffle{
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        width: 20px;
-        height: 20px;
-        background: url("/shuffle.png") no-repeat 0px 0px;
-        background-size: contain;
-        cursor: pointer;
-        transition: .2s;
-      }
-      .shuffleActive{
-        background: url("/shuffleActive.png") no-repeat 0px 0px;
-        background-size: contain;
-        transition: .2s;
-      }
-
-      div#progressMeter{
-        position: relative;
-        display: inline-block;
-        width: 220px;
-        height: 10px;
-        top: 10px;
-        // left: 45px; THIS CAN BE DELETED AFTER I CHECK THE AUDIO JS
-        #progressBar{
+        text-shadow: 0px 1px 3px #000206;
+        h2,p{
+          margin: 5px 0px;
           position: relative;
-          width: 220px;
-          height: 1px;
-          top: 5px;
-          background-color: whitesmoke;
+          z-index: 100;
         }
-        #thumbScrubber{
+        p.duration{
           position: absolute;
-          top: 0px;
+          bottom: 5px;
+          right: 10px;
+        }
+        .arrow{
+          position: absolute;
+          cursor: pointer;
+          top: 10px;
+          right: 10px;
           width: 10px;
           height: 10px;
-          background-color: white;
-          border-radius: 10px;
+          border-top: 2px solid #A6AAAD;
+          border-left: 2px solid #B5B7B9;
+          transform: rotate(-45deg);
+          z-index: 1000;
         }
-        #thumbScrubber:hover{
+        .listShadow{
+          position: absolute;
           top: 0px;
-          transform: scale(1.5,1.5);
-          transition: .1s;
+          left: 0px;
+          width: inherit;
+          height: inherit;
+          background-color: rgba(0,0,0,.5);
         }
-        .largeScrubber{
-          top: 0px;
-          transform: scale(1.5,1.5);
-          transition: .1s;
-        }
-        #currentTime, #totalTime{ position: absolute; font-family: Helvetica, Arial, sans-serif; font-size: 10px; color: white; opacity: 1; }
-        #currentTime{
-          left: -10px;
-          top: 20px;
-        }
-        #totalTime{
-          right: -10px;
-          top: 20px;
-        }
-
       }
 
-      div.loop{
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 20px;
-        height: 20px;
-        background: url("/loop.png") no-repeat 0px 0px;
-        background-size: contain;
-        cursor: pointer;
-        transition: .2s;
-      }
-      .loopActive{
-        background: url("/loopActive.png") no-repeat 0px 0px;
-        background-size: contain;
-        transition: .2s;
+      div.songList{
+        ol {
+          list-style-type: none;
+          margin: 0px;
+          padding: 8px;
+          width: inherit;
+          height: 220px;
+          overflow-y: auto;
+        }
+        ol > li {
+          counter-increment: customlistcounter;
+          padding: 8px;
+          font-family: Helvetica, Arial, sans-serif;
+          font-size: 11px;
+          color: #fff;
+          border-bottom: 1px solid #4A575E;
+        }
+        ol > li:hover {
+          background-color: #4A575E;
+        }
+        ol > li:before {
+          content: counter(customlistcounter) " ";
+          padding: 10px 10px 10px 5px;
+          color: #4A575E;
+        }
+        ol:first-child {
+          counter-reset: customlistcounter;
+        }
+        .listActive{
+          background-color: #5A6971;
+        }
       }
     }
 
-    div.descriptionCtn{
+    div.controlsContainer{
       position: relative;
-      top: 20px;
-      margin: 0px auto;
-      overflow: hidden;
-      width: 115px;
-      height: 20px;
-      .songDescription{
-        position: absolute;
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 12px;
-        color: white;
-        text-align: center;
-        white-space: nowrap;
-        display: inline;
-        padding-right: 15px;
-        line-height: 22px;
-      }
-      .songDescription:nth-child(1){
-        transform: translateX(0%);
-      }
-      .songDescription:nth-child(2){
-        transform: translateX(100%);
-      }
-      .marquee{
-        animation: marquee 10s ease infinite;
-        -webkit-animation: marquee 10s ease infinite;
-      }
-      .marqueetwo{
-        animation: marqueetwo 10s ease infinite;
-        -webkit-animation: marqueetwo 10s ease infinite;
-      }
-    }
+      width: inherit;
+      height: 165px;
+      background-color: #363F45;
+      div.topControls{
+        .shuffle{
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          width: 20px;
+          height: 20px;
+          background: url("/shuffle.png") no-repeat 0px 0px;
+          background-size: contain;
+          cursor: pointer;
+          transition: .2s;
+        }
+        .shuffleActive{
+          background: url("/shuffleActive.png") no-repeat 0px 0px;
+          background-size: contain;
+          transition: .2s;
+        }
 
-    div.playPause{
-      position: absolute;
-      width: 50%;
-      height: 70px;
-      left: 25%;
-      bottom: 30px;
-      .prev, .next{position: absolute; width: 50px; height: 50px; z-index: 1; cursor: pointer;}
-      .prev{
-        background: url("/back.png") no-repeat 0px 0px;
-        background-size: contain;
-        top: 10px;
+        div#progressMeter{
+          position: relative;
+          display: inline-block;
+          width: 220px;
+          height: 10px;
+          top: 10px;
+          // left: 45px; THIS CAN BE DELETED AFTER I CHECK THE AUDIO JS
+          #progressBar{
+            position: relative;
+            width: 220px;
+            height: 1px;
+            top: 5px;
+            background-color: whitesmoke;
+          }
+          #thumbScrubber{
+            position: absolute;
+            top: 0px;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 10px;
+          }
+          #thumbScrubber:hover{
+            top: 0px;
+            transform: scale(1.5,1.5);
+            transition: .1s;
+          }
+          .largeScrubber{
+            top: 0px;
+            transform: scale(1.5,1.5);
+            transition: .1s;
+          }
+          #currentTime, #totalTime{ position: absolute; font-family: Helvetica, Arial, sans-serif; font-size: 10px; color: white; opacity: 1; }
+          #currentTime{
+            left: -10px;
+            top: 20px;
+          }
+          #totalTime{
+            right: -10px;
+            top: 20px;
+          }
+        }
+
+        div.loop{
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          width: 20px;
+          height: 20px;
+          background: url("/loop.png") no-repeat 0px 0px;
+          background-size: contain;
+          cursor: pointer;
+          transition: .2s;
+        }
+        .loopActive{
+          background: url("/loopActive.png") no-repeat 0px 0px !important;
+          background-size: contain !important;
+          transition: .2s;
+        }
       }
-      .next{
-        background: url("/forward.png") no-repeat 0px 0px;
-        background-size: contain;
-        top: 10px;
-        right: 0px;
+
+      div.descriptionCtn{
+        position: relative;
+        top: 15px;
+        margin: 0px auto;
+        overflow: hidden;
+        width: 115px;
+        height: 20px;
+        .songDescription{
+          position: absolute;
+          left: 0px;
+          font-family: Helvetica, Arial, sans-serif;
+          font-size: 12px;
+          color: white;
+          text-align: center;
+          white-space: nowrap;
+          display: inline;
+          padding-right: 15px;
+          line-height: 22px;
+        }
+        .songDescription:nth-child(1){
+          transform: translateX(0%);
+        }
+        .songDescription:nth-child(2){
+          transform: translateX(100%);
+        }
+        .marquee{
+          animation: marquee 10s ease infinite;
+          -webkit-animation: marquee 10s ease infinite;
+        }
+        .marqueetwo{
+          animation: marqueetwo 10s ease infinite;
+          -webkit-animation: marqueetwo 10s ease infinite;
+        }
       }
-      .play_pause{
+
+      div.playPause{
         position: absolute;
-        width: 70px;
+        width: 50%;
         height: 70px;
-        left: 50%;
-        transform: translate(-50%, 0px);
-        -webkit-transform: translate(-50%, 0px);
-        background: url("/play.png") no-repeat 0px 0px;
-        background-size: contain;
-        z-index: 3;
-        cursor: pointer;
-      }
-      .pause{
-        background: url("/pause.png") no-repeat 0px 0px;
-        background-size: contain;
+        left: 25%;
+        bottom: 30px;
+        .prev, .next{position: absolute; width: 50px; height: 50px; z-index: 1; cursor: pointer;}
+        .prev{
+          background: url("/back.png") no-repeat 0px 0px;
+          background-size: contain;
+          top: 10px;
+        }
+        .next{
+          background: url("/forward.png") no-repeat 0px 0px;
+          background-size: contain;
+          top: 10px;
+          right: 0px;
+        }
+        .play_pause{
+          position: absolute;
+          width: 70px;
+          height: 70px;
+          left: 50%;
+          transform: translate(-50%, 0px);
+          -webkit-transform: translate(-50%, 0px);
+          background: url("/play.png") no-repeat 0px 0px;
+          background-size: contain;
+          z-index: 3;
+          cursor: pointer;
+        }
+        .pause{
+          background: url("/pause.png") no-repeat 0px 0px;
+          background-size: contain;
+        }
       }
     }
   }
 }
+
 
 //----- 8. PORTFOLIO WORK SECTION -----//
 section#portfoliWork{

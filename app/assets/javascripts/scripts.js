@@ -10,7 +10,7 @@ $(window).load(function(){
 ////-- CLOSURE FOR MAIN FUNCTIONS --//
 (function(){
 
-    var app = angular.module('portfolioApp', ['ngAnimate', 'portfolio-directives']);
+    var app = angular.module('portfolioApp', ['ngAnimate', 'portfolio-directives', 'audioApp']);
 
     app.config(['$animateProvider', function($animateProvider) {
         $animateProvider.classNameFilter(/^(?:(?!ng-animate-disabled).)*$/);
@@ -194,6 +194,7 @@ $(window).load(function(){
   };
 
   var navDown = $.fn.dropDownMenu( 0 );
+
 
 })(); // END OF SELF CALL CLOSURE
 
