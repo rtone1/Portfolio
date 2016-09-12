@@ -686,6 +686,7 @@ section#ct_audio{
         }
         ol > li:hover {
           background-color: #4A575E;
+          cursor: default;
         }
         ol > li:before {
           content: counter(customlistcounter) " ";
