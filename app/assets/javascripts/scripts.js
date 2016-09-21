@@ -129,19 +129,19 @@ $(window).load(function(){
 
   ///////// CODE NEED TO BE ANGULAR FRIENDLY
 
-    // var greetings = ['hola','ciao','hello'];
-    // var countGreet = 0;
-    //
-    //
-    // function animeGreet(){
-    //     var txt = greetings[countGreet];
-    //     $('span.greet_anime').addClass('animeGreet');
-    //     $('span.greet_anime').empty();
-    //     $('span.greet_anime').append(txt);
-    //     countGreet++;
-    //     if (countGreet == greetings.length){ countGreet = 0; }
-    // }
-    // setInterval(animeGreet,5000);
+    var greetings = ['hola','ciao','hello'];
+    var countGreet = 0;
+
+
+    function animeGreet(){
+        var txt = greetings[countGreet];
+        $('span.greet_anime').addClass('animeGreet');
+        $('span.greet_anime').empty();
+        $('span.greet_anime').append(txt);
+        countGreet++;
+        if (countGreet == greetings.length){ countGreet = 0; }
+    }
+    setInterval(animeGreet,5000);
 
     // ZOOM OUT FUNCTION
     // $('input, select, textarea').on('focus blur', function(event) {
