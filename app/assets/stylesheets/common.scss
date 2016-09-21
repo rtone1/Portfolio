@@ -504,10 +504,10 @@ section#mainHero{
         -webkit-animation-name: greetThem;
         -webkit-animation-duration: 5s;
         -webkit-animation-timing-function: linear;
-        -webkit-animation-fill-mode: forwards;
-        -moz-animation: greetThem 5s linear forwards;
-        -ms-animation: greetThem 5s linear forwards;
-        -o-animation: greetThem 5s linear forwards;
+        -webkit-animation-fill-mode: infinite;
+        -moz-animation: greetThem 5s linear infinite;
+        -ms-animation: greetThem 5s linear infinite;
+        -o-animation: greetThem 5s linear infinite;
       }
   }
 
