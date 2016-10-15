@@ -813,12 +813,24 @@ section#ct_audio{
           transform: translateX(100%);
         }
         .marquee{
-          animation: marquee 10s ease infinite;
-          -webkit-animation: marquee 10s ease infinite;
+          animation: marqueeone 10s ease infinite;
+          -webkit-animation-name: marqueeone;
+          -webkit-animation-duration: 10s;
+          -webkit-animation-timing-function: ease;
+          -webkit-animation-fill-mode: infinite;
+          -moz-animation: marqueeone 10s ease infinite;
+          -ms-animation: marqueeone 10s ease infinite;
+          -o-animation: marqueeone 10s ease infinite;
         }
         .marqueetwo{
           animation: marqueetwo 10s ease infinite;
-          -webkit-animation: marqueetwo 10s ease infinite;
+          -webkit-animation-name: marqueetwo;
+          -webkit-animation-duration: 10s;
+          -webkit-animation-timing-function: ease;
+          -webkit-animation-fill-mode: infinite;
+          -moz-animation: marqueetwo 10s ease infinite;
+          -ms-animation: marqueetwo 10s ease infinite;
+          -o-animation: marqueetwo 10s ease infinite;
         }
       }
 
@@ -1349,7 +1361,7 @@ div.subFooter{
 }
 
 
-@keyframes marquee {
+@keyframes marqueeone {
     0%{ transform: translateX(0%); }
     20%{ transform: translateX(0%); }
     40%{ transform: translateX(0%); }

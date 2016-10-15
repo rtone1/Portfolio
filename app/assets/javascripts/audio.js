@@ -12,8 +12,7 @@
         { song: "/bensound-sadday.mp3", description: "Bensound: Sad Day", image: "/sadday.jpg"},
         { song: "/bensound-goinghigher.mp3", description: "Bensound: Going Higher", image: "/goinghigher.jpg" },
         { song: "/bensound-happyrock.mp3", description: "Bensound: Happy Rock", image: "/happyrock.jpg"}
-
-      ]
+      ];
 
       var count = 0; // global variable that allows looping use by setInterval, next, prev functions and audioSelected
       $scope.songCount = 0; // global variable used by number of functions
@@ -394,38 +393,59 @@
 
   // THIRD PARTY DIRECTIVE TO HANDLE DOUBLE CLICKS ON MOBILE
   // MAKE YOUR ON OR FIND A BETTER SOLUTION
-  app.directive('iosDblclick',
-    function () {
+  // app.directive('iosDblclick',
+  //   function () {
+  //
+  //       const DblClickInterval = 300; //milliseconds
+  //
+  //       var firstClickTime;
+  //       var waitingSecondClick = false;
+  //
+  //       return {
+  //           restrict: 'A',
+  //           link: function (scope, element, attrs) {
+  //               element.bind('click', function (e) {
+  //
+  //                   if (!waitingSecondClick) {
+  //                       firstClickTime = (new Date()).getTime();
+  //                       waitingSecondClick = true;
+  //
+  //                       setTimeout(function () {
+  //                           waitingSecondClick = false;
+  //                       }, DblClickInterval);
+  //                   }
+  //                   else {
+  //                       waitingSecondClick = false;
+  //
+  //                       var time = (new Date()).getTime();
+  //                       if (time - firstClickTime < DblClickInterval) {
+  //                           scope.$apply(attrs.iosDblclick);
+  //                       }
+  //                   }
+  //               });
+  //           }
+  //       };
+  //   });
 
-        const DblClickInterval = 300; //milliseconds
 
-        var firstClickTime;
-        var waitingSecondClick = false;
+  var tapped = false;
+  $("div.prev").on("touchstart",function(e){
+      if(!tapped){ //if tap is not set, set up single tap
+        tapped=setTimeout(function(){
+            tapped=null
+            //insert things you want to do when single tapped
+            $scope.restartSong();
+        },300);   //wait 300ms then run single click code
+      } else {    //tapped within 300ms of last tap. double tap
+        clearTimeout(tapped); //stop single tap callback
+        tapped=null
+        //insert things you want to do when double tapped
+            $scope.prevSong();
+      }
+      e.preventDefault();
+  });
 
-        return {
-            restrict: 'A',
-            link: function (scope, element, attrs) {
-                element.bind('click', function (e) {
 
-                    if (!waitingSecondClick) {
-                        firstClickTime = (new Date()).getTime();
-                        waitingSecondClick = true;
 
-                        setTimeout(function () {
-                            waitingSecondClick = false;
-                        }, DblClickInterval);
-                    }
-                    else {
-                        waitingSecondClick = false;
-
-                        var time = (new Date()).getTime();
-                        if (time - firstClickTime < DblClickInterval) {
-                            scope.$apply(attrs.iosDblclick);
-                        }
-                    }
-                });
-            }
-        };
-    });
 
 })(); // END OF SELF CALL CLOSURE
