@@ -483,10 +483,7 @@ section#mainHero{
       span.greet_int{
         position: relative;
         animation: fadeOut 5s linear forwards;
-        -webkit-animation-name: fadeOut;
-        -webkit-animation-duration: 5s;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-iteration-count: forwards;
+        -webkit-animation: fadeOut 5s linear forwards;
         -moz-animation: fadeOut 5s linear forwards;
         -ms-animation: fadeOut 5s linear forwards;
         -o-animation: fadeOut 5s linear forwards;
