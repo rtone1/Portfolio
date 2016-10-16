@@ -338,13 +338,13 @@
 
 
       $scope.marqueeStart = function(){
-          $('.songDescription:nth-child(1)').addClass('marquee');
-          $('.songDescription:nth-child(2)').addClass('marqueetwo');
+          $('.songD1').addClass('marquee');
+          $('.songD2').addClass('marqueetwo');
       };
 
       $scope.marqueeRemove = function(){
-          $('.songDescription:nth-child(1)').removeClass('marquee');
-          $('.songDescription:nth-child(2)').removeClass('marqueetwo');
+          $('.songD1').removeClass('marquee');
+          $('.songD2').removeClass('marqueetwo');
       };
 
 

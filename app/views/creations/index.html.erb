@@ -103,7 +103,8 @@
                   <div class="loop" ng-click="toggleLoop()"></div>
               </div>
               <div class="descriptionCtn">
-                  <div class="songDescription" ng-repeat="i in getNumber(2) track by $index" ng-bind="songInfo"></div>
+                  <div class="songDescription songD1" ng-bind="songInfo"></div>
+                  <div class="songDescription songD2" ng-bind="songInfo"></div>
               </div>
               <div class="playPause">
                   <div class="prev" ng-click="restartSong()" ng-dblclick="prevSong()"></div>
