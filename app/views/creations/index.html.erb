@@ -106,7 +106,7 @@
                   <div class="songDescription" ng-repeat="i in getNumber(2) track by $index" ng-bind="songInfo"></div>
               </div>
               <div class="playPause">
-                  <div class="prev" ></div>
+                  <div class="prev" ng-click="restartSong()" ng-dblclick="prevSong()"></div>
                   <div class="play_pause" ng-click="togglePlay(0)"></div>
                   <div class="next" ng-click="nextSong()"></div>
               </div>
