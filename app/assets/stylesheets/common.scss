@@ -1367,12 +1367,25 @@ div.subFooter{
     40%{ transform: translateX(0%); }
     100%{ transform: translateX(-100%); }
 }
+@-webkit-keyframes marqueeone {
+    0%{ -webkit-transform: translateX(0%); }
+    20%{ -webkit-transform: translateX(0%); }
+    40%{ -webkit-transform: translateX(0%); }
+    100%{ -webkit-transform: translateX(-100%); }
+}
 
 @keyframes marqueetwo {
     0%{ transform: translateX(100%); }
     20%{ transform: translateX(100%); }
     40%{ transform: translateX(100%); }
     100%{ transform: translateX(0%); }
+}
+
+@-webkit-keyframes marqueetwo {
+    0%{ -webkit-transform: translateX(100%); }
+    20%{ -webkit-transform: translateX(100%); }
+    40%{ -webkit-transform: translateX(100%); }
+    100%{ -webkit-transform: translateX(0%); }
 }
 
 @keyframes topRotate{
