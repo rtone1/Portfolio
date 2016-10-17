@@ -186,7 +186,7 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
   -webkit-animation-name: fadeIn;
   -webkit-animation-timing-function: linear;
   -webkit-animation-duration: .4s;
-  -webkit-animation-iteration-count: forwards;
+  -webkit-animation-fill-mode: forwards;
   -moz-animation: fadeIn .4s linear forwards;
   -ms-animation: fadeIn .4s linear forwards;
   -o-animation: fadeIn .4s linear forwards;
@@ -198,7 +198,7 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
   -webkit-animation-name: textPop;
   -webkit-animation-timing-function: linear;
   -webkit-animation-duration: .4s;
-  -webkit-animation-iteration-count: forwards;
+  -webkit-animation-fill-mode: forwards;
   -moz-animation: textPop .4s linear forwards;
   -ms-animation: textPop .4s linear forwards;
   -o-animation: textPop .4s linear forwards;
@@ -208,7 +208,7 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
   animation: topRotate .6s forwards;
   -webkit-animation-name: topRotate;
   -webkit-animation-duration: .6s;
-  -webkit-animation-iteration-count: forwards;
+  -webkit-animation-fill-mode: forwards;
   -moz-animation: topRotate .6s forwards;
   -ms-animation: topRotate .6s forwards;
   -o-animation: topRotate .6s forwards;
@@ -217,7 +217,7 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
   animation: fadeOut .2s forwards;
   -webkit-animation-name: fadeOut;
   -webkit-animation-duration: .2s;
-  -webkit-animation-iteration-count: forwards;
+  -webkit-animation-fill-mode: forwards;
   -moz-animtion: fadeOut .2s forwards;
   -ms-animtion: fadeOut .2s forwards;
   -o-animtion: fadeOut .2s forwards;
@@ -227,7 +227,7 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
   animation: bottomRotate .6s forwards;
   -webkit-animation-name: bottomRotate;
   -webkit-animation-duration: .6s;
-  -webkit-animation-iteration-count: forwards;
+  -webkit-animation-fill-mode: forwards;
   -moz-animation: bottomRotate .6s forwards;
   -ms-animation: bottomRotate .6s forwards;
   -o-animation: bottomRotate .6s forwards;
@@ -236,7 +236,7 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
   animation: menuTopStart .6s forwards;
   -webkit-animation-name: menuTopStart;
   -webkit-animation-duration: .6s;
-  -webkit-animation-iteration-count: forwards;
+  -webkit-animation-fill-mode: forwards;
   -moz-animation: menuTopStart .6s forwards;
   -ms-animation: menuTopStart .6s forwards;
   -o-animation: menuTopStart .6s forwards;
@@ -253,7 +253,7 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
   animation: menuBottomStart .6s forwards;
   -webkit-animation-name: menuBottomStart;
   -webkit-animation-duration: .6s;
-  -webkit-animation-iteration-count: forwards;
+  -webkit-animation-fill-mode: forwards;
   -moz-animation: menuBottomStart .6s forwards;
   -ms-animation: menuBottomStart .6s forwards;
   -o-animation: menuBottomStart .6s forwards;
@@ -264,7 +264,7 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
   -webkit-animation-name: fadeIn;
   -webkit-animation-duration: .3s ;
   -webkit-animation-timing-function: ease;
-  -webkit-animation-iteration-count: forwards;
+  -webkit-animation-fill-mode: forwards;
   -moz-animation: fadeIn .3s  ease forwards;
   -ms-animation: fadeIn .3s  ease forwards;
   -o-animation: fadeIn .3s  ease forwards;
@@ -275,7 +275,7 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
   -webkit-animation-name: fadeOut;
   -webkit-animation-duration: .3s ;
   -webkit-animation-timing-function: ease;
-  -webkit-animation-iteration-count: forwards;
+  -webkit-animation-fill-mode: forwards;
   -moz-animation: fadeOut .3s  ease forwards;
   -ms-animation: fadeOut .3s  ease forwards;
   -o-animation: fadeOut .3s  ease forwards;
@@ -286,7 +286,7 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
   -webkit-animation-name: dropDown;
   -webkit-animation-duration: .2s ;
   -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: forwards;
+  -webkit-animation-fill-mode: forwards;
   -moz-animation: dropDown .2s  linear forwards;
   -ms-animation: dropDown .2s  linear forwards;
   -o-animation: dropDown .2s  linear forwards;
@@ -297,7 +297,7 @@ div.help-block ul{ list-style-type: none; color: #ff5722; }
   -webkit-animation-name: comeUp;
   -webkit-animation-duration: .2s ;
   -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: forwards;
+  -webkit-animation-fill-mode: forwards;
   -moz-animation: comeUp .2s  linear forwards;
   -ms-animation: comeUp .2s  linear forwards;
   -o-animation: comeUp .2s  linear forwards;
@@ -490,7 +490,7 @@ section#mainHero{
       }
       span.greet_anime{
         position: absolute;
-        top: 0px;
+        top: -100px;
         right: 0px;
         opacity: 0;
       }
@@ -1184,7 +1184,7 @@ div.subFooter{
       -webkit-animation-name: bounce;
       -webkit-animation-duration: 1.8s;
       -webkit-animation-timing-function: ease;
-      -webkit-animation-iteration-count: forwards;
+      -webkit-animation-fill-mode: forwards;
       -moz-animation: bounce 1.8s ease forwards;
       -ms-animation: bounce 1.8s ease forwards;
       -o-animation: bounce 1.8s ease forwards;
@@ -1306,7 +1306,7 @@ div.subFooter{
 
 
 @keyframes greetThem{
-    0%{ top: -100%; opacity: 1; }
+    0%{ top: -100%; opacity: 0; }
     30%{ top: 0px; opacity: 1; }
     50%{ top: 0px; opacity: 1; }
     70%{ top: 0px; opacity: 1; }
@@ -1314,7 +1314,7 @@ div.subFooter{
     100%{ top: 0px; opacity: 0; }
 }
 @-webkit-keyframes greetThem{
-    0%{ top: -100%; opacity: 1; }
+    0%{ top: -100%; opacity: 0; }
     30%{ top: 0px; opacity: 1; }
     50%{ top: 0px; opacity: 1; }
     70%{ top: 0px; opacity: 1; }
