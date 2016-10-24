@@ -1100,7 +1100,9 @@ section#about_me{
         cursor: pointer;
         color: $skillTextColor;
         li{
+          position: relative;
           display: inline-block;
+          overflow: hidden;
           padding: 20px;
           border-radius: 5px;
           background-color: #777E82;
@@ -1113,7 +1115,29 @@ section#about_me{
         li:nth-child(5){ background-color: #069ACE;}
         li:nth-child(6){ background-color: #F78218;}
       }
-      ul.skillList li:hover{ color: $white; transition: .2s; }
+      .skill{
+        opacity: 1;
+        transition: .3s ease-out;
+        -webkit-transition: .3s ease-out;
+      }
+      .skillLevel{
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 100%;
+        transform: translate(0,-50%);
+        -webkit-transform: translate(0,-50%);
+        font-size: 36px;
+        transition: .5s ease-out;
+        -webkit-transiton: .5s ease-out;
+      }
+      ul.skillList li:hover .skill{ opacity: 0; }
+      ul.skillList li:hover .skillLevel{
+        color: $white;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+      }
     }
   }
 }
