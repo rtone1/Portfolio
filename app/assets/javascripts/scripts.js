@@ -52,7 +52,7 @@ $(window).load(function(){
 
         var w = angular.element($window);
         w.bind('resize', function(){
-              if( w.width() > 600 && $scope.mobileMenu == true){
+              if( w.width() > 600 ){
                   removeAnimations();
                   $scope.$apply("mobileMenu = false");
 
@@ -179,21 +179,21 @@ $(window).load(function(){
     $('.line3').removeClass('bottom');
   }
 
-  // FUNCTION TO DROP DOWN MENU
-  $.fn.dropDownMenu = function(counter){
-
-     $('.main_hamIcon').on('click', function(){
-      if (counter === 0 ){
-        addXMenu();
-        counter += 1;
-      } else{
-        removeXMenu();
-        counter -= 1;
-      }
-    });
-  };
-
-  var navDown = $.fn.dropDownMenu( 0 );
+  // // FUNCTION TO DROP DOWN MENU
+  // $.fn.dropDownMenu = function(counter){
+  //
+  //    $('.main_hamIcon').on('click', function(){
+  //     if (counter === 0 ){
+  //       addXMenu();
+  //       counter += 1;
+  //     } else{
+  //       removeXMenu();
+  //       counter -= 1;
+  //     }
+  //   });
+  // };
+  //
+  // var navDown = $.fn.dropDownMenu( 0 );
 
 
 })(); // END OF SELF CALL CLOSURE
