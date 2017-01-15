@@ -24,10 +24,12 @@
 </head>
   <body id="rodrigo-top" ng-controller="PortfolioController" ng-class="{noScroll:contact}">
 
+    <div ng-controller="WeatherController as weather">
 
-      <%= yield %>
 
+        <%= yield %>
 
+    </div>
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>

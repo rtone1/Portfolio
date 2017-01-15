@@ -1,0 +1,59 @@
+(function(){
+
+  var app = angular.module( 'weatherApp', [] );
+
+  app.controller('WeatherController', ['$http', 'weatherService', function($http, weatherService){
+      var weather = this;
+      weather.locations = [];
+      weather.forecasts = [];
+      weather.hourly = [];
+      weather.night = 'nt_';
+
+      weatherService.getLocation().then(function(data) {
+          weather.locations = data.location;
+
+          $http.get('http://api.wunderground.com/api/<%= ENV["WEATHER_KEY"] %>/forecast10day/'+weather.locations.l+'.json').success(function(data){
+
+            weather.forecasts = data.forecast.simpleforecast.forecastday;
+
+
+          });
+
+          $http.get('http://api.wunderground.com/api/<%= ENV["WEATHER_KEY"] %>/hourly/'+weather.locations.l+'.json').success(function(data){
+            weather.hourly = data.hourly_forecast;
+          });
+
+        }, function() {
+          weather.error = 'unable to get the weather';
+      }); // END OF GETLOCATION FUNCTION
+
+
+  }]); // END OF WEATHER CONTROLLER
+
+  app.factory('weatherService', ['$http','$q', function($http, $q) {
+      var getLocation = function() {
+        var defer = $q.defer();
+        $http.get('http://api.wunderground.com/api/<%= ENV["WEATHER_KEY"] %>/geolookup/q/autoip.json').then(function(response) {
+          defer.resolve(response.data);
+        }, function(response) {
+          defer.reject(response);
+        });
+        return defer.promise;
+      };
+
+      var getTime = function(){
+
+      };
+
+      return {
+        getLocation: getLocation
+      };
+  }]); // END OF FACTORY
+
+  app.filter('slice', function() {
+      return function(arr, start, end) {
+        return (arr || []).slice(start, end);
+      };
+  }); // END OF FILTER SLICE
+
+})(); //END OF CLOUSER

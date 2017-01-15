@@ -5,12 +5,10 @@ $(window).load(function(){
 });
 
 
-
-
 ////-- CLOSURE FOR MAIN FUNCTIONS --//
 (function(){
 
-    var app = angular.module('portfolioApp', ['ngAnimate', 'portfolio-directives', 'audioApp']);
+    var app = angular.module('portfolioApp', ['ngAnimate', 'portfolio-directives', 'audioApp', 'weatherApp']);
 
     app.config(['$animateProvider', function($animateProvider) {
         $animateProvider.classNameFilter(/^(?:(?!ng-animate-disabled).)*$/);

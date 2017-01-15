@@ -1,11 +1,11 @@
 <!-- MOBILE MENU -->
-<div class="mobile_nav" ng-class="{show:mobileMenu}">
+<div class="mobile_nav" ng-class="{show:mobileMenu}" >
   <div class="m_weather">
     <div class="w_city">
-      <span>Chicago</span><span class="forecast">partly cloudy</span>
+      <span>{{weather.locations.city}}</span><span class="forecast">{{weather.forecasts[0].conditions}}</span>
     </div>
     <div class="temp">
-      <span>85&deg; f</span>
+      <span>{{weather.hourly[0].temp.english}}&deg; f</span>
     </div>
   </div>
   <nav class="m_navigation">
@@ -20,9 +20,9 @@
 <div id="rodrigo_torres_portfolio" windowSize class="content_wrapper ng-cloak" ng-class="{slideLeft:mobileMenu}">
 
   <!-- DOCUMENT HEADER -->
-  <header scroll ng-class="{small:changeClass, solidHeader:changeClass, slideLeft:mobileMenu}">
+  <header scroll ng-class="{small:changeClass, solidHeader:changeClass, slideLeft:mobileMenu}" >
       <a href="#rodrigo_torres_portfolio"><h1 ng-class="{smallH1:changeClass}">Rodrigo Torres</h1></a>
-        <div class="local_weather"><span>Chicago 55&deg; f</span><span class="forecast">partly cloudy</span></div>
+        <div class="local_weather"><span>{{weather.locations.city}}  {{weather.hourly[0].temp.english}}&deg; f</span><span class="forecast">partly cloudy</span></div>
         <nav>
             <ul class="navigation">
               <li class="navlink linkActive"><a href="#contact_me" ng-click="toggleContact()">contact me</a></li>

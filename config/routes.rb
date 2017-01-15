@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root 'creations#index'
   resource :messages
 
-
   # profile page routes =============================
   get '/profile' => 'users#profile'
   get '/messages' => 'messages#index'
